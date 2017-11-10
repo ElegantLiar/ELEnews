@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D601FB5495F00ECC33C /* AppDelegate.m */; };
+		65472D641FB5495F00ECC33C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D631FB5495F00ECC33C /* ViewController.m */; };
+		65472D671FB5495F00ECC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65472D651FB5495F00ECC33C /* Main.storyboard */; };
+		65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65472D681FB5495F00ECC33C /* Assets.xcassets */; };
+		65472D6C1FB5495F00ECC33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65472D6A1FB5495F00ECC33C /* LaunchScreen.storyboard */; };
+		65472D6F1FB5495F00ECC33C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D6E1FB5495F00ECC33C /* main.m */; };
+		65472D791FB5495F00ECC33C /* ELENewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D781FB5495F00ECC33C /* ELENewsTests.m */; };
+		65472D841FB5495F00ECC33C /* ELENewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D831FB5495F00ECC33C /* ELENewsUITests.m */; };
+		E43F9023CECA5FB227726121 /* libPods-ELENews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 368F734167BEB89BA344E6B4 /* libPods-ELENews.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65472D751FB5495F00ECC33C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65472D541FB5495F00ECC33C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65472D5B1FB5495F00ECC33C;
+			remoteInfo = ELENews;
+		};
+		65472D801FB5495F00ECC33C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65472D541FB5495F00ECC33C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65472D5B1FB5495F00ECC33C;
+			remoteInfo = ELENews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00FA55D0A96FB815DFBA207A /* Pods-ELENews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELENews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELENews/Pods-ELENews.debug.xcconfig"; sourceTree = "<group>"; };
+		368F734167BEB89BA344E6B4 /* libPods-ELENews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ELENews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65472D5C1FB5495F00ECC33C /* ELENews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELENews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65472D5F1FB5495F00ECC33C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65472D601FB5495F00ECC33C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		65472D621FB5495F00ECC33C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		65472D631FB5495F00ECC33C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		65472D661FB5495F00ECC33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65472D681FB5495F00ECC33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65472D6B1FB5495F00ECC33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65472D6D1FB5495F00ECC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65472D6E1FB5495F00ECC33C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65472D741FB5495F00ECC33C /* ELENewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELENewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65472D781FB5495F00ECC33C /* ELENewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELENewsTests.m; sourceTree = "<group>"; };
+		65472D7A1FB5495F00ECC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65472D7F1FB5495F00ECC33C /* ELENewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELENewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65472D831FB5495F00ECC33C /* ELENewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELENewsUITests.m; sourceTree = "<group>"; };
+		65472D851FB5495F00ECC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD7F80F6FD8CFD2ADF8B010A /* Pods-ELENews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELENews.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELENews/Pods-ELENews.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65472D591FB5495F00ECC33C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E43F9023CECA5FB227726121 /* libPods-ELENews.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65472D711FB5495F00ECC33C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65472D7C1FB5495F00ECC33C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65472D531FB5495F00ECC33C = {
+			isa = PBXGroup;
+			children = (
+				65472D5E1FB5495F00ECC33C /* ELENews */,
+				65472D771FB5495F00ECC33C /* ELENewsTests */,
+				65472D821FB5495F00ECC33C /* ELENewsUITests */,
+				65472D5D1FB5495F00ECC33C /* Products */,
+				F8AAF69BBB73813EF5D731D7 /* Pods */,
+				AF0ED1662E382D072ECC8E13 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		65472D5D1FB5495F00ECC33C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65472D5C1FB5495F00ECC33C /* ELENews.app */,
+				65472D741FB5495F00ECC33C /* ELENewsTests.xctest */,
+				65472D7F1FB5495F00ECC33C /* ELENewsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65472D5E1FB5495F00ECC33C /* ELENews */ = {
+			isa = PBXGroup;
+			children = (
+				65472D5F1FB5495F00ECC33C /* AppDelegate.h */,
+				65472D601FB5495F00ECC33C /* AppDelegate.m */,
+				65472D621FB5495F00ECC33C /* ViewController.h */,
+				65472D631FB5495F00ECC33C /* ViewController.m */,
+				65472D651FB5495F00ECC33C /* Main.storyboard */,
+				65472D681FB5495F00ECC33C /* Assets.xcassets */,
+				65472D6A1FB5495F00ECC33C /* LaunchScreen.storyboard */,
+				65472D6D1FB5495F00ECC33C /* Info.plist */,
+				65472D6E1FB5495F00ECC33C /* main.m */,
+			);
+			path = ELENews;
+			sourceTree = "<group>";
+		};
+		65472D771FB5495F00ECC33C /* ELENewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				65472D781FB5495F00ECC33C /* ELENewsTests.m */,
+				65472D7A1FB5495F00ECC33C /* Info.plist */,
+			);
+			path = ELENewsTests;
+			sourceTree = "<group>";
+		};
+		65472D821FB5495F00ECC33C /* ELENewsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65472D831FB5495F00ECC33C /* ELENewsUITests.m */,
+				65472D851FB5495F00ECC33C /* Info.plist */,
+			);
+			path = ELENewsUITests;
+			sourceTree = "<group>";
+		};
+		AF0ED1662E382D072ECC8E13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				368F734167BEB89BA344E6B4 /* libPods-ELENews.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8AAF69BBB73813EF5D731D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00FA55D0A96FB815DFBA207A /* Pods-ELENews.debug.xcconfig */,
+				BD7F80F6FD8CFD2ADF8B010A /* Pods-ELENews.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65472D5B1FB5495F00ECC33C /* ELENews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65472D881FB5495F00ECC33C /* Build configuration list for PBXNativeTarget "ELENews" */;
+			buildPhases = (
+				3B65F3514CCDC890D5C5F45C /* [CP] Check Pods Manifest.lock */,
+				65472D581FB5495F00ECC33C /* Sources */,
+				65472D591FB5495F00ECC33C /* Frameworks */,
+				65472D5A1FB5495F00ECC33C /* Resources */,
+				CB7810BCD073CBF64D360A3A /* [CP] Embed Pods Frameworks */,
+				18A9BB979143BB405454C1C6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ELENews;
+			productName = ELENews;
+			productReference = 65472D5C1FB5495F00ECC33C /* ELENews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65472D731FB5495F00ECC33C /* ELENewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65472D8B1FB5495F00ECC33C /* Build configuration list for PBXNativeTarget "ELENewsTests" */;
+			buildPhases = (
+				65472D701FB5495F00ECC33C /* Sources */,
+				65472D711FB5495F00ECC33C /* Frameworks */,
+				65472D721FB5495F00ECC33C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65472D761FB5495F00ECC33C /* PBXTargetDependency */,
+			);
+			name = ELENewsTests;
+			productName = ELENewsTests;
+			productReference = 65472D741FB5495F00ECC33C /* ELENewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65472D7E1FB5495F00ECC33C /* ELENewsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65472D8E1FB5495F00ECC33C /* Build configuration list for PBXNativeTarget "ELENewsUITests" */;
+			buildPhases = (
+				65472D7B1FB5495F00ECC33C /* Sources */,
+				65472D7C1FB5495F00ECC33C /* Frameworks */,
+				65472D7D1FB5495F00ECC33C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65472D811FB5495F00ECC33C /* PBXTargetDependency */,
+			);
+			name = ELENewsUITests;
+			productName = ELENewsUITests;
+			productReference = 65472D7F1FB5495F00ECC33C /* ELENewsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65472D541FB5495F00ECC33C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EL;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = ElegantLiar;
+				TargetAttributes = {
+					65472D5B1FB5495F00ECC33C = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					65472D731FB5495F00ECC33C = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 65472D5B1FB5495F00ECC33C;
+					};
+					65472D7E1FB5495F00ECC33C = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 65472D5B1FB5495F00ECC33C;
+					};
+				};
+			};
+			buildConfigurationList = 65472D571FB5495F00ECC33C /* Build configuration list for PBXProject "ELENews" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65472D531FB5495F00ECC33C;
+			productRefGroup = 65472D5D1FB5495F00ECC33C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65472D5B1FB5495F00ECC33C /* ELENews */,
+				65472D731FB5495F00ECC33C /* ELENewsTests */,
+				65472D7E1FB5495F00ECC33C /* ELENewsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65472D5A1FB5495F00ECC33C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65472D6C1FB5495F00ECC33C /* LaunchScreen.storyboard in Resources */,
+				65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */,
+				65472D671FB5495F00ECC33C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65472D721FB5495F00ECC33C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65472D7D1FB5495F00ECC33C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18A9BB979143BB405454C1C6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ELENews/Pods-ELENews-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELENews/Pods-ELENews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B65F3514CCDC890D5C5F45C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELENews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB7810BCD073CBF64D360A3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELENews/Pods-ELENews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65472D581FB5495F00ECC33C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65472D641FB5495F00ECC33C /* ViewController.m in Sources */,
+				65472D6F1FB5495F00ECC33C /* main.m in Sources */,
+				65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65472D701FB5495F00ECC33C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65472D791FB5495F00ECC33C /* ELENewsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65472D7B1FB5495F00ECC33C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65472D841FB5495F00ECC33C /* ELENewsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65472D761FB5495F00ECC33C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65472D5B1FB5495F00ECC33C /* ELENews */;
+			targetProxy = 65472D751FB5495F00ECC33C /* PBXContainerItemProxy */;
+		};
+		65472D811FB5495F00ECC33C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65472D5B1FB5495F00ECC33C /* ELENews */;
+			targetProxy = 65472D801FB5495F00ECC33C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65472D651FB5495F00ECC33C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65472D661FB5495F00ECC33C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65472D6A1FB5495F00ECC33C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65472D6B1FB5495F00ECC33C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65472D861FB5495F00ECC33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		65472D871FB5495F00ECC33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65472D891FB5495F00ECC33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FA55D0A96FB815DFBA207A /* Pods-ELENews.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EACARN623L;
+				INFOPLIST_FILE = ELENews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.EL.ELENews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
+			};
+			name = Debug;
+		};
+		65472D8A1FB5495F00ECC33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD7F80F6FD8CFD2ADF8B010A /* Pods-ELENews.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EACARN623L;
+				INFOPLIST_FILE = ELENews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.EL.ELENews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
+			};
+			name = Release;
+		};
+		65472D8C1FB5495F00ECC33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EACARN623L;
+				INFOPLIST_FILE = ELENewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.EL.ELENewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELENews.app/ELENews";
+			};
+			name = Debug;
+		};
+		65472D8D1FB5495F00ECC33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EACARN623L;
+				INFOPLIST_FILE = ELENewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.EL.ELENewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELENews.app/ELENews";
+			};
+			name = Release;
+		};
+		65472D8F1FB5495F00ECC33C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EACARN623L;
+				INFOPLIST_FILE = ELENewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.EL.ELENewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ELENews;
+			};
+			name = Debug;
+		};
+		65472D901FB5495F00ECC33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EACARN623L;
+				INFOPLIST_FILE = ELENewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.EL.ELENewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ELENews;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65472D571FB5495F00ECC33C /* Build configuration list for PBXProject "ELENews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65472D861FB5495F00ECC33C /* Debug */,
+				65472D871FB5495F00ECC33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65472D881FB5495F00ECC33C /* Build configuration list for PBXNativeTarget "ELENews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65472D891FB5495F00ECC33C /* Debug */,
+				65472D8A1FB5495F00ECC33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65472D8B1FB5495F00ECC33C /* Build configuration list for PBXNativeTarget "ELENewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65472D8C1FB5495F00ECC33C /* Debug */,
+				65472D8D1FB5495F00ECC33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65472D8E1FB5495F00ECC33C /* Build configuration list for PBXNativeTarget "ELENewsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65472D8F1FB5495F00ECC33C /* Debug */,
+				65472D901FB5495F00ECC33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65472D541FB5495F00ECC33C /* Project object */;
+}
