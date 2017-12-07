@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ELMainTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    kAppStatusBarHeight = IS_iPhoneX ? 44 : 20;
+    
+    self.window = [[UIWindow alloc] initWithFrame:ELScreenBounds];
+    self.window.backgroundColor = ELWhiteColor;
+    
+    ELMainTabBarController *tabBarVc = [[ELMainTabBarController alloc] init];;
+    
+    self.window.rootViewController = tabBarVc;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

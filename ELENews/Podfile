@@ -3,4 +3,8 @@ platform :ios, ‘9.0’
 target :’ELENews’ do
 	pod 'MJRefresh'
 	pod 'YYKit'    	
+	pod 'FDFullscreenPopGesture','1.1'
+	pod 'Masonry', '~> 1.1.0'
+	pod 'ReactiveCocoa','2.5'
+	pod 'AFNetworking', '~> 3.1.0'
 end
