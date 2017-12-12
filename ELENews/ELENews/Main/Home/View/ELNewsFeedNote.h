@@ -1,15 +1,15 @@
 //
-//  ELFeedOneSamllPicLeftNote.h
+//  ELNewsFeedNote.h
 //  ELENews
 //
-//  Created by EL on 2017/12/8.
+//  Created by EL on 2017/12/12.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import "ELFeedBean.h"
 
-@interface ELFeedOneSamllPicLeftNote : ASCellNode
+@interface ELNewsFeedNote : ASCellNode
 
 - (instancetype)initWithFeedBean:(ELFeedBean *)feedBean;
 

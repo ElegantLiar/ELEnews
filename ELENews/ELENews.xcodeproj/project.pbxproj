@@ -14,7 +14,8 @@
 		65472D6F1FB5495F00ECC33C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D6E1FB5495F00ECC33C /* main.m */; };
 		65472D791FB5495F00ECC33C /* ELENewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D781FB5495F00ECC33C /* ELENewsTests.m */; };
 		65472D841FB5495F00ECC33C /* ELENewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D831FB5495F00ECC33C /* ELENewsUITests.m */; };
-		655ED3B51FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ED3B41FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m */; };
+		6555D82B1FDF823700058708 /* ELNetWorkBaseParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */; };
+		6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */; };
 		655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ED3B61FDA752100A4E9BA /* Utilities.m */; };
 		656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 656A89C31FD6912E00A17CDB /* ELMainTabBarController.m */; };
 		657CC0C01FD7C374001616BF /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0B71FD7C373001616BF /* YZFlowLayout.m */; };
@@ -98,8 +99,11 @@
 		65472D7F1FB5495F00ECC33C /* ELENewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELENewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D831FB5495F00ECC33C /* ELENewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELENewsUITests.m; sourceTree = "<group>"; };
 		65472D851FB5495F00ECC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		655ED3B31FDA725000A4E9BA /* ELFeedOneSamllPicLeftNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFeedOneSamllPicLeftNote.h; sourceTree = "<group>"; };
-		655ED3B41FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFeedOneSamllPicLeftNote.m; sourceTree = "<group>"; };
+		6555D8291FDF823700058708 /* ELNetWorkBaseParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNetWorkBaseParams.h; sourceTree = "<group>"; };
+		6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNetWorkBaseParams.m; sourceTree = "<group>"; };
+		6555D82C1FDFB07700058708 /* ELNewsFeedNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsFeedNote.h; sourceTree = "<group>"; };
+		6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsFeedNote.m; sourceTree = "<group>"; };
+		6555D8301FDFC1EF00058708 /* ELHomeScrollDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELHomeScrollDelegate.h; sourceTree = "<group>"; };
 		655ED3B61FDA752100A4E9BA /* Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		655ED3B71FDA752100A4E9BA /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		656A89C21FD6912E00A17CDB /* ELMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMainTabBarController.h; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		6529F3BA1FD68E3500A096FE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				6555D8291FDF823700058708 /* ELNetWorkBaseParams.h */,
+				6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -474,10 +480,11 @@
 		65D8B7771FD6828D0054DDE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				657CC0DC1FD93185001616BF /* ELChannelBean.h */,
-				657CC0DD1FD93185001616BF /* ELChannelBean.m */,
+				6555D8301FDFC1EF00058708 /* ELHomeScrollDelegate.h */,
 				657CC0E21FD93F82001616BF /* ELFeedBean.h */,
 				657CC0E31FD93F82001616BF /* ELFeedBean.m */,
+				657CC0DC1FD93185001616BF /* ELChannelBean.h */,
+				657CC0DD1FD93185001616BF /* ELChannelBean.m */,
 				657CC0EE1FD94605001616BF /* ELNewsCommonBean.h */,
 				657CC0EF1FD94605001616BF /* ELNewsCommonBean.m */,
 			);
@@ -487,8 +494,8 @@
 		65D8B7781FD6828D0054DDE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				655ED3B31FDA725000A4E9BA /* ELFeedOneSamllPicLeftNote.h */,
-				655ED3B41FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m */,
+				6555D82C1FDFB07700058708 /* ELNewsFeedNote.h */,
+				6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -839,7 +846,6 @@
 				65A830511FD6A44400A75B32 /* ELBaseViewController.m in Sources */,
 				657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */,
 				655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */,
-				655ED3B51FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m in Sources */,
 				65A8301C1FD6919800A75B32 /* ELNavgationController.m in Sources */,
 				657CC0F01FD94605001616BF /* ELNewsCommonBean.m in Sources */,
 				65A830491FD694C200A75B32 /* NSArray+Safe.m in Sources */,
@@ -860,7 +866,9 @@
 				657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */,
 				657CC0C61FD7C3EA001616BF /* ELHomeViewController.m in Sources */,
 				657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */,
+				6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */,
 				657CC0C11FD7C374001616BF /* YZDisplayViewController.m in Sources */,
+				6555D82B1FDF823700058708 /* ELNetWorkBaseParams.m in Sources */,
 				657CC0E11FD93D77001616BF /* ELNewsCommonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

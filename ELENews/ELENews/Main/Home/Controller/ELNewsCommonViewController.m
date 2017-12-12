@@ -11,9 +11,9 @@
 #import "ELFeedViewModel.h"
 #import "ELNewsCommonBean.h"
 #import "ELFeedBean.h"
-#import "ELFeedOneSamllPicLeftNote.h"
+#import "ELNewsFeedNote.h"
 
-@interface ELNewsCommonViewController ()<ASTableDelegate, ASTableDataSource>
+@interface ELNewsCommonViewController ()<ASTableDelegate, ASTableDataSource, UIScrollViewDelegate>
 
 @end
 
@@ -28,16 +28,13 @@
 #pragma mark – LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     _listArray = @[].mutableCopy;
     
     _feedViewModel = [[ELFeedViewModel alloc] init];
     _feedViewModel.channelID = _singleChannelBean.channelID;
-    [self initUI];
     
-//    [self loadPageWithContext:nil];
-//    [_feedViewModel loadFirstPageDataFromNetwork];
-
+    [self initUI];
 }
 
 #pragma mark - Intial Methods
@@ -55,17 +52,11 @@
 
 #pragma mark - Private Methods
 - (void)loadPageWithContext:(ASBatchContext *)context{
-    
     @weakify(self);
     [[_feedViewModel.requestCommand execute:nil] subscribeNext:^(ELNewsCommonBean *commonBean) {
         @strongify(self);
-        if (commonBean.page == 1) {
-            [self->_listArray setArray:commonBean.list];
-            [self->_tableNode reloadData];
-        } else {
-            [self->_listArray addObjectsFromArray:commonBean.list];
-            [self insertNewRows:commonBean.list];
-        }
+        [self->_listArray addObjectsFromArray:commonBean.list];
+        [self insertNewRows:commonBean.list];
         if (context) {
             [context completeBatchFetching:YES];
         }
@@ -87,29 +78,28 @@
 
 #pragma mark - Setter Getter Methods
 
-#pragma mark - ASTableDataSource methods
-
+#pragma mark - ASTableDataSource
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section{
     return _listArray.count;
 }
 
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath{
     ELFeedBean *feedBean = [_listArray safeObjectAtIndex:indexPath.row];
-    ASCellNode *(^cellNodeBlock)() = ^ASCellNode *() {
-        ELFeedOneSamllPicLeftNote *cellNode = [[ELFeedOneSamllPicLeftNote alloc] initWithFeedBean:feedBean];
+    return ^ASCellNode *() {
+        ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithFeedBean:feedBean];
         return cellNode;
     };
-    
-    return cellNodeBlock;
 }
 
-#pragma mark - ASTableDelegate methods
+#pragma mark - ASTableDelegate
 - (void)tableNode:(ASTableNode *)tableNode willBeginBatchFetchWithContext:(ASBatchContext *)context{
     [context beginBatchFetching];
     [_feedViewModel loadNextPageDataFromNetwork];
     [self loadPageWithContext:context];
 }
 
-
-
+#pragma mark -- ScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
 @end

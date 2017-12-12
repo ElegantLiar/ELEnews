@@ -29,5 +29,5 @@
 #import "AFNetworking.h"
 #import "AsyncDisplayKit.h"
 #import "ELHTTPManager.h"
-
+#import "ELNetWorkBaseParams.h"
 #endif /* ELENewsHeaders_pch */
