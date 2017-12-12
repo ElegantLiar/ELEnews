@@ -10,6 +10,14 @@
 
 @implementation ELFeedBean
 
+- (NSAttributedString *)usernameAttributedStringWithFontSize:(CGFloat)size{
+    return [NSAttributedString attributedStringWithString:self.cat.name fontSize:size color:[UIColor darkBlueColor] firstWordColor:nil];
+}
+
+- (NSAttributedString *)newsAttributedStringWithFontSize:(CGFloat)size{
+    return [NSAttributedString attributedStringWithString:self.title fontSize:size color:[UIColor lightGrayColor] firstWordColor:nil];
+}
+
 @end
 
 @implementation ELFeedCatBean

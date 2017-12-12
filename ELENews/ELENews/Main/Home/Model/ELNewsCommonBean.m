@@ -14,7 +14,7 @@
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{
              @"info" : ELFeedBean.class,
-             @"video" : ELFeedBean.class,
+             @"list" : ELFeedBean.class,
              };
 }
 

@@ -14,6 +14,11 @@
 
 @property (nonatomic, assign) NSInteger channelID;
 
-- (void)loadDataFromNetwork;
+@property (nonatomic, assign) NSInteger page;
+
+- (void)loadFirstPageDataFromNetwork;
+
+- (void)loadNextPageDataFromNetwork;
+
 
 @end

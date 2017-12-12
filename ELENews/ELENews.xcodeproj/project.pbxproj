@@ -14,6 +14,8 @@
 		65472D6F1FB5495F00ECC33C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D6E1FB5495F00ECC33C /* main.m */; };
 		65472D791FB5495F00ECC33C /* ELENewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D781FB5495F00ECC33C /* ELENewsTests.m */; };
 		65472D841FB5495F00ECC33C /* ELENewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D831FB5495F00ECC33C /* ELENewsUITests.m */; };
+		655ED3B51FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ED3B41FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m */; };
+		655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ED3B61FDA752100A4E9BA /* Utilities.m */; };
 		656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 656A89C31FD6912E00A17CDB /* ELMainTabBarController.m */; };
 		657CC0C01FD7C374001616BF /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0B71FD7C373001616BF /* YZFlowLayout.m */; };
 		657CC0C11FD7C374001616BF /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0B91FD7C374001616BF /* YZDisplayViewController.m */; };
@@ -96,6 +98,10 @@
 		65472D7F1FB5495F00ECC33C /* ELENewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELENewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D831FB5495F00ECC33C /* ELENewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELENewsUITests.m; sourceTree = "<group>"; };
 		65472D851FB5495F00ECC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655ED3B31FDA725000A4E9BA /* ELFeedOneSamllPicLeftNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFeedOneSamllPicLeftNote.h; sourceTree = "<group>"; };
+		655ED3B41FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFeedOneSamllPicLeftNote.m; sourceTree = "<group>"; };
+		655ED3B61FDA752100A4E9BA /* Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		655ED3B71FDA752100A4E9BA /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		656A89C21FD6912E00A17CDB /* ELMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMainTabBarController.h; sourceTree = "<group>"; };
 		656A89C31FD6912E00A17CDB /* ELMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMainTabBarController.m; sourceTree = "<group>"; };
 		657CC0B71FD7C373001616BF /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 				65A830481FD694C200A75B32 /* NSMutableDictionary+Safe.m */,
 				65A8304C1FD698B400A75B32 /* UIColor+extend.h */,
 				65A8304D1FD698B400A75B32 /* UIColor+extend.m */,
+				655ED3B71FDA752100A4E9BA /* Utilities.h */,
+				655ED3B61FDA752100A4E9BA /* Utilities.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -479,6 +487,8 @@
 		65D8B7781FD6828D0054DDE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				655ED3B31FDA725000A4E9BA /* ELFeedOneSamllPicLeftNote.h */,
+				655ED3B41FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -828,6 +838,8 @@
 				65A8304B1FD694C200A75B32 /* NSMutableDictionary+Safe.m in Sources */,
 				65A830511FD6A44400A75B32 /* ELBaseViewController.m in Sources */,
 				657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */,
+				655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */,
+				655ED3B51FDA725100A4E9BA /* ELFeedOneSamllPicLeftNote.m in Sources */,
 				65A8301C1FD6919800A75B32 /* ELNavgationController.m in Sources */,
 				657CC0F01FD94605001616BF /* ELNewsCommonBean.m in Sources */,
 				65A830491FD694C200A75B32 /* NSArray+Safe.m in Sources */,

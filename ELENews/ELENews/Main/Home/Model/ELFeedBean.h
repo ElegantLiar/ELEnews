@@ -18,6 +18,10 @@
 @property (nonatomic, strong) NSArray *gallary;
 @property (nonatomic, strong) NSString *urlroute;
 
+- (NSAttributedString *)usernameAttributedStringWithFontSize:(CGFloat)size;
+- (NSAttributedString *)newsAttributedStringWithFontSize:(CGFloat)size;
+
+
 @end
 
 @interface ELFeedCatBean : NSObject
