@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, ELFeedType) {
+    ELFeedTypeNews = 0,
+    ELFeedTypeFlash,
+    ELFeedTypeGif,
+};
 @interface ELFeedViewModel : NSObject
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
@@ -16,9 +21,13 @@
 
 @property (nonatomic, assign) NSInteger page;
 
+@property (nonatomic, assign) NSInteger flag;
+
+@property (nonatomic, assign) ELFeedType feedType;
+
+
 - (void)loadFirstPageDataFromNetwork;
 
 - (void)loadNextPageDataFromNetwork;
-
 
 @end

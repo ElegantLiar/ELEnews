@@ -25,6 +25,10 @@
 #define ELBrownColor [UIColor brownColor]
 #define ELClearColor [UIColor clearColor]
 
+#define ELNotificationCenter [NSNotificationCenter defaultCenter]
+
+#define ELHomeNewsScrollViewDidScrollNotification @"ELHomeNewsScrollViewDidScrollNotification"
+
 /** 屏幕 */
 #define ELScreen [UIScreen mainScreen]
 /** 屏幕宽度 */

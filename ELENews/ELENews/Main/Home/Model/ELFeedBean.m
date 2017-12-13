@@ -17,11 +17,17 @@
 }
 
 - (NSAttributedString *)usernameAttributedStringWithFontSize:(CGFloat)size{
-    return [NSAttributedString attributedStringWithString:self.cat.name fontSize:size color:[UIColor darkBlueColor] firstWordColor:nil];
+    return [NSAttributedString attributedStringWithString:self.cat.name
+                                                 fontSize:size
+                                                    color:[UIColor darkBlueColor]
+                                           firstWordColor:nil];
 }
 
 - (NSAttributedString *)newsAttributedStringWithFontSize:(CGFloat)size{
-    return [NSAttributedString attributedStringWithString:self.title fontSize:size color:[UIColor hexChangeFloat:@"333333"] firstWordColor:nil];
+    return [NSAttributedString attributedStringWithString:self.title
+                                                 fontSize:size
+                                                    color:[UIColor hexChangeFloat:@"333333"]
+                                           firstWordColor:nil];
 }
 
 @end

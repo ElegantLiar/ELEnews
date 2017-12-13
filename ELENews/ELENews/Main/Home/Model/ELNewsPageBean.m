@@ -1,15 +1,15 @@
 //
-//  ELNewsCommonBean.m
+//  ELNewsPageBean.m
 //  ELENews
 //
-//  Created by EL on 2017/12/7.
+//  Created by EL on 2017/12/12.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
-#import "ELNewsCommonBean.h"
+#import "ELNewsPageBean.h"
 #import "ELFeedBean.h"
 
-@implementation ELNewsCommonBean
+@implementation ELNewsPageBean
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{

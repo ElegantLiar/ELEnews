@@ -8,7 +8,7 @@
 
 #import "ELHomeViewController.h"
 #import "ELHomeChannelViewModel.h"
-#import "ELNewsCommonViewController.h"
+#import "ELNewsPageViewController.h"
 
 @interface ELHomeViewController ()
 
@@ -68,6 +68,14 @@
     } error:^(NSError *error) {
         
     }];
+    
+    
+    [[ELNotificationCenter rac_addObserverForName:ELHomeNewsScrollViewDidScrollNotification object:nil] subscribeNext:^(NSNotification *x) {
+//        @strongify(self);
+//        if ([x.object isKindOfClass:[self class]]) {
+//            [self.contentTableView.mj_header beginRefreshing];
+//        }
+    }];
 }
 
 #pragma mark – Target Methods
@@ -77,10 +85,10 @@
 - (void)setUpAllViewController{
     for (NSInteger i = 0; i < _channleViewModel.channelBean.home.count; i++) {
         ELSingleChannelBean *bean = [_channleViewModel.channelBean.home safeObjectAtIndex:i];
-        ELNewsCommonViewController *commonVc = [[ELNewsCommonViewController alloc] init];
-        commonVc.title = bean.name;
-        commonVc.singleChannelBean = bean;
-        [self addChildViewController:commonVc];
+        ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] init];
+        newsPageVc.title = bean.name;
+        newsPageVc.singleChannelBean = bean;
+        [self addChildViewController:newsPageVc];
     }
     
     [self refreshDisplay];
