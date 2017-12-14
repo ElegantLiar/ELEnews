@@ -7,10 +7,10 @@
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-#import "ELFeedBean.h"
+#import "ELNewsListBean.h"
 
 @interface ELNewsFeedNote : ASCellNode
 
-- (instancetype)initWithFeedBean:(ELFeedBean *)feedBean;
+- (instancetype)initWithNewsListBean:(ELNewsListBean *)newsListBean;
 
 @end

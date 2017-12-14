@@ -1,14 +1,14 @@
 //
-//  ELFeedBean.m
+//  ELNewsListBean.m
 //  ELENews
 //
-//  Created by EL on 2017/12/7.
+//  Created by EL on 2017/12/13.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
-#import "ELFeedBean.h"
+#import "ELNewsListBean.h"
 
-@implementation ELFeedBean
+@implementation ELNewsListBean
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{
@@ -32,6 +32,6 @@
 
 @end
 
-@implementation ELFeedCatBean
+@implementation ELNewsAuthorBean
 
 @end

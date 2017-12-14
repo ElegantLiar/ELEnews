@@ -7,10 +7,10 @@
 //
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-#import "ELFlashBean.h"
+#import "ELFlashListBean.h"
 
 @interface ELFlashFeedNote : ASCellNode
 
-- (instancetype)initWithFlashBean:(ELFlashBean *)flashBean;
+- (instancetype)initWithFlashListBean:(ELFlashListBean *)flashListBean;
 
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		653CB0C21FDFCC3D006C4C2D /* ELFlashBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0C11FDFCC3D006C4C2D /* ELFlashBean.m */; };
 		653CB0C51FDFCFC1006C4C2D /* ELNewsPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0C41FDFCFC1006C4C2D /* ELNewsPageBean.m */; };
 		653CB0C81FDFD087006C4C2D /* ELFlashPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0C71FDFD087006C4C2D /* ELFlashPageBean.m */; };
 		653CB0CB1FDFD126006C4C2D /* ELNewsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0CA1FDFD126006C4C2D /* ELNewsPageViewController.m */; };
@@ -16,6 +15,11 @@
 		653CB0D71FE0D53C006C4C2D /* person_arrow_9x5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CB0D31FE0D53C006C4C2D /* person_arrow_9x5_@2x.png */; };
 		653CB0D81FE0D53C006C4C2D /* person_arrow_up_9x5_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CB0D41FE0D53C006C4C2D /* person_arrow_up_9x5_@2x.png */; };
 		653CB0D91FE0D53C006C4C2D /* person_arrow_9x5_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CB0D51FE0D53C006C4C2D /* person_arrow_9x5_@3x.png */; };
+		653CB0DC1FE10044006C4C2D /* ELGIFPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0DB1FE10044006C4C2D /* ELGIFPageBean.m */; };
+		653CB0E21FE10186006C4C2D /* ELNewsListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0E11FE10186006C4C2D /* ELNewsListBean.m */; };
+		653CB0E51FE10410006C4C2D /* ELFlashListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0E41FE10410006C4C2D /* ELFlashListBean.m */; };
+		653CB0E81FE1055C006C4C2D /* ELGIFListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0E71FE1055C006C4C2D /* ELGIFListBean.m */; };
+		653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0EA1FE10935006C4C2D /* ELGIFFeedNode.m */; };
 		65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D601FB5495F00ECC33C /* AppDelegate.m */; };
 		65472D671FB5495F00ECC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65472D651FB5495F00ECC33C /* Main.storyboard */; };
 		65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65472D681FB5495F00ECC33C /* Assets.xcassets */; };
@@ -37,7 +41,6 @@
 		657CC0D81FD92B7A001616BF /* ELHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0D71FD92B7A001616BF /* ELHTTPManager.m */; };
 		657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0DA1FD93165001616BF /* ELHomeChannelViewModel.m */; };
 		657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0DD1FD93185001616BF /* ELChannelBean.m */; };
-		657CC0E41FD93F82001616BF /* ELFeedBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0E31FD93F82001616BF /* ELFeedBean.m */; };
 		657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0E61FD94024001616BF /* ELFeedViewModel.m */; };
 		65A8301C1FD6919800A75B32 /* ELNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D8B7841FD6828D0054DDE4 /* ELNavgationController.m */; };
 		65A830301FD6931200A75B32 /* tabbar_home_refresh_40x40_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A8301D1FD6931000A75B32 /* tabbar_home_refresh_40x40_@2x.png */; };
@@ -91,8 +94,6 @@
 /* Begin PBXFileReference section */
 		00FA55D0A96FB815DFBA207A /* Pods-ELENews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELENews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELENews/Pods-ELENews.debug.xcconfig"; sourceTree = "<group>"; };
 		368F734167BEB89BA344E6B4 /* libPods-ELENews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ELENews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		653CB0C01FDFCC3D006C4C2D /* ELFlashBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFlashBean.h; sourceTree = "<group>"; };
-		653CB0C11FDFCC3D006C4C2D /* ELFlashBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFlashBean.m; sourceTree = "<group>"; };
 		653CB0C31FDFCFC1006C4C2D /* ELNewsPageBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsPageBean.h; sourceTree = "<group>"; };
 		653CB0C41FDFCFC1006C4C2D /* ELNewsPageBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsPageBean.m; sourceTree = "<group>"; };
 		653CB0C61FDFD087006C4C2D /* ELFlashPageBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFlashPageBean.h; sourceTree = "<group>"; };
@@ -105,6 +106,16 @@
 		653CB0D31FE0D53C006C4C2D /* person_arrow_9x5_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_arrow_9x5_@2x.png"; sourceTree = "<group>"; };
 		653CB0D41FE0D53C006C4C2D /* person_arrow_up_9x5_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_arrow_up_9x5_@2x.png"; sourceTree = "<group>"; };
 		653CB0D51FE0D53C006C4C2D /* person_arrow_9x5_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_arrow_9x5_@3x.png"; sourceTree = "<group>"; };
+		653CB0DA1FE10043006C4C2D /* ELGIFPageBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELGIFPageBean.h; sourceTree = "<group>"; };
+		653CB0DB1FE10044006C4C2D /* ELGIFPageBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELGIFPageBean.m; sourceTree = "<group>"; };
+		653CB0E01FE10186006C4C2D /* ELNewsListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsListBean.h; sourceTree = "<group>"; };
+		653CB0E11FE10186006C4C2D /* ELNewsListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsListBean.m; sourceTree = "<group>"; };
+		653CB0E31FE10410006C4C2D /* ELFlashListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFlashListBean.h; sourceTree = "<group>"; };
+		653CB0E41FE10410006C4C2D /* ELFlashListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFlashListBean.m; sourceTree = "<group>"; };
+		653CB0E61FE1055C006C4C2D /* ELGIFListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELGIFListBean.h; sourceTree = "<group>"; };
+		653CB0E71FE1055C006C4C2D /* ELGIFListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELGIFListBean.m; sourceTree = "<group>"; };
+		653CB0E91FE10935006C4C2D /* ELGIFFeedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELGIFFeedNode.h; sourceTree = "<group>"; };
+		653CB0EA1FE10935006C4C2D /* ELGIFFeedNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELGIFFeedNode.m; sourceTree = "<group>"; };
 		65432F411FD66F9F00367FD4 /* ELENewsHeaders.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELENewsHeaders.pch; sourceTree = "<group>"; };
 		65472D5C1FB5495F00ECC33C /* ELENews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELENews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D5F1FB5495F00ECC33C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,8 +158,6 @@
 		657CC0DA1FD93165001616BF /* ELHomeChannelViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELHomeChannelViewModel.m; sourceTree = "<group>"; };
 		657CC0DC1FD93185001616BF /* ELChannelBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELChannelBean.h; sourceTree = "<group>"; };
 		657CC0DD1FD93185001616BF /* ELChannelBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELChannelBean.m; sourceTree = "<group>"; };
-		657CC0E21FD93F82001616BF /* ELFeedBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFeedBean.h; sourceTree = "<group>"; };
-		657CC0E31FD93F82001616BF /* ELFeedBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFeedBean.m; sourceTree = "<group>"; };
 		657CC0E51FD94024001616BF /* ELFeedViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFeedViewModel.h; sourceTree = "<group>"; };
 		657CC0E61FD94024001616BF /* ELFeedViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFeedViewModel.m; sourceTree = "<group>"; };
 		65A8301D1FD6931000A75B32 /* tabbar_home_refresh_40x40_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home_refresh_40x40_@2x.png"; sourceTree = "<group>"; };
@@ -500,16 +509,20 @@
 		65D8B7771FD6828D0054DDE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				657CC0E21FD93F82001616BF /* ELFeedBean.h */,
-				657CC0E31FD93F82001616BF /* ELFeedBean.m */,
+				653CB0E01FE10186006C4C2D /* ELNewsListBean.h */,
+				653CB0E11FE10186006C4C2D /* ELNewsListBean.m */,
+				653CB0E31FE10410006C4C2D /* ELFlashListBean.h */,
+				653CB0E41FE10410006C4C2D /* ELFlashListBean.m */,
+				653CB0E61FE1055C006C4C2D /* ELGIFListBean.h */,
+				653CB0E71FE1055C006C4C2D /* ELGIFListBean.m */,
 				657CC0DC1FD93185001616BF /* ELChannelBean.h */,
 				657CC0DD1FD93185001616BF /* ELChannelBean.m */,
 				653CB0C31FDFCFC1006C4C2D /* ELNewsPageBean.h */,
 				653CB0C41FDFCFC1006C4C2D /* ELNewsPageBean.m */,
 				653CB0C61FDFD087006C4C2D /* ELFlashPageBean.h */,
 				653CB0C71FDFD087006C4C2D /* ELFlashPageBean.m */,
-				653CB0C01FDFCC3D006C4C2D /* ELFlashBean.h */,
-				653CB0C11FDFCC3D006C4C2D /* ELFlashBean.m */,
+				653CB0DA1FE10043006C4C2D /* ELGIFPageBean.h */,
+				653CB0DB1FE10044006C4C2D /* ELGIFPageBean.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -521,6 +534,8 @@
 				6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */,
 				653CB0CF1FDFD6B2006C4C2D /* ELFlashFeedNote.h */,
 				653CB0D01FDFD6B2006C4C2D /* ELFlashFeedNote.m */,
+				653CB0E91FE10935006C4C2D /* ELGIFFeedNode.h */,
+				653CB0EA1FE10935006C4C2D /* ELGIFFeedNode.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -875,9 +890,10 @@
 				65A8304B1FD694C200A75B32 /* NSMutableDictionary+Safe.m in Sources */,
 				653CB0D11FDFD6B2006C4C2D /* ELFlashFeedNote.m in Sources */,
 				65A830511FD6A44400A75B32 /* ELBaseViewController.m in Sources */,
+				653CB0DC1FE10044006C4C2D /* ELGIFPageBean.m in Sources */,
 				657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */,
 				655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */,
-				653CB0C21FDFCC3D006C4C2D /* ELFlashBean.m in Sources */,
+				653CB0E81FE1055C006C4C2D /* ELGIFListBean.m in Sources */,
 				65A8301C1FD6919800A75B32 /* ELNavgationController.m in Sources */,
 				65A830491FD694C200A75B32 /* NSArray+Safe.m in Sources */,
 				657CC0C01FD7C374001616BF /* YZFlowLayout.m in Sources */,
@@ -887,17 +903,19 @@
 				653CB0C51FDFCFC1006C4C2D /* ELNewsPageBean.m in Sources */,
 				65A830541FD6ACEF00A75B32 /* ELViewFactory.m in Sources */,
 				657CC0D81FD92B7A001616BF /* ELHTTPManager.m in Sources */,
-				657CC0E41FD93F82001616BF /* ELFeedBean.m in Sources */,
 				657CC0C21FD7C374001616BF /* UIView+Frame.m in Sources */,
 				65A8304A1FD694C200A75B32 /* NSMutableArray+Safe.m in Sources */,
 				65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */,
+				653CB0E51FE10410006C4C2D /* ELFlashListBean.m in Sources */,
 				653CB0CB1FDFD126006C4C2D /* ELNewsPageViewController.m in Sources */,
 				65A830571FD780BD00A75B32 /* ELDisplayViewController.m in Sources */,
 				65D8B78F1FD6830C0054DDE4 /* ELMacros.m in Sources */,
 				656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */,
 				65A8304E1FD698B400A75B32 /* UIColor+extend.m in Sources */,
 				657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */,
+				653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */,
 				657CC0C61FD7C3EA001616BF /* ELHomeViewController.m in Sources */,
+				653CB0E21FE10186006C4C2D /* ELNewsListBean.m in Sources */,
 				657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */,
 				6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */,
 				657CC0C11FD7C374001616BF /* YZDisplayViewController.m in Sources */,

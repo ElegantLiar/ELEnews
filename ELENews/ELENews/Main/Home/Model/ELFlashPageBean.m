@@ -7,13 +7,13 @@
 //
 
 #import "ELFlashPageBean.h"
-#import "ELFlashBean.h"
+#import "ELFlashListBean.h"
 
 @implementation ELFlashPageBean
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{
-             @"list" : ELFlashBean.class,
+             @"list" : ELFlashListBean.class,
              };
 }
 

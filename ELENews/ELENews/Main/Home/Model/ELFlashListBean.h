@@ -1,15 +1,16 @@
 //
-//  ELFlashBean.h
+//  ELFlashListBean.h
 //  ELENews
 //
-//  Created by EL on 2017/12/12.
+//  Created by EL on 2017/12/13.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @class ELFlashImageBean;
-@interface ELFlashBean : NSObject
+
+@interface ELFlashListBean : NSObject
 
 @property (nonatomic, assign) NSInteger flashID;
 @property (nonatomic, strong) NSString *title;
@@ -22,7 +23,6 @@
 - (NSAttributedString *)timeAttributedStringWithFontSize:(CGFloat)size;
 - (NSAttributedString *)titleAttributedStringWithFontSize:(CGFloat)size;
 - (NSAttributedString *)textAttributedStringWithFontSize:(CGFloat)size;
-
 
 @end
 

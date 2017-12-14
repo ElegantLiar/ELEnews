@@ -15,43 +15,48 @@
 
 #define HEADER_HEIGHT           50
 
-#define HORIZONTAL_BUFFER       10
-#define VERTICAL_BUFFER         5
-#define FONT_SIZE               14
-
-#define InsetForAvatar UIEdgeInsetsMake(HORIZONTAL_BUFFER, 0, HORIZONTAL_BUFFER, HORIZONTAL_BUFFER)
-#define InsetForHeader UIEdgeInsetsMake(0, HORIZONTAL_BUFFER, 0, HORIZONTAL_BUFFER)
-#define InsetForFooter UIEdgeInsetsMake(VERTICAL_BUFFER, HORIZONTAL_BUFFER, VERTICAL_BUFFER, HORIZONTAL_BUFFER)
 
 @implementation ELNewsFeedNote{
     ASNetworkImageNode  *_userAvatarImageNode;
     ASNetworkImageNode  *_photoImageNode;
     ASTextNode          *_userNameLabel;
     ASTextNode          *_newsLabel;
-    ELFeedBean          *_feedBean;
+    ELNewsListBean      *_newsListBean;
     ASTextNode          *_testLabel;
     NSMutableArray      *_threePhotosArray;
 }
 
-- (instancetype)initWithFeedBean:(ELFeedBean *)feedBean{
+- (instancetype)initWithNewsListBean:(ELNewsListBean *)newsListBean{
     if (self = [super init]) {
-        _feedBean = feedBean;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        _newsListBean = newsListBean;
         
         _newsLabel      = [[ASTextNode alloc] init];
-        _newsLabel.attributedText = [_feedBean newsAttributedStringWithFontSize:16];
+        _newsLabel.attributedText = [_newsListBean newsAttributedStringWithFontSize:16];
         _newsLabel.maximumNumberOfLines = 3;
         [self addSubnode:_newsLabel];
         
         _userAvatarImageNode = [[ASNetworkImageNode alloc] init];
-        _userAvatarImageNode.URL = [NSURL URLWithString:_feedBean.cat.pic];
+        _userAvatarImageNode.URL = [NSURL URLWithString:_newsListBean.cat.pic];
         [self addSubnode:_userAvatarImageNode];
+        _userAvatarImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
+            UIImage *modifiedImage;
+            CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+            UIGraphicsBeginImageContextWithOptions(image.size, false, [[UIScreen mainScreen] scale]);
+            [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:USER_IMAGE_HEIGHT] addClip];
+            [image drawInRect:rect];
+            modifiedImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            return modifiedImage;
+        };
         
         _userNameLabel      = [[ASTextNode alloc] init];
-        _userNameLabel.attributedText = [_feedBean usernameAttributedStringWithFontSize:11];
+        _userNameLabel.attributedText = [_newsListBean usernameAttributedStringWithFontSize:11];
         [self addSubnode:_userNameLabel];
         
         _photoImageNode = [[ASNetworkImageNode alloc] init];
-        _photoImageNode.URL = [NSURL URLWithString:_feedBean.pic];
+        _photoImageNode.URL = [NSURL URLWithString:_newsListBean.pic];
         _photoImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
             UIImage *modifiedImage;
             CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
@@ -65,11 +70,11 @@
         
         [self addSubnode:_photoImageNode];
         
-        if (_feedBean.display == 102 && _feedBean.gallary.count >= 3) {
+        if (_newsListBean.display == 102 && _newsListBean.gallary.count >= 3) {
             _threePhotosArray = @[].mutableCopy;
             for (NSInteger i = 0; i < 3; i++) {
                 ASNetworkImageNode *photoImageNode = [[ASNetworkImageNode alloc] init];
-                NSDictionary *dic = [_feedBean.gallary safeObjectAtIndex:i];
+                NSDictionary *dic = [_newsListBean.gallary safeObjectAtIndex:i];
                 photoImageNode.URL = [NSURL URLWithString:[dic objectForKey:@"pic"]];
                 photoImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
                     UIImage *modifiedImage;
@@ -92,9 +97,9 @@
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize{
     ASLayoutSpec *layoutSpec = nil;
     
-    if (_feedBean.display == 101) {
+    if (_newsListBean.display == 101) {
         layoutSpec = [self layoutOfOneBigPicCenterWithConstrainedSize:constrainedSize];
-    } else if (_feedBean.display == 102 && _feedBean.gallary.count >= 3){
+    } else if (_newsListBean.display == 102 && _newsListBean.gallary.count >= 3){
         layoutSpec = [self layoutOfThreeSmallPicWithConstrainedSize:constrainedSize];
     } else {
         layoutSpec = [self layoutOfOneSmallPicLeftWithConstrainedSize:constrainedSize];

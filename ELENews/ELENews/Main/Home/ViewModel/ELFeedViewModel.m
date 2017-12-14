@@ -8,8 +8,9 @@
 
 #import "ELFeedViewModel.h"
 #import "ELNewsPageBean.h"
-#import "ELFlashBean.h"
+#import "ELFlashListBean.h"
 #import "ELFlashPageBean.h"
+#import "ELGIFPageBean.h"
 
 @implementation ELFeedViewModel
 
@@ -26,7 +27,7 @@
             if (_feedType == ELFeedTypeFlash) {
                 url = @"http://api.app.happyjuzi.com/flash/hotlist";
             } else if (_feedType == ELFeedTypeGif) {
-                
+                url = @"http://api.app.happyjuzi.com/article/list/gif";
             } else {
                 url = self.channelID == 0 ? @"http://api.app.happyjuzi.com/article/list/userfeed" : @"http://api.app.happyjuzi.com/article/list/channel";
             }
@@ -34,14 +35,18 @@
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                     id obj = nil;
+                                     NSArray *listArray = nil;
                                      if (_feedType == ELFeedTypeFlash) {
-                                         obj = [ELFlashPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                         ELFlashPageBean *flashPageBean = [ELFlashPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                         listArray = flashPageBean.list;
                                      } else if (_feedType == ELFeedTypeGif) {
+                                         ELGIFPageBean *gifPageBean = [ELGIFPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                         listArray = gifPageBean.list;
                                      } else {
-                                         obj = [ELNewsPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                         ELNewsPageBean *newsPageBean = [ELNewsPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                         listArray = newsPageBean.list;
                                      }
-                [subscriber sendNext:obj];
+                [subscriber sendNext:listArray];
                 [subscriber sendCompleted];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

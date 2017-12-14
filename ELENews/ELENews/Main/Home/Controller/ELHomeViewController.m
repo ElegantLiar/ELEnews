@@ -30,7 +30,7 @@
     [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat *titleHeight, CGFloat *titleWidth) {
         *norColor = [UIColor hexChangeFloat:@"9A9A9A"];
         *selColor = [UIColor hexChangeFloat:@"FF3D3D"];
-        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
+//        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
         *titleHeight = 32;
         *titleFont = [UIFont systemFontOfSize:15];
     }];

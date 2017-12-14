@@ -1,20 +1,20 @@
 //
-//  ELNewsPageBean.m
+//  ELGifPageBean.m
 //  ELENews
 //
-//  Created by EL on 2017/12/12.
+//  Created by EL on 2017/12/13.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
-#import "ELNewsPageBean.h"
-#import "ELNewsListBean.h"
+#import "ELGifPageBean.h"
+#import "ELGIFListBean.h"
 
-@implementation ELNewsPageBean
+@implementation ELGIFPageBean
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{
              @"info" : ELNewsListBean.class,
-             @"list" : ELNewsListBean.class,
+             @"list" : ELGIFListBean.class,
              };
 }
 

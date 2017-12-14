@@ -11,10 +11,12 @@
 #import "ELChannelBean.h"
 #import "ELFeedViewModel.h"
 #import "ELNewsPageBean.h"
-#import "ELFeedBean.h"
+#import "ELNewsListBean.h"
 #import "ELNewsFeedNote.h"
 #import "ELFlashFeedNote.h"
+#import "ELGIFFeedNode.h"
 #import "ELFlashPageBean.h"
+#import "ELGifPageBean.h"
 
 @interface ELNewsPageViewController ()<
 ASTableDelegate,
@@ -58,28 +60,14 @@ UIScrollViewDelegate>
 #pragma mark - Private Methods
 - (void)loadPageWithContext:(ASBatchContext *)context{
     @weakify(self);
-    [[_feedViewModel.requestCommand execute:nil] subscribeNext:^(id pageBean) {
+    [[_feedViewModel.requestCommand execute:nil] subscribeNext:^(NSArray *listArray) {
         @strongify(self);
-        [self->_listArray addObjectsFromArray:[self listWithPageBean:pageBean]];
-        [self insertNewRows:[self listWithPageBean:pageBean]];
+        [self->_listArray addObjectsFromArray:listArray];
+        [self insertNewRows:listArray];
         if (context) {
             [context completeBatchFetching:YES];
         }
     }];
-}
-
-- (NSArray *)listWithPageBean:(id)pageBean{
-    NSArray *listArray = nil;
-    if (_feedViewModel.feedType == ELFeedTypeFlash) {
-        ELFlashPageBean *bean = pageBean;
-        listArray = bean.list;
-    } else if (_feedViewModel.feedType == ELFeedTypeGif) {
-        
-    } else {
-        ELNewsPageBean *bean = pageBean;
-        listArray = bean.list;
-    }
-    return listArray;
 }
 
 - (void)insertNewRows:(NSArray *)newPhotos{
@@ -106,17 +94,17 @@ UIScrollViewDelegate>
     id feedBean = [_listArray safeObjectAtIndex:indexPath.row];
     if (_feedViewModel.feedType == ELFeedTypeNews) {
         return ^ASCellNode *() {
-            ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithFeedBean:feedBean];
+            ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithNewsListBean:feedBean];
             return cellNode;
         };
     } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
         return ^ASCellNode *() {
-            ELFlashFeedNote *cellNode = [[ELFlashFeedNote alloc] initWithFlashBean:feedBean];
+            ELFlashFeedNote *cellNode = [[ELFlashFeedNote alloc] initWithFlashListBean:feedBean];
             return cellNode;
         };
     } else {
         return ^ASCellNode *() {
-            ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithFeedBean:feedBean];
+            ELGIFFeedNode *cellNode = [[ELGIFFeedNode alloc] initWithGIFListBean:feedBean];
             return cellNode;
         };
     }
@@ -130,7 +118,13 @@ UIScrollViewDelegate>
 }
 
 #pragma mark -- ScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-}
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    if (_feedViewModel.feedType == ELFeedTypeGif) {
+//        NSArray *visibleCells = [_tableNode indexPathsForVisibleRows];
+//        for (NSIndexPath *indexPath in visibleCells) {
+//            ELGIFFeedNode *cellNode = [_tableNode nodeForRowAtIndexPath:indexPath];
+//            [cellNode playGIF];
+//        }
+//    }
+//}
 @end

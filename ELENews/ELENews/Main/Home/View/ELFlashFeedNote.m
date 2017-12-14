@@ -9,7 +9,7 @@
 #import "ELFlashFeedNote.h"
 
 @implementation ELFlashFeedNote{
-    ELFlashBean         *_flashBean;
+    ELFlashListBean     *_flashListBean;
     ASDisplayNode       *_timeLineTopNode;
     ASDisplayNode       *_timeLineBtmNode;
     ASDisplayNode       *_timeLineLeftPaddingNode;
@@ -25,11 +25,11 @@
 
 }
 
-- (instancetype)initWithFlashBean:(ELFlashBean *)flashBean{
+- (instancetype)initWithFlashListBean:(ELFlashListBean *)flashListBean{
     if (self = [super init]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        _flashBean = flashBean;
+        _flashListBean = flashListBean;
         
         _timeLineTopNode = [[ASDisplayNode alloc] init];
         _timeLineTopNode.backgroundColor = [UIColor hexChangeFloat:@"F6F6F6"];
@@ -52,17 +52,17 @@
         [self addSubnode:_timeCircleNode];
         
         _timeLabel      = [[ASTextNode alloc] init];
-        _timeLabel.attributedText = [_flashBean timeAttributedStringWithFontSize:11];
+        _timeLabel.attributedText = [_flashListBean timeAttributedStringWithFontSize:11];
         _timeLabel.maximumNumberOfLines = 1;
         [self addSubnode:_timeLabel];
 
         _titleLabel      = [[ASTextNode alloc] init];
-        _titleLabel.attributedText = [_flashBean titleAttributedStringWithFontSize:16];
+        _titleLabel.attributedText = [_flashListBean titleAttributedStringWithFontSize:16];
         _titleLabel.maximumNumberOfLines = 3;
         [self addSubnode:_titleLabel];
         
         _textLabel      = [[ASTextNode alloc] init];
-        _textLabel.attributedText = [_flashBean textAttributedStringWithFontSize:15];
+        _textLabel.attributedText = [_flashListBean textAttributedStringWithFontSize:15];
         _textLabel.maximumNumberOfLines = 3;
         [self addSubnode:_textLabel];
         
@@ -83,13 +83,13 @@
         
         [self addSubnode:_expandBtnNode];
 
-        if (_flashBean.imgs.count >= 3) {
+        if (_flashListBean.imgs.count >= 3) {
             _threePhotosArray = @[].mutableCopy;
             for (NSInteger i = 0; i < 3; i++) {
                 ASNetworkImageNode *photoImageNode = [[ASNetworkImageNode alloc] init];
                 CGFloat width = (ELScreenW - 80 - 10) / 3;
                 photoImageNode.style.preferredSize = CGSizeMake(width, width / 19 * 14);
-                ELFlashImageBean *imageBean = [_flashBean.imgs safeObjectAtIndex:i];
+                ELFlashImageBean *imageBean = [_flashListBean.imgs safeObjectAtIndex:i];
                 photoImageNode.URL = [NSURL URLWithString:imageBean.thumb];
                 photoImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
                     UIImage *modifiedImage;
@@ -106,7 +106,7 @@
             }
         } else {
             _photoImageNode = [[ASNetworkImageNode alloc] init];
-            ELFlashImageBean *imageBean = [_flashBean.imgs safeObjectAtIndex:0];
+            ELFlashImageBean *imageBean = [_flashListBean.imgs safeObjectAtIndex:0];
             _photoImageNode.URL = [NSURL URLWithString:imageBean.thumb];
             _photoImageNode.style.preferredSize = CGSizeMake(197, 149);
             _photoImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
@@ -164,8 +164,8 @@
     ASStackLayoutSpec *photosHorizontalStack = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal
                                                                                        spacing:5
                                                                                 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch
-                                                                                      children:_flashBean.imgs.count >= 3 ? _threePhotosArray : @[_photoImageNode]];
-    NSArray *verticalChildren = _flashBean.imgs.count > 0 ? @[_titleLabel, _textLabel, _expandBtnNode, photosHorizontalStack] : @[_titleLabel, _textLabel, _expandBtnNode];
+                                                                                      children:_flashListBean.imgs.count >= 3 ? _threePhotosArray : @[_photoImageNode]];
+    NSArray *verticalChildren = _flashListBean.imgs.count > 0 ? @[_titleLabel, _textLabel, _expandBtnNode, photosHorizontalStack] : @[_titleLabel, _textLabel, _expandBtnNode];
     ASStackLayoutSpec *contentVerticalStack = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical
                                                                                        spacing:10
                                                                                 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart

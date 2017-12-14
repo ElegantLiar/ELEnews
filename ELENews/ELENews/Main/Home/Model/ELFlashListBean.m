@@ -1,14 +1,14 @@
 //
-//  ELFlashBean.m
+//  ELFlashListBean.m
 //  ELENews
 //
-//  Created by EL on 2017/12/12.
+//  Created by EL on 2017/12/13.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
-#import "ELFlashBean.h"
+#import "ELFlashListBean.h"
 
-@implementation ELFlashBean
+@implementation ELFlashListBean
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{
@@ -27,7 +27,7 @@
                                                  fontSize:size
                                                     color:[UIColor hexChangeFloat:@"999999"]
                                            firstWordColor:nil];
-
+    
 }
 
 - (NSAttributedString *)titleAttributedStringWithFontSize:(CGFloat)size{
@@ -35,7 +35,7 @@
                                                  fontSize:size
                                                     color:[UIColor hexChangeFloat:@"333333"]
                                            firstWordColor:nil];
-
+    
 }
 
 - (NSAttributedString *)textAttributedStringWithFontSize:(CGFloat)size{
