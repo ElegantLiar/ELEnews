@@ -22,7 +22,6 @@
     ASTextNode          *_userNameLabel;
     ASTextNode          *_newsLabel;
     ELNewsListBean      *_newsListBean;
-    ASTextNode          *_testLabel;
     NSMutableArray      *_threePhotosArray;
 }
 

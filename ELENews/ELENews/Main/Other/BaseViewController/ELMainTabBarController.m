@@ -28,13 +28,16 @@
     self.delegate = self;
         
     NSArray *titles = @[@"首页", @"视频", @"社区", @"我"];
-    NSArray *className = @[@"ELHomeViewController", @"ELVideoViewController", @"ELHomeViewController", @"ELHomeViewController"];
+    NSArray *className = @[@"ELHomeViewController", @"ELVideoViewController", @"ELCommunityViewController", @"ELHomeViewController"];
     NSArray *defaultImageNames = @[@"tabbar_index_normal_40x40_", @"tabbar_video_normal_40x40_", @"tabbar_community_normal_40x40_", @"tabbar_me_normal_40x40_"];
     NSArray *selectedImageNames = @[@"tabbar_index_selected_40x40_", @"tabbar_video_selected_40x40_", @"tabbar_community_selected_40x40_", @"tabbar_me_selected_40x40_"];
     
     for (NSInteger i = 0; i < titles.count; i++) {
         
-        [self addChildViewController:[[NSClassFromString([className safeObjectAtIndex:i]) alloc] init] title:[titles safeObjectAtIndex:i] defaultImageName:[defaultImageNames safeObjectAtIndex:i] selectedImageName:[selectedImageNames safeObjectAtIndex:i]];
+        [self addChildViewController:[[NSClassFromString([className safeObjectAtIndex:i]) alloc] init]
+                               title:[titles safeObjectAtIndex:i]
+                    defaultImageName:[defaultImageNames safeObjectAtIndex:i]
+                   selectedImageName:[selectedImageNames safeObjectAtIndex:i]];
     }
         
 }

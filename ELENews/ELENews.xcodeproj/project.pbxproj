@@ -24,6 +24,20 @@
 		653CB1091FE22699006C4C2D /* ELVideoListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1081FE22699006C4C2D /* ELVideoListBean.m */; };
 		653CB10C1FE227C3006C4C2D /* ELVideoPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB10B1FE227C3006C4C2D /* ELVideoPageBean.m */; };
 		653CB10F1FE22AD2006C4C2D /* ELVideoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB10E1FE22AD2006C4C2D /* ELVideoNode.m */; };
+		653CB1121FE25F6E006C4C2D /* ELCommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1111FE25F6D006C4C2D /* ELCommunityViewController.m */; };
+		653CB1151FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1141FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m */; };
+		653CB1181FE2600F006C4C2D /* ELCommunityRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1171FE2600F006C4C2D /* ELCommunityRecommendViewController.m */; };
+		653CB11B1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB11A1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m */; };
+		653CB11E1FE26040006C4C2D /* ELCommunityFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB11D1FE26040006C4C2D /* ELCommunityFindViewController.m */; };
+		653CB1241FE26E41006C4C2D /* ELCommunityFeedListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1231FE26E41006C4C2D /* ELCommunityFeedListBean.m */; };
+		653CB1271FE270D5006C4C2D /* ELCommunityAuthorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1261FE270D5006C4C2D /* ELCommunityAuthorBean.m */; };
+		653CB12A1FE271B1006C4C2D /* ELCommunityTopicBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1291FE271B1006C4C2D /* ELCommunityTopicBean.m */; };
+		653CB12D1FE271CF006C4C2D /* ELCommunityCommentListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB12C1FE271CF006C4C2D /* ELCommunityCommentListBean.m */; };
+		653CB1301FE275E5006C4C2D /* ELCommunityRecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB12F1FE275E5006C4C2D /* ELCommunityRecommendViewModel.m */; };
+		653CB1331FE27975006C4C2D /* ELCommunityRecommendPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1321FE27975006C4C2D /* ELCommunityRecommendPageBean.m */; };
+		653CB1361FE27B48006C4C2D /* ELCommunityStarBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1351FE27B48006C4C2D /* ELCommunityStarBean.m */; };
+		653CB1391FE27BCE006C4C2D /* ELCommunityOptBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1381FE27BCE006C4C2D /* ELCommunityOptBean.m */; };
+		653CB13C1FE28387006C4C2D /* ELCommunityFeedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB13B1FE28387006C4C2D /* ELCommunityFeedNode.m */; };
 		65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D601FB5495F00ECC33C /* AppDelegate.m */; };
 		65472D671FB5495F00ECC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65472D651FB5495F00ECC33C /* Main.storyboard */; };
 		65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65472D681FB5495F00ECC33C /* Assets.xcassets */; };
@@ -128,6 +142,34 @@
 		653CB10B1FE227C3006C4C2D /* ELVideoPageBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoPageBean.m; sourceTree = "<group>"; };
 		653CB10D1FE22AD2006C4C2D /* ELVideoNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoNode.h; sourceTree = "<group>"; };
 		653CB10E1FE22AD2006C4C2D /* ELVideoNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoNode.m; sourceTree = "<group>"; };
+		653CB1101FE25F6D006C4C2D /* ELCommunityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityViewController.h; sourceTree = "<group>"; };
+		653CB1111FE25F6D006C4C2D /* ELCommunityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityViewController.m; sourceTree = "<group>"; };
+		653CB1131FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFeedBaseViewController.h; sourceTree = "<group>"; };
+		653CB1141FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFeedBaseViewController.m; sourceTree = "<group>"; };
+		653CB1161FE2600F006C4C2D /* ELCommunityRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityRecommendViewController.h; sourceTree = "<group>"; };
+		653CB1171FE2600F006C4C2D /* ELCommunityRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityRecommendViewController.m; sourceTree = "<group>"; };
+		653CB1191FE2602E006C4C2D /* ELCommunityLastNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityLastNewsViewController.h; sourceTree = "<group>"; };
+		653CB11A1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityLastNewsViewController.m; sourceTree = "<group>"; };
+		653CB11C1FE26040006C4C2D /* ELCommunityFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFindViewController.h; sourceTree = "<group>"; };
+		653CB11D1FE26040006C4C2D /* ELCommunityFindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFindViewController.m; sourceTree = "<group>"; };
+		653CB1221FE26E41006C4C2D /* ELCommunityFeedListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFeedListBean.h; sourceTree = "<group>"; };
+		653CB1231FE26E41006C4C2D /* ELCommunityFeedListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFeedListBean.m; sourceTree = "<group>"; };
+		653CB1251FE270D5006C4C2D /* ELCommunityAuthorBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityAuthorBean.h; sourceTree = "<group>"; };
+		653CB1261FE270D5006C4C2D /* ELCommunityAuthorBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityAuthorBean.m; sourceTree = "<group>"; };
+		653CB1281FE271B1006C4C2D /* ELCommunityTopicBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityTopicBean.h; sourceTree = "<group>"; };
+		653CB1291FE271B1006C4C2D /* ELCommunityTopicBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityTopicBean.m; sourceTree = "<group>"; };
+		653CB12B1FE271CF006C4C2D /* ELCommunityCommentListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityCommentListBean.h; sourceTree = "<group>"; };
+		653CB12C1FE271CF006C4C2D /* ELCommunityCommentListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityCommentListBean.m; sourceTree = "<group>"; };
+		653CB12E1FE275E5006C4C2D /* ELCommunityRecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityRecommendViewModel.h; sourceTree = "<group>"; };
+		653CB12F1FE275E5006C4C2D /* ELCommunityRecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityRecommendViewModel.m; sourceTree = "<group>"; };
+		653CB1311FE27975006C4C2D /* ELCommunityRecommendPageBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityRecommendPageBean.h; sourceTree = "<group>"; };
+		653CB1321FE27975006C4C2D /* ELCommunityRecommendPageBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityRecommendPageBean.m; sourceTree = "<group>"; };
+		653CB1341FE27B48006C4C2D /* ELCommunityStarBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityStarBean.h; sourceTree = "<group>"; };
+		653CB1351FE27B48006C4C2D /* ELCommunityStarBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityStarBean.m; sourceTree = "<group>"; };
+		653CB1371FE27BCE006C4C2D /* ELCommunityOptBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityOptBean.h; sourceTree = "<group>"; };
+		653CB1381FE27BCE006C4C2D /* ELCommunityOptBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityOptBean.m; sourceTree = "<group>"; };
+		653CB13A1FE28387006C4C2D /* ELCommunityFeedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFeedNode.h; sourceTree = "<group>"; };
+		653CB13B1FE28387006C4C2D /* ELCommunityFeedNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFeedNode.m; sourceTree = "<group>"; };
 		65432F411FD66F9F00367FD4 /* ELENewsHeaders.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELENewsHeaders.pch; sourceTree = "<group>"; };
 		65472D5C1FB5495F00ECC33C /* ELENews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELENews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D5F1FB5495F00ECC33C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -471,6 +513,16 @@
 		65D8B7711FD6828D0054DDE4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				653CB1101FE25F6D006C4C2D /* ELCommunityViewController.h */,
+				653CB1111FE25F6D006C4C2D /* ELCommunityViewController.m */,
+				653CB1131FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.h */,
+				653CB1141FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m */,
+				653CB1161FE2600F006C4C2D /* ELCommunityRecommendViewController.h */,
+				653CB1171FE2600F006C4C2D /* ELCommunityRecommendViewController.m */,
+				653CB1191FE2602E006C4C2D /* ELCommunityLastNewsViewController.h */,
+				653CB11A1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m */,
+				653CB11C1FE26040006C4C2D /* ELCommunityFindViewController.h */,
+				653CB11D1FE26040006C4C2D /* ELCommunityFindViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -478,6 +530,20 @@
 		65D8B7721FD6828D0054DDE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				653CB1311FE27975006C4C2D /* ELCommunityRecommendPageBean.h */,
+				653CB1321FE27975006C4C2D /* ELCommunityRecommendPageBean.m */,
+				653CB1341FE27B48006C4C2D /* ELCommunityStarBean.h */,
+				653CB1351FE27B48006C4C2D /* ELCommunityStarBean.m */,
+				653CB1371FE27BCE006C4C2D /* ELCommunityOptBean.h */,
+				653CB1381FE27BCE006C4C2D /* ELCommunityOptBean.m */,
+				653CB1221FE26E41006C4C2D /* ELCommunityFeedListBean.h */,
+				653CB1231FE26E41006C4C2D /* ELCommunityFeedListBean.m */,
+				653CB1251FE270D5006C4C2D /* ELCommunityAuthorBean.h */,
+				653CB1261FE270D5006C4C2D /* ELCommunityAuthorBean.m */,
+				653CB1281FE271B1006C4C2D /* ELCommunityTopicBean.h */,
+				653CB1291FE271B1006C4C2D /* ELCommunityTopicBean.m */,
+				653CB12B1FE271CF006C4C2D /* ELCommunityCommentListBean.h */,
+				653CB12C1FE271CF006C4C2D /* ELCommunityCommentListBean.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,6 +551,8 @@
 		65D8B7731FD6828D0054DDE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				653CB13A1FE28387006C4C2D /* ELCommunityFeedNode.h */,
+				653CB13B1FE28387006C4C2D /* ELCommunityFeedNode.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -492,6 +560,8 @@
 		65D8B7741FD6828D0054DDE4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				653CB12E1FE275E5006C4C2D /* ELCommunityRecommendViewModel.h */,
+				653CB12F1FE275E5006C4C2D /* ELCommunityRecommendViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -908,38 +978,52 @@
 			files = (
 				653CB0C81FDFD087006C4C2D /* ELFlashPageBean.m in Sources */,
 				65A8304B1FD694C200A75B32 /* NSMutableDictionary+Safe.m in Sources */,
+				653CB12D1FE271CF006C4C2D /* ELCommunityCommentListBean.m in Sources */,
 				653CB0D11FDFD6B2006C4C2D /* ELFlashFeedNote.m in Sources */,
+				653CB11E1FE26040006C4C2D /* ELCommunityFindViewController.m in Sources */,
 				65A830511FD6A44400A75B32 /* ELBaseViewController.m in Sources */,
 				653CB0DC1FE10044006C4C2D /* ELGIFPageBean.m in Sources */,
 				657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */,
+				653CB13C1FE28387006C4C2D /* ELCommunityFeedNode.m in Sources */,
 				655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */,
+				653CB1391FE27BCE006C4C2D /* ELCommunityOptBean.m in Sources */,
 				653CB0E81FE1055C006C4C2D /* ELGIFListBean.m in Sources */,
+				653CB12A1FE271B1006C4C2D /* ELCommunityTopicBean.m in Sources */,
 				65A8301C1FD6919800A75B32 /* ELNavgationController.m in Sources */,
 				65A830491FD694C200A75B32 /* NSArray+Safe.m in Sources */,
+				653CB1271FE270D5006C4C2D /* ELCommunityAuthorBean.m in Sources */,
+				653CB1151FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m in Sources */,
+				653CB1121FE25F6E006C4C2D /* ELCommunityViewController.m in Sources */,
 				657CC0C01FD7C374001616BF /* YZFlowLayout.m in Sources */,
 				65472D6F1FB5495F00ECC33C /* main.m in Sources */,
 				65D8B78C1FD682BB0054DDE4 /* ELConst.m in Sources */,
 				657CC0C31FD7C374001616BF /* YZDisplayTitleLabel.m in Sources */,
 				653CB0C51FDFCFC1006C4C2D /* ELNewsPageBean.m in Sources */,
 				65A830541FD6ACEF00A75B32 /* ELViewFactory.m in Sources */,
+				653CB1181FE2600F006C4C2D /* ELCommunityRecommendViewController.m in Sources */,
 				657CC0D81FD92B7A001616BF /* ELHTTPManager.m in Sources */,
 				657CC0C21FD7C374001616BF /* UIView+Frame.m in Sources */,
 				65A8304A1FD694C200A75B32 /* NSMutableArray+Safe.m in Sources */,
+				653CB1361FE27B48006C4C2D /* ELCommunityStarBean.m in Sources */,
 				65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */,
 				653CB0E51FE10410006C4C2D /* ELFlashListBean.m in Sources */,
 				653CB0CB1FDFD126006C4C2D /* ELNewsPageViewController.m in Sources */,
 				65A830571FD780BD00A75B32 /* ELDisplayViewController.m in Sources */,
 				65D8B78F1FD6830C0054DDE4 /* ELMacros.m in Sources */,
 				656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */,
+				653CB1331FE27975006C4C2D /* ELCommunityRecommendPageBean.m in Sources */,
+				653CB1241FE26E41006C4C2D /* ELCommunityFeedListBean.m in Sources */,
 				65A8304E1FD698B400A75B32 /* UIColor+extend.m in Sources */,
 				653CB1091FE22699006C4C2D /* ELVideoListBean.m in Sources */,
 				657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */,
 				653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */,
+				653CB11B1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m in Sources */,
 				657CC0C61FD7C3EA001616BF /* ELHomeViewController.m in Sources */,
 				653CB10C1FE227C3006C4C2D /* ELVideoPageBean.m in Sources */,
 				653CB0E21FE10186006C4C2D /* ELNewsListBean.m in Sources */,
 				653CB10F1FE22AD2006C4C2D /* ELVideoNode.m in Sources */,
 				657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */,
+				653CB1301FE275E5006C4C2D /* ELCommunityRecommendViewModel.m in Sources */,
 				6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */,
 				653CB1001FE21B54006C4C2D /* ELVideoViewController.m in Sources */,
 				657CC0C11FD7C374001616BF /* YZDisplayViewController.m in Sources */,

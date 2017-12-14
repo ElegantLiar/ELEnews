@@ -26,7 +26,6 @@
     
     [self showNavImageWithImageName:@"home_nav_logo_91x26_" size:CGSizeMake(91, 26)];
 
-    
     [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat *titleHeight, CGFloat *titleWidth) {
         *norColor = [UIColor hexChangeFloat:@"9A9A9A"];
         *selColor = [UIColor hexChangeFloat:@"FF3D3D"];
