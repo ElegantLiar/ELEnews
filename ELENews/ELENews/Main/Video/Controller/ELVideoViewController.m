@@ -1,36 +1,34 @@
 //
-//  ELHomeViewController.m
+//  ELVideoViewController.m
 //  ELENews
 //
-//  Created by EL on 2017/12/6.
+//  Created by EL on 2017/12/14.
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
-#import "ELHomeViewController.h"
+#import "ELVideoViewController.h"
 #import "ELHomeChannelViewModel.h"
 #import "ELNewsPageViewController.h"
 
-@interface ELHomeViewController ()
-
+#import "ELVideoNode.h"
+@interface ELVideoViewController ()
 
 @end
 
-@implementation ELHomeViewController{
-    ELHomeChannelViewModel  *_channleViewModel;
-
+@implementation ELVideoViewController{
+    ELHomeChannelViewModel     *_channelViewModel;
 }
 
 #pragma mark – LifeCycle
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    [self showNavImageWithImageName:@"home_nav_logo_91x26_" size:CGSizeMake(91, 26)];
-
+    self.baseTitle = @"视频";
     
     [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat *titleHeight, CGFloat *titleWidth) {
         *norColor = [UIColor hexChangeFloat:@"9A9A9A"];
         *selColor = [UIColor hexChangeFloat:@"FF3D3D"];
-//        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
+        //        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
         *titleHeight = 32;
         *titleFont = [UIFont systemFontOfSize:15];
     }];
@@ -47,7 +45,7 @@
     }];
     
     [self initData];
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -57,25 +55,23 @@
 
 #pragma mark - Intial Methods
 - (void)initData{
-    _channleViewModel = [ELHomeChannelViewModel shareInstance];
+    _channelViewModel = [ELHomeChannelViewModel shareInstance];
     
-    [_channleViewModel loadDataFromNetwork];
+    if (_channelViewModel.channelBean.video.count == 0) {
+        [_channelViewModel loadDataFromNetwork];
+
+    } else {
+        [self setUpAllViewController];
+    }
     
     @weakify(self);
-    [[_channleViewModel.requestCommand execute:nil] subscribeNext:^(id x) {
+    [[_channelViewModel.requestCommand execute:nil] subscribeNext:^(id x) {
         @strongify(self);
         [self setUpAllViewController];
     } error:^(NSError *error) {
         
     }];
     
-    
-    [[ELNotificationCenter rac_addObserverForName:ELHomeNewsScrollViewDidScrollNotification object:nil] subscribeNext:^(NSNotification *x) {
-//        @strongify(self);
-//        if ([x.object isKindOfClass:[self class]]) {
-//            [self.contentTableView.mj_header beginRefreshing];
-//        }
-    }];
 }
 
 #pragma mark – Target Methods
@@ -83,12 +79,12 @@
 #pragma mark - Private Methods
 // 添加所有子控制器
 - (void)setUpAllViewController{
-    for (NSInteger i = 0; i < _channleViewModel.channelBean.home.count; i++) {
-        ELSingleChannelBean *bean = [_channleViewModel.channelBean.home safeObjectAtIndex:i];
+    for (NSInteger i = 0; i < _channelViewModel.channelBean.video.count; i++) {
+        ELSingleChannelBean *bean = [_channelViewModel.channelBean.video safeObjectAtIndex:i];
         ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] init];
         newsPageVc.title = bean.name;
         newsPageVc.singleChannelBean = bean;
-        newsPageVc.tabType = ELTabTypeHome;
+        newsPageVc.tabType = ELTabTypeVideo;
         [self addChildViewController:newsPageVc];
     }
     
@@ -99,8 +95,6 @@
 #pragma mark - Setter Getter Methods
 
 #pragma mark - External Delegate
-
-
 
 
 

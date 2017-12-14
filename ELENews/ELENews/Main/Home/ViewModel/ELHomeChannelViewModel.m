@@ -10,6 +10,15 @@
 
 @implementation ELHomeChannelViewModel
 
++ (ELHomeChannelViewModel *)shareInstance{
+    static ELHomeChannelViewModel *viewModel = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        viewModel = [[ELHomeChannelViewModel alloc] init];
+    });
+    return viewModel;
+}
+
 - (void)loadDataFromNetwork{
     @weakify(self);
 

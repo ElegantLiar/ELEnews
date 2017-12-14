@@ -10,6 +10,12 @@
 
 @implementation ELGIFListBean
 
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"gifID" : @"id"
+             };
+}
+
 - (NSAttributedString *)titleAttributedStringWithFontSize:(CGFloat)size{
     return [NSAttributedString attributedStringWithString:self.title
                                                  fontSize:size

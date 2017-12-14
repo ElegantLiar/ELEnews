@@ -11,8 +11,14 @@
 typedef NS_ENUM(NSInteger, ELFeedType) {
     ELFeedTypeNews = 0,
     ELFeedTypeFlash,
-    ELFeedTypeGif,
+    ELFeedTypeGif
 };
+
+typedef NS_ENUM(NSInteger, ELTabType) {
+    ELTabTypeHome = 0,
+    ELTabTypeVideo
+};
+
 @interface ELFeedViewModel : NSObject
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
@@ -25,8 +31,9 @@ typedef NS_ENUM(NSInteger, ELFeedType) {
 
 @property (nonatomic, assign) ELFeedType feedType;
 
+@property (nonatomic, assign) ELTabType tabType;
 
-- (void)loadFirstPageDataFromNetwork;
+- (void)loadFirstPageDataFromNetworkWithTabType:(ELTabType)tabType;
 
 - (void)loadNextPageDataFromNetwork;
 

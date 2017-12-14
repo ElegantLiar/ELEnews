@@ -20,6 +20,10 @@
 		653CB0E51FE10410006C4C2D /* ELFlashListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0E41FE10410006C4C2D /* ELFlashListBean.m */; };
 		653CB0E81FE1055C006C4C2D /* ELGIFListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0E71FE1055C006C4C2D /* ELGIFListBean.m */; };
 		653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0EA1FE10935006C4C2D /* ELGIFFeedNode.m */; };
+		653CB1001FE21B54006C4C2D /* ELVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB0FF1FE21B52006C4C2D /* ELVideoViewController.m */; };
+		653CB1091FE22699006C4C2D /* ELVideoListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1081FE22699006C4C2D /* ELVideoListBean.m */; };
+		653CB10C1FE227C3006C4C2D /* ELVideoPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB10B1FE227C3006C4C2D /* ELVideoPageBean.m */; };
+		653CB10F1FE22AD2006C4C2D /* ELVideoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB10E1FE22AD2006C4C2D /* ELVideoNode.m */; };
 		65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D601FB5495F00ECC33C /* AppDelegate.m */; };
 		65472D671FB5495F00ECC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65472D651FB5495F00ECC33C /* Main.storyboard */; };
 		65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65472D681FB5495F00ECC33C /* Assets.xcassets */; };
@@ -116,6 +120,14 @@
 		653CB0E71FE1055C006C4C2D /* ELGIFListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELGIFListBean.m; sourceTree = "<group>"; };
 		653CB0E91FE10935006C4C2D /* ELGIFFeedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELGIFFeedNode.h; sourceTree = "<group>"; };
 		653CB0EA1FE10935006C4C2D /* ELGIFFeedNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELGIFFeedNode.m; sourceTree = "<group>"; };
+		653CB0FE1FE21B52006C4C2D /* ELVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoViewController.h; sourceTree = "<group>"; };
+		653CB0FF1FE21B52006C4C2D /* ELVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoViewController.m; sourceTree = "<group>"; };
+		653CB1071FE22699006C4C2D /* ELVideoListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoListBean.h; sourceTree = "<group>"; };
+		653CB1081FE22699006C4C2D /* ELVideoListBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoListBean.m; sourceTree = "<group>"; };
+		653CB10A1FE227C3006C4C2D /* ELVideoPageBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoPageBean.h; sourceTree = "<group>"; };
+		653CB10B1FE227C3006C4C2D /* ELVideoPageBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoPageBean.m; sourceTree = "<group>"; };
+		653CB10D1FE22AD2006C4C2D /* ELVideoNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoNode.h; sourceTree = "<group>"; };
+		653CB10E1FE22AD2006C4C2D /* ELVideoNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoNode.m; sourceTree = "<group>"; };
 		65432F411FD66F9F00367FD4 /* ELENewsHeaders.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELENewsHeaders.pch; sourceTree = "<group>"; };
 		65472D5C1FB5495F00ECC33C /* ELENews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELENews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D5F1FB5495F00ECC33C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -628,6 +640,8 @@
 		65D8B7861FD6828D0054DDE4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				653CB0FE1FE21B52006C4C2D /* ELVideoViewController.h */,
+				653CB0FF1FE21B52006C4C2D /* ELVideoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -635,6 +649,10 @@
 		65D8B7871FD6828D0054DDE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				653CB1071FE22699006C4C2D /* ELVideoListBean.h */,
+				653CB1081FE22699006C4C2D /* ELVideoListBean.m */,
+				653CB10A1FE227C3006C4C2D /* ELVideoPageBean.h */,
+				653CB10B1FE227C3006C4C2D /* ELVideoPageBean.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -642,6 +660,8 @@
 		65D8B7881FD6828D0054DDE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				653CB10D1FE22AD2006C4C2D /* ELVideoNode.h */,
+				653CB10E1FE22AD2006C4C2D /* ELVideoNode.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -912,12 +932,16 @@
 				65D8B78F1FD6830C0054DDE4 /* ELMacros.m in Sources */,
 				656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */,
 				65A8304E1FD698B400A75B32 /* UIColor+extend.m in Sources */,
+				653CB1091FE22699006C4C2D /* ELVideoListBean.m in Sources */,
 				657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */,
 				653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */,
 				657CC0C61FD7C3EA001616BF /* ELHomeViewController.m in Sources */,
+				653CB10C1FE227C3006C4C2D /* ELVideoPageBean.m in Sources */,
 				653CB0E21FE10186006C4C2D /* ELNewsListBean.m in Sources */,
+				653CB10F1FE22AD2006C4C2D /* ELVideoNode.m in Sources */,
 				657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */,
 				6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */,
+				653CB1001FE21B54006C4C2D /* ELVideoViewController.m in Sources */,
 				657CC0C11FD7C374001616BF /* YZDisplayViewController.m in Sources */,
 				6555D82B1FDF823700058708 /* ELNetWorkBaseParams.m in Sources */,
 			);

@@ -9,14 +9,14 @@
 #import "ELNewsPageViewController.h"
 
 #import "ELChannelBean.h"
-#import "ELFeedViewModel.h"
 #import "ELNewsPageBean.h"
-#import "ELNewsListBean.h"
+#import "ELFlashPageBean.h"
+#import "ELGifPageBean.h"
+
 #import "ELNewsFeedNote.h"
 #import "ELFlashFeedNote.h"
 #import "ELGIFFeedNode.h"
-#import "ELFlashPageBean.h"
-#import "ELGifPageBean.h"
+#import "ELVideoNode.h"
 
 @interface ELNewsPageViewController ()<
 ASTableDelegate,
@@ -40,6 +40,7 @@ UIScrollViewDelegate>
     _feedViewModel = [[ELFeedViewModel alloc] init];
     _feedViewModel.channelID = _singleChannelBean.channelID;
     _feedViewModel.flag = _singleChannelBean.flag;
+    _feedViewModel.tabType = _tabType;
     
     [self initUI];
 }
@@ -92,19 +93,26 @@ UIScrollViewDelegate>
 
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath{
     id feedBean = [_listArray safeObjectAtIndex:indexPath.row];
-    if (_feedViewModel.feedType == ELFeedTypeNews) {
-        return ^ASCellNode *() {
-            ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithNewsListBean:feedBean];
-            return cellNode;
-        };
-    } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
-        return ^ASCellNode *() {
-            ELFlashFeedNote *cellNode = [[ELFlashFeedNote alloc] initWithFlashListBean:feedBean];
-            return cellNode;
-        };
+    if (_feedViewModel.tabType == ELTabTypeHome) {
+        if (_feedViewModel.feedType == ELFeedTypeNews) {
+            return ^ASCellNode *() {
+                ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithNewsListBean:feedBean];
+                return cellNode;
+            };
+        } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
+            return ^ASCellNode *() {
+                ELFlashFeedNote *cellNode = [[ELFlashFeedNote alloc] initWithFlashListBean:feedBean];
+                return cellNode;
+            };
+        } else {
+            return ^ASCellNode *() {
+                ELGIFFeedNode *cellNode = [[ELGIFFeedNode alloc] initWithGIFListBean:feedBean];
+                return cellNode;
+            };
+        }
     } else {
         return ^ASCellNode *() {
-            ELGIFFeedNode *cellNode = [[ELGIFFeedNode alloc] initWithGIFListBean:feedBean];
+            ELVideoNode *cellNode = [[ELVideoNode alloc] initWithVideoListBean:feedBean];
             return cellNode;
         };
     }

@@ -7,11 +7,13 @@
 //
 
 #import "ELBaseViewController.h"
+#import "ELFeedViewModel.h"
 
 @class ELSingleChannelBean;
 
 @interface ELNewsPageViewController : ELBaseViewController
 
 @property (nonatomic, strong) ELSingleChannelBean *singleChannelBean;
+@property (nonatomic, assign) ELTabType tabType;
 
 @end

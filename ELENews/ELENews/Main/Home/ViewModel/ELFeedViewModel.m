@@ -11,10 +11,16 @@
 #import "ELFlashListBean.h"
 #import "ELFlashPageBean.h"
 #import "ELGIFPageBean.h"
+#import "ELVideoPageBean.h"
 
 @implementation ELFeedViewModel
 
+- (void)loadFirstPageDataFromNetworkWithTabType:(ELTabType)tabType{
+    _tabType = tabType;
+    [self loadFirstPageDataFromNetwork];
+}
 - (void)loadDataFromNetwork{
+    
     @weakify(self);
     
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
@@ -24,28 +30,43 @@
             [params setObject:@(self.channelID) forKey:@"id"];
             [params setObject:@(self->_page) forKey:@"page"];
             NSString *url = nil;
-            if (_feedType == ELFeedTypeFlash) {
-                url = @"http://api.app.happyjuzi.com/flash/hotlist";
-            } else if (_feedType == ELFeedTypeGif) {
-                url = @"http://api.app.happyjuzi.com/article/list/gif";
-            } else {
-                url = self.channelID == 0 ? @"http://api.app.happyjuzi.com/article/list/userfeed" : @"http://api.app.happyjuzi.com/article/list/channel";
+            if (_tabType == ELTabTypeHome) {
+                if (_feedType == ELFeedTypeFlash) {
+                    url = @"http://api.app.happyjuzi.com/flash/hotlist";
+                } else if (_feedType == ELFeedTypeGif) {
+                    url = @"http://api.app.happyjuzi.com/article/list/gif";
+                } else {
+                    url = self.channelID == 0 ? @"http://api.app.happyjuzi.com/article/list/userfeed" : @"http://api.app.happyjuzi.com/article/list/channel";
+                }
+            } else if (_tabType == ELTabTypeVideo){
+                if (_channelID == 0) {
+                    url = @"http://api.app.happyjuzi.com/video/home";
+                } else {
+                    url = @"http://api.app.happyjuzi.com/video/category";
+                }
             }
+            
             [[ELHTTPManager manager] GET:url
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                                      NSArray *listArray = nil;
-                                     if (_feedType == ELFeedTypeFlash) {
-                                         ELFlashPageBean *flashPageBean = [ELFlashPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
-                                         listArray = flashPageBean.list;
-                                     } else if (_feedType == ELFeedTypeGif) {
-                                         ELGIFPageBean *gifPageBean = [ELGIFPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
-                                         listArray = gifPageBean.list;
-                                     } else {
-                                         ELNewsPageBean *newsPageBean = [ELNewsPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                     if (_tabType == ELTabTypeHome) {
+                                         if (_feedType == ELFeedTypeFlash) {
+                                             ELFlashPageBean *flashPageBean = [ELFlashPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                             listArray = flashPageBean.list;
+                                         } else if (_feedType == ELFeedTypeGif) {
+                                             ELGIFPageBean *gifPageBean = [ELGIFPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                             listArray = gifPageBean.list;
+                                         } else {
+                                             ELNewsPageBean *newsPageBean = [ELNewsPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                             listArray = newsPageBean.list;
+                                         }
+                                     }  else if (_tabType == ELTabTypeVideo) {
+                                         ELVideoPageBean *newsPageBean = [ELVideoPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
                                          listArray = newsPageBean.list;
                                      }
+                                     
                 [subscriber sendNext:listArray];
                 [subscriber sendCompleted];
                 
