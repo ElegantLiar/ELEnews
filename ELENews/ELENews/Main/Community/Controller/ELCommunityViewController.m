@@ -57,21 +57,17 @@
 #pragma mark - Private Methods
 // 添加所有子控制器
 - (void)setUpAllViewController{
-    NSArray *classNames = @[
-                           @"ELCommunityRecommendViewController",
-                           @"ELCommunityLastNewsViewController",
-                           @"ELCommunityFindViewController"
-                           ];
-    NSArray *titles = @[
-                        @"推荐",
-                        @"最新",
-                        @"发现"
-                        ];
-    for (NSInteger i = 0; i < classNames.count; i++) {
-        ELDisplayViewController *vc = [[NSClassFromString([classNames safeObjectAtIndex:i]) alloc] init];
-        vc.title = [titles safeObjectAtIndex:i];
-        [self addChildViewController:vc];
-    }
+    ELCommunityFeedBaseViewController *recommendVc= [[ELCommunityFeedBaseViewController alloc] initWithVcType:ELCommunityFeedBaseViewControllerTypeRecommend];
+    recommendVc.title = @"推荐";
+    [self addChildViewController:recommendVc];
+    
+    ELCommunityFeedBaseViewController *lastNewsVc= [[ELCommunityFeedBaseViewController alloc] initWithVcType:ELCommunityFeedBaseViewControllerTypeLastNews];
+    lastNewsVc.title = @"最新";
+    [self addChildViewController:lastNewsVc];
+    
+    ELCommunityFindViewController *findVc= [[ELCommunityFindViewController alloc] init];
+    findVc.title = @"发现";
+    [self addChildViewController:findVc];
 }
 
 #pragma mark - Setter Getter Methods

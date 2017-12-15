@@ -10,4 +10,10 @@
 
 @implementation ELCommunityTopicBean
 
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"topicID" : @"id"
+             };
+}
+
 @end

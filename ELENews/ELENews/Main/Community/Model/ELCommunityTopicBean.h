@@ -10,4 +10,8 @@
 
 @interface ELCommunityTopicBean : NSObject
 
+@property (nonatomic, assign) NSInteger topicID;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *urlroute;
+
 @end

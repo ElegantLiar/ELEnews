@@ -16,4 +16,5 @@
 @property (nonatomic, strong) NSString *portrait;
 @property (nonatomic, strong) NSString *bgpic;
 
+- (NSAttributedString *)starNameAttributedStringWithFontSize:(CGFloat)size;
 @end

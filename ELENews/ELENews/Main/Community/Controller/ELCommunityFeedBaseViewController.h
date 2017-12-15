@@ -7,7 +7,10 @@
 //
 
 #import "ELBaseViewController.h"
+#import "ELCommunityRecommendViewModel.h"
 
 @interface ELCommunityFeedBaseViewController : ELBaseViewController
+
+- (instancetype)initWithVcType:(ELCommunityFeedBaseViewControllerType)vcType;
 
 @end

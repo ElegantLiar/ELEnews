@@ -16,4 +16,11 @@
              };
 }
 
+- (NSAttributedString *)starNameAttributedStringWithFontSize:(CGFloat)size{
+    return [NSAttributedString attributedStringWithString:self.name
+                                                 fontSize:size
+                                                    color:[UIColor hexChangeFloat:@"333333"]
+                                           firstWordColor:nil];
+}
+
 @end

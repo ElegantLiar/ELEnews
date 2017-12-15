@@ -15,7 +15,8 @@
 @interface ELCommunityRecommendViewController ()<
 ASTableDelegate,
 ASTableDataSource,
-UIScrollViewDelegate>
+UIScrollViewDelegate
+>
 
 @end
 

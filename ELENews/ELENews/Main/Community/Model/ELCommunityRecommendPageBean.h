@@ -14,5 +14,5 @@
 @property (nonatomic, strong) NSArray *list;
 @property (nonatomic, strong) ELCommunityOptBean *opt;
 @property (nonatomic, strong) NSArray *stars;
-
+@property (nonatomic, assign) NSInteger page;
 @end

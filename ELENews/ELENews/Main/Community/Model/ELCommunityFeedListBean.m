@@ -49,4 +49,11 @@
                                                     color:[UIColor hexChangeFloat:@"999999"]
                                            firstWordColor:nil];
 }
+
+- (NSAttributedString *)topicAttributedStringWithFontSize:(CGFloat)size{
+    return [NSAttributedString attributedStringWithString:[NSString stringWithFormat:@"#%@", self.topic.title]
+                                                 fontSize:size
+                                                    color:[UIColor hexChangeFloat:@"FF3D3D"]
+                                           firstWordColor:nil];
+}
 @end

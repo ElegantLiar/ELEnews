@@ -16,7 +16,14 @@
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:[ELNetWorkBaseParams baseParams]];
             [params setObject:@(0) forKey:@"islogin"];
-            [[ELHTTPManager manager] GET:@"http://api.app.happyjuzi.com/shequ/index/index"
+            [params setObject:@(_page) forKey:@"page"];
+            NSString *url = @"";
+            if (_type == ELCommunityFeedBaseViewControllerTypeRecommend) {
+                url = @"http://api.app.happyjuzi.com/shequ/index/index";
+            } else if (_type == ELCommunityFeedBaseViewControllerTypeLastNews) {
+                url = @"http://api.app.happyjuzi.com/shequ/index/feed";
+            }
+            [[ELHTTPManager manager] GET:url
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

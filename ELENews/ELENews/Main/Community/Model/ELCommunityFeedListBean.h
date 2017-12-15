@@ -39,6 +39,7 @@
 - (NSAttributedString *)timeAttributedStringWithFontSize:(CGFloat)size;
 - (NSAttributedString *)titleAttributedStringWithFontSize:(CGFloat)size;
 - (NSAttributedString *)textAttributedStringWithFontSize:(CGFloat)size;
+- (NSAttributedString *)topicAttributedStringWithFontSize:(CGFloat)size;
 
 @end
 
