@@ -8,8 +8,11 @@
 
 #import "ELBaseViewController.h"
 #import "ELCommunityRecommendViewModel.h"
+#import "ELDisplayViewScrollDelegate.h"
 
 @interface ELCommunityFeedBaseViewController : ELBaseViewController
+
+@property (nonatomic, weak) id<ELDisplayViewScrollDelegate> delegate;
 
 - (instancetype)initWithVcType:(ELCommunityFeedBaseViewControllerType)vcType;
 

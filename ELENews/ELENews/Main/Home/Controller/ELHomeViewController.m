@@ -17,7 +17,7 @@
 
 @implementation ELHomeViewController{
     ELHomeChannelViewModel  *_channleViewModel;
-
+    CGPoint                 _lastOffset;
 }
 
 #pragma mark – LifeCycle
@@ -88,6 +88,7 @@
         newsPageVc.title = bean.name;
         newsPageVc.singleChannelBean = bean;
         newsPageVc.tabType = ELTabTypeHome;
+        newsPageVc.delegate = self;
         [self addChildViewController:newsPageVc];
     }
     

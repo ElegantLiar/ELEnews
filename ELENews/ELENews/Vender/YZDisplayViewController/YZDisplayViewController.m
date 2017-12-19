@@ -16,9 +16,13 @@ static NSString * const ID = @"CONTENTCELL";
 
 @interface YZDisplayViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
-    UIColor *_norColor;
-    UIColor *_selColor;
+    UIColor         *_norColor;
+    UIColor         *_selColor;
+    CGFloat         _contentY;
+    UILabel         *_titleLabel;
+    UIImageView     *_iconImageView;
 }
+
 /**
  *  下标宽度是否等于标题宽度
  */
@@ -172,6 +176,36 @@ static NSString * const ID = @"CONTENTCELL";
 - (instancetype)init
 {
     if (self = [super init]) {
+        
+        _baseNavigationView = [[UIView alloc] init];
+        [self.view addSubview:_baseNavigationView];
+        [_baseNavigationView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(self.view).with.offset(0);
+            make.top.mas_equalTo(self.view).with.offset(kAppStatusBarHeight);
+            make.height.mas_equalTo(@(kAppNavigationBarHeight));
+        }];
+        
+        _titleLabel = [ELViewFactory labelWithBackgroundColor:ELClearColor
+                                                    textColor:[UIColor hexChangeFloat:@"333333"]
+                                                textAlignment:NSTextAlignmentCenter
+                                                numberOfLines:1
+                                                         text:self.baseTitle
+                                                     fontSize:20];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+        _titleLabel.shadowOffset = CGSizeMake(0, 1);
+        [_baseNavigationView addSubview:_titleLabel];
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(_baseNavigationView).with.offset(0);
+        }];
+        
+        UIView *barView = [[UIView alloc] init];
+        barView.backgroundColor = ELWhiteColor;
+        [self.view addSubview:barView];
+        [barView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.right.mas_equalTo(self.view).with.offset(0);
+            make.height.mas_equalTo(@(kAppStatusBarHeight));
+        }];
+        
         [self initial];
     }
     return self;
@@ -319,7 +353,6 @@ static NSString * const ID = @"CONTENTCELL";
         UIView *contentView = [[UIView alloc] init];
         _contentView = contentView;
         [self.view addSubview:contentView];
-        
     }
     
     return _contentView;
@@ -485,8 +518,6 @@ static NSString * const ID = @"CONTENTCELL";
         
         CGFloat titleY = self.navigationController.navigationBarHidden == NO ?YZNavBarH:statusH;
         
-        
-        
         // 是否占据全屏
         if (_isfullScreen) {
             
@@ -538,6 +569,24 @@ static NSString * const ID = @"CONTENTCELL";
     }
     
     
+}
+
+- (void)showNavImageWithImageName:(NSString *)imageName
+                             size:(CGSize)size{
+    _titleLabel.hidden = YES;
+    if (!_iconImageView) {
+        _iconImageView = [[UIImageView alloc] init];
+        [_baseNavigationView addSubview:_iconImageView];
+        [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(size);
+            make.center.mas_equalTo(_baseNavigationView).with.offset(0);
+        }];
+    } else {
+        [_iconImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(size);
+        }];
+    }
+    _iconImageView.image = [UIImage imageNamed:imageName];
 }
 
 #pragma mark - 添加标题方法
@@ -1223,5 +1272,20 @@ static NSString * const ID = @"CONTENTCELL";
     }
 }
 
+#pragma mark - External Delegate
+- (void)elScrollViewHasScrolledWithContentOffset:(CGPoint)contentOffset{
+    if (contentOffset.y > kAppNavigationBarHeight) {
+        _contentY = 0 + kAppStatusBarHeight;
+    } else if (contentOffset.y < 0) {
+        _contentY = kAppNavigationBarHeight + kAppStatusBarHeight;
+    } else {
+        _contentY = kAppNavigationBarHeight + kAppStatusBarHeight - contentOffset.y;
+    }
+    
+    [_baseNavigationView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).with.offset(_contentY - kAppNavigationBarHeight);
+    }];
+    self.contentView.frame = CGRectMake(0, _contentY, YZScreenW, YZScreenH - _contentY);
 
+}
 @end

@@ -82,6 +82,7 @@
     for (NSInteger i = 0; i < _channelViewModel.channelBean.video.count; i++) {
         ELSingleChannelBean *bean = [_channelViewModel.channelBean.video safeObjectAtIndex:i];
         ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] init];
+        newsPageVc.delegate = self;
         newsPageVc.title = bean.name;
         newsPageVc.singleChannelBean = bean;
         newsPageVc.tabType = ELTabTypeVideo;

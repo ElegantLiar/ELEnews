@@ -8,6 +8,7 @@
 
 #import "ELBaseViewController.h"
 #import "ELFeedViewModel.h"
+#import "ELDisplayViewScrollDelegate.h"
 
 @class ELSingleChannelBean;
 
@@ -15,5 +16,6 @@
 
 @property (nonatomic, strong) ELSingleChannelBean *singleChannelBean;
 @property (nonatomic, assign) ELTabType tabType;
+@property (nonatomic, weak) id<ELDisplayViewScrollDelegate> delegate;
 
 @end

@@ -59,14 +59,17 @@
 - (void)setUpAllViewController{
     ELCommunityFeedBaseViewController *recommendVc= [[ELCommunityFeedBaseViewController alloc] initWithVcType:ELCommunityFeedBaseViewControllerTypeRecommend];
     recommendVc.title = @"推荐";
+    recommendVc.delegate = self;
     [self addChildViewController:recommendVc];
     
     ELCommunityFeedBaseViewController *lastNewsVc= [[ELCommunityFeedBaseViewController alloc] initWithVcType:ELCommunityFeedBaseViewControllerTypeLastNews];
     lastNewsVc.title = @"最新";
+    lastNewsVc.delegate = self;
     [self addChildViewController:lastNewsVc];
     
     ELCommunityFindViewController *findVc= [[ELCommunityFindViewController alloc] init];
     findVc.title = @"发现";
+    findVc.delegate = self;
     [self addChildViewController:findVc];
 }
 

@@ -10,10 +10,7 @@
 
 @interface ELDisplayViewController : YZDisplayViewController
 
-@property (nonatomic, strong) UIView *baseNavigationView;
-@property (nonatomic, strong) NSString *baseTitle;
 
-- (void)showNavImageWithImageName:(NSString *)imageName
-                             size:(CGSize)size;
+
 
 @end

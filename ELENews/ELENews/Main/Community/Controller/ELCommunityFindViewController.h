@@ -7,7 +7,10 @@
 //
 
 #import "ELBaseViewController.h"
+#import "ELDisplayViewScrollDelegate.h"
 
 @interface ELCommunityFindViewController : ELBaseViewController
+
+@property (nonatomic, weak) id<ELDisplayViewScrollDelegate> delegate;
 
 @end

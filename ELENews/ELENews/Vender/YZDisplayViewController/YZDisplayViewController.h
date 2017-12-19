@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ELDisplayViewScrollDelegate.h"
 
 // 颜色渐变样式
 typedef enum : NSUInteger {
@@ -14,7 +15,7 @@ typedef enum : NSUInteger {
     YZTitleColorGradientStyleFill, // 填充
 } YZTitleColorGradientStyle;
 
-@interface YZDisplayViewController : UIViewController
+@interface YZDisplayViewController : UIViewController<ELDisplayViewScrollDelegate>
 
 /**************************************【内容】************************************/
 /**
@@ -34,6 +35,9 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, assign) BOOL dragingFollow;
 
+@property (nonatomic, strong) UIView *baseNavigationView;
+@property (nonatomic, strong) NSString *baseTitle;
+
 /**
     如果_isfullScreen = Yes，这个方法就不好使。
  
@@ -45,6 +49,10 @@ typedef enum : NSUInteger {
  刷新标题和整个界面，在调用之前，必须先确定所有的子控制器。
  */
 - (void)refreshDisplay;
+
+
+- (void)showNavImageWithImageName:(NSString *)imageName
+                             size:(CGSize)size;
 
 
 /***********************************【顶部标题样式】********************************/

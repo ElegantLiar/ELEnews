@@ -127,6 +127,11 @@ UIScrollViewDelegate>
 }
 
 #pragma mark -- ScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (_delegate && [_delegate respondsToSelector:@selector(elScrollViewHasScrolledWithContentOffset:)]) {
+        [_delegate elScrollViewHasScrolledWithContentOffset:scrollView.contentOffset];
+    }
+}
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 //    if (_feedViewModel.feedType == ELFeedTypeGif) {
 //        NSArray *visibleCells = [_tableNode indexPathsForVisibleRows];
