@@ -31,7 +31,7 @@
         *selColor = [UIColor hexChangeFloat:@"FF3D3D"];
 //        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
         *titleHeight = 32;
-        *titleFont = [UIFont systemFontOfSize:15];
+        *titleFont = [UIFont systemFontOfSize:16];
     }];
     
     // 标题渐变

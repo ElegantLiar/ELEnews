@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *urlroute;
 
+- (NSAttributedString *)findTopicNameAttributedStringWithFontSize:(CGFloat)size;
+
 @end

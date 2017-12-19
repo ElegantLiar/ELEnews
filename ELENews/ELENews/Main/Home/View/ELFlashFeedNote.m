@@ -127,7 +127,7 @@
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize{
     _timeLineTopNode.style.spacingBefore = 0;
-    _timeLineTopNode.style.width = ASDimensionMakeWithPoints(2);
+    _timeLineTopNode.style.width = ASDimensionMakeWithPoints(1);
     _timeLineTopNode.style.height = ASDimensionMakeWithPoints(11.5);
 
     _timeLineBtmNode.style.flexGrow = YES;

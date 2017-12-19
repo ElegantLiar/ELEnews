@@ -18,7 +18,7 @@
 - (instancetype)initWithImageName:(NSString *)imageName Title:(NSString *)title hasMore:(BOOL)hasMore{
     if (self = [super init]) {
         _headerImageNode = [[ASImageNode alloc] init];
-        _headerImageNode.image = [UIImage imageNamed:@"community_dabang_14x14_"];
+        _headerImageNode.image = [UIImage imageNamed:imageName];
         _headerImageNode.style.preferredSize = CGSizeMake(14, 14);
         [self addSubnode:_headerImageNode];
         
@@ -37,7 +37,8 @@
         [self addSubnode:_hasMoreTextNode];
         
         _arrowImageNode = [[ASImageNode alloc] init];
-        _headerImageNode.image = [UIImage imageNamed:@""];
+        _arrowImageNode.image = [UIImage imageNamed:@"video_arrow_7x11_"];
+        _arrowImageNode.style.preferredSize = CGSizeMake(7, 11);
         [self addSubnode:_arrowImageNode];
     }
     return self;
@@ -45,12 +46,12 @@
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize{
     ASStackLayoutSpec *leftHorizontalSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal
-                                                                                    spacing:10
+                                                                                    spacing:8
                                                                              justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsCenter
                                                                                    children:@[_headerImageNode, _titleNode]];
 
     ASStackLayoutSpec *rightHorizontalSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal
-                                                                                    spacing:10
+                                                                                    spacing:2
                                                                              justifyContent:ASStackLayoutJustifyContentEnd alignItems:ASStackLayoutAlignItemsCenter
                                                                                    children:@[_hasMoreTextNode, _arrowImageNode]];
     
@@ -62,7 +63,9 @@
                                                                                        spacing:10
                                                                                 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch
                                                                                       children:@[leftHorizontalSpec, blankSpec, rightHorizontalSpec]];
-    return contentHorizontalSpec;
+    
+    ASInsetLayoutSpec *contentInsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(10, 10, 10, 10) child:contentHorizontalSpec];
+    return contentInsetSpec;
 }
 
 @end

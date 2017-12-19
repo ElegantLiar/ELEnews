@@ -50,10 +50,11 @@ UIScrollViewDelegate>
     _tableNode = [[ASTableNode alloc] init];
     _tableNode.delegate = self;
     _tableNode.dataSource = self;
-    [self.baseContentView addSubnode:_tableNode];
+    [self.view addSubnode:_tableNode];
     _tableNode.view.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.right.equalTo(self.view);
+        make.top.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).with.offset(-kAppTabBarHeight);
     }];
 }
 #pragma mark – Target Methods

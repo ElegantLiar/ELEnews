@@ -57,7 +57,8 @@ UIScrollViewDelegate
     [self.baseContentView addSubnode:_tableNode];
     _tableNode.view.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.right.equalTo(self.view);
+        make.top.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).with.offset(-kAppTabBarHeight);
     }];
 }
 #pragma mark – Target Methods
@@ -67,9 +68,9 @@ UIScrollViewDelegate
     @weakify(self);
     [[_recommentViewModel.requestCommand execute:nil] subscribeNext:^(ELCommunityRecommendPageBean *bean) {
         @strongify(self);
-        _bean = bean;
+        self->_bean = bean;
         [self->_listArray addObjectsFromArray:_bean.list];
-        if (_bean.page == 1) {
+        if (self->_bean.page == 1) {
             [_tableNode reloadData];
         } else {
             [self insertNewRows:_bean.list];

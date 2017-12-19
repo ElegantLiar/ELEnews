@@ -24,6 +24,7 @@
 #define ELPurpleColor [UIColor purpleColor]
 #define ELBrownColor [UIColor brownColor]
 #define ELClearColor [UIColor clearColor]
+#define ELLineColor [[UIColor hexChangeFloat:@"999999"] colorWithAlphaComponent:0.3]
 
 #define ELNotificationCenter [NSNotificationCenter defaultCenter]
 

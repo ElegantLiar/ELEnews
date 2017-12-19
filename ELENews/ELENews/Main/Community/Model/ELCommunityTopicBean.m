@@ -16,4 +16,11 @@
              };
 }
 
+- (NSAttributedString *)findTopicNameAttributedStringWithFontSize:(CGFloat)size{
+    return [NSAttributedString attributedStringWithString:[NSString stringWithFormat:@"#%@", self.title]
+                                                 fontSize:size
+                                                    color:[UIColor hexChangeFloat:@"999999"]
+                                           firstWordColor:nil];
+}
+
 @end
