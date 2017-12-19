@@ -29,6 +29,8 @@ UIScrollViewDelegate>
     ASTableNode         *_tableNode;
     ELFeedViewModel     *_feedViewModel;
     NSMutableArray      *_listArray;
+    CGFloat             _orignalHeight;
+    CGFloat             _height;
 }
 
 #pragma mark – LifeCycle
@@ -43,10 +45,14 @@ UIScrollViewDelegate>
     _feedViewModel.tabType = _tabType;
     
     [self initUI];
+    
+
 }
 
 #pragma mark - Intial Methods
 - (void)initUI{
+    _orignalHeight = self.view.height - kAppTabBarHeight;
+    
     _tableNode = [[ASTableNode alloc] init];
     _tableNode.delegate = self;
     _tableNode.dataSource = self;
@@ -54,7 +60,7 @@ UIScrollViewDelegate>
     _tableNode.view.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.view).with.offset(-kAppTabBarHeight);
+        make.height.mas_equalTo(@(_orignalHeight));
     }];
 }
 #pragma mark – Target Methods
@@ -130,6 +136,18 @@ UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (_delegate && [_delegate respondsToSelector:@selector(elScrollViewHasScrolledWithContentOffset:)]) {
         [_delegate elScrollViewHasScrolledWithContentOffset:scrollView.contentOffset];
+        if (scrollView.contentOffset.y > kAppNavigationBarHeight) {
+            if (_height == _orignalHeight + kAppNavigationBarHeight) return;
+            _height = _orignalHeight + kAppNavigationBarHeight;
+        } else if (scrollView.contentOffset.y < 0) {
+            return;
+        } else {
+            _height = _orignalHeight + kAppNavigationBarHeight - scrollView.contentOffset.y;
+        }
+
+        [_tableNode.view mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(@(_height));
+        }];
     }
 }
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

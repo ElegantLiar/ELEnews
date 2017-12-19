@@ -1286,6 +1286,5 @@ static NSString * const ID = @"CONTENTCELL";
         make.top.mas_equalTo(self.view).with.offset(_contentY - kAppNavigationBarHeight);
     }];
     self.contentView.frame = CGRectMake(0, _contentY, YZScreenW, YZScreenH - _contentY);
-
 }
 @end

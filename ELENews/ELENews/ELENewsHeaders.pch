@@ -30,4 +30,5 @@
 #import "AsyncDisplayKit.h"
 #import "ELHTTPManager.h"
 #import "ELNetWorkBaseParams.h"
+#import "UIView+YYAdd.h"
 #endif /* ELENewsHeaders_pch */

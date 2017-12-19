@@ -8,11 +8,15 @@
 
 #import "AppDelegate.h"
 #import "ELMainTabBarController.h"
+#import "YYFPSLabel.h"
+
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    YYFPSLabel              *_fpsLabel;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -27,6 +31,12 @@
     
     self.window.rootViewController = tabBarVc;
     [self.window makeKeyAndVisible];
+    
+    _fpsLabel = [YYFPSLabel new];
+    [_fpsLabel sizeToFit];
+    _fpsLabel.centerY = 45;
+    _fpsLabel.left = ELScreenW - 90;
+    [self.window addSubview:_fpsLabel];
     
     return YES;
 }

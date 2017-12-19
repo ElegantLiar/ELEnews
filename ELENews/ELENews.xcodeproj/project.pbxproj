@@ -67,6 +67,9 @@
 		653CB17E1FE35DF0006C4C2D /* tabbar_video_selected_40x40_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CB15E1FE35DF0006C4C2D /* tabbar_video_selected_40x40_@3x.png */; };
 		653CF40F1FE8ACE70002BF23 /* ELCommunityFindTopicCategoryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CF40E1FE8ACE70002BF23 /* ELCommunityFindTopicCategoryNode.m */; };
 		653CF4121FE8ADFD0002BF23 /* ELCommunityFindActivityNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CF4111FE8ADFD0002BF23 /* ELCommunityFindActivityNode.m */; };
+		653CF4191FE902C10002BF23 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CF4161FE902C00002BF23 /* YYFPSLabel.m */; };
+		653CF41A1FE902C10002BF23 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CF4181FE902C00002BF23 /* YYWeakProxy.m */; };
+		653CF42A1FE90BA10002BF23 /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CF4291FE90BA10002BF23 /* UIView+YYAdd.m */; };
 		65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D601FB5495F00ECC33C /* AppDelegate.m */; };
 		65472D671FB5495F00ECC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65472D651FB5495F00ECC33C /* Main.storyboard */; };
 		65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65472D681FB5495F00ECC33C /* Assets.xcassets */; };
@@ -249,6 +252,13 @@
 		653CF4101FE8ADFD0002BF23 /* ELCommunityFindActivityNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFindActivityNode.h; sourceTree = "<group>"; };
 		653CF4111FE8ADFD0002BF23 /* ELCommunityFindActivityNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFindActivityNode.m; sourceTree = "<group>"; };
 		653CF4131FE8C5F30002BF23 /* ELDisplayViewScrollDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELDisplayViewScrollDelegate.h; sourceTree = "<group>"; };
+		653CF4151FE902C00002BF23 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		653CF4161FE902C00002BF23 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		653CF4171FE902C00002BF23 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		653CF4181FE902C00002BF23 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		653CF4281FE90BA10002BF23 /* UIView+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYAdd.h"; sourceTree = "<group>"; };
+		653CF4291FE90BA10002BF23 /* UIView+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YYAdd.m"; sourceTree = "<group>"; };
+		653CF42B1FE90BDD0002BF23 /* YYKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYKitMacro.h; sourceTree = "<group>"; };
 		65432F411FD66F9F00367FD4 /* ELENewsHeaders.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELENewsHeaders.pch; sourceTree = "<group>"; };
 		65472D5C1FB5495F00ECC33C /* ELENews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELENews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D5F1FB5495F00ECC33C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -486,6 +496,17 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		653CF4141FE902C00002BF23 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				653CF4151FE902C00002BF23 /* YYFPSLabel.h */,
+				653CF4161FE902C00002BF23 /* YYFPSLabel.m */,
+				653CF4171FE902C00002BF23 /* YYWeakProxy.h */,
+				653CF4181FE902C00002BF23 /* YYWeakProxy.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
 		65432F681FD6812F00367FD4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +537,7 @@
 		65432F6B1FD6812F00367FD4 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				653CF4141FE902C00002BF23 /* YYFPSLabel */,
 				657CC0AD1FD7C269001616BF /* YZDisplayViewController */,
 			);
 			path = Vender;
@@ -536,6 +558,8 @@
 		65432F6D1FD6812F00367FD4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				653CF4281FE90BA10002BF23 /* UIView+YYAdd.h */,
+				653CF4291FE90BA10002BF23 /* UIView+YYAdd.m */,
 				65A830431FD694C100A75B32 /* NSArray+Safe.h */,
 				65A830441FD694C100A75B32 /* NSArray+Safe.m */,
 				65A830471FD694C100A75B32 /* NSMutableArray+Safe.h */,
@@ -562,6 +586,7 @@
 		65432F6F1FD6812F00367FD4 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				653CF42B1FE90BDD0002BF23 /* YYKitMacro.h */,
 				65D8B78D1FD6830C0054DDE4 /* ELMacros.h */,
 				65D8B78E1FD6830C0054DDE4 /* ELMacros.m */,
 			);
@@ -1211,6 +1236,7 @@
 			files = (
 				653CB0C81FDFD087006C4C2D /* ELFlashPageBean.m in Sources */,
 				65A8304B1FD694C200A75B32 /* NSMutableDictionary+Safe.m in Sources */,
+				653CF42A1FE90BA10002BF23 /* UIView+YYAdd.m in Sources */,
 				653CB12D1FE271CF006C4C2D /* ELCommunityCommentListBean.m in Sources */,
 				653CB0D11FDFD6B2006C4C2D /* ELFlashFeedNote.m in Sources */,
 				653CB11E1FE26040006C4C2D /* ELCommunityFindViewController.m in Sources */,
@@ -1243,6 +1269,7 @@
 				657CC0C21FD7C374001616BF /* UIView+Frame.m in Sources */,
 				65D4AD511FE7A25E005B050B /* ELCommunityTopicCategoryBean.m in Sources */,
 				65A8304A1FD694C200A75B32 /* NSMutableArray+Safe.m in Sources */,
+				653CF4191FE902C10002BF23 /* YYFPSLabel.m in Sources */,
 				653CB1361FE27B48006C4C2D /* ELCommunityStarBean.m in Sources */,
 				65C9C2341FE3AE0400157CE5 /* ELCommunityFeedHeaderNote.m in Sources */,
 				65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */,
@@ -1267,6 +1294,7 @@
 				653CB0E21FE10186006C4C2D /* ELNewsListBean.m in Sources */,
 				653CB10F1FE22AD2006C4C2D /* ELVideoNode.m in Sources */,
 				657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */,
+				653CF41A1FE902C10002BF23 /* YYWeakProxy.m in Sources */,
 				653CB1301FE275E5006C4C2D /* ELCommunityRecommendViewModel.m in Sources */,
 				6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */,
 				653CB1001FE21B54006C4C2D /* ELVideoViewController.m in Sources */,
