@@ -175,9 +175,9 @@
     ASInsetLayoutSpec *rightContentInsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(10, 0, 10, 6) child:contentVerticalStack];
     
     ASStackLayoutSpec *allHorizontalStack = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal
-                                                                                       spacing:10
-                                                                                justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch
-                                                                                      children:@[timeHorizontalStack, rightContentInsetSpec]];
+                                                                                    spacing:10
+                                                                             justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch
+                                                                                   children:@[timeHorizontalStack, rightContentInsetSpec]];
     return allHorizontalStack;
 }
 

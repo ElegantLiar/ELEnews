@@ -9,4 +9,5 @@ target :’ELENews’ do
 	pod 'ReactiveCocoa','2.5'
 	pod 'AFNetworking', '~> 3.1.0'
 	pod 'PINRemoteImage/WebP'
+	pod 'YYWebImage', '~> 1.0.5'
 end

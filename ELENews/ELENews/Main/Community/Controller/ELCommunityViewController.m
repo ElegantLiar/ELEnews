@@ -7,8 +7,7 @@
 //
 
 #import "ELCommunityViewController.h"
-#import "ELCommunityRecommendViewController.h"
-#import "ELCommunityLastNewsViewController.h"
+#import "ELCommunityFeedBaseViewController.h"
 #import "ELCommunityFindViewController.h"
 
 @interface ELCommunityViewController ()

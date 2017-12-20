@@ -23,7 +23,6 @@
 		653CB1121FE25F6E006C4C2D /* ELCommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1111FE25F6D006C4C2D /* ELCommunityViewController.m */; };
 		653CB1151FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1141FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m */; };
 		653CB1181FE2600F006C4C2D /* ELCommunityRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1171FE2600F006C4C2D /* ELCommunityRecommendViewController.m */; };
-		653CB11B1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB11A1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m */; };
 		653CB11E1FE26040006C4C2D /* ELCommunityFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB11D1FE26040006C4C2D /* ELCommunityFindViewController.m */; };
 		653CB1241FE26E41006C4C2D /* ELCommunityFeedListBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1231FE26E41006C4C2D /* ELCommunityFeedListBean.m */; };
 		653CB1271FE270D5006C4C2D /* ELCommunityAuthorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CB1261FE270D5006C4C2D /* ELCommunityAuthorBean.m */; };
@@ -194,8 +193,6 @@
 		653CB1141FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFeedBaseViewController.m; sourceTree = "<group>"; };
 		653CB1161FE2600F006C4C2D /* ELCommunityRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityRecommendViewController.h; sourceTree = "<group>"; };
 		653CB1171FE2600F006C4C2D /* ELCommunityRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityRecommendViewController.m; sourceTree = "<group>"; };
-		653CB1191FE2602E006C4C2D /* ELCommunityLastNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityLastNewsViewController.h; sourceTree = "<group>"; };
-		653CB11A1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityLastNewsViewController.m; sourceTree = "<group>"; };
 		653CB11C1FE26040006C4C2D /* ELCommunityFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFindViewController.h; sourceTree = "<group>"; };
 		653CB11D1FE26040006C4C2D /* ELCommunityFindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELCommunityFindViewController.m; sourceTree = "<group>"; };
 		653CB1221FE26E41006C4C2D /* ELCommunityFeedListBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELCommunityFeedListBean.h; sourceTree = "<group>"; };
@@ -718,8 +715,6 @@
 				653CB1141FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m */,
 				653CB1161FE2600F006C4C2D /* ELCommunityRecommendViewController.h */,
 				653CB1171FE2600F006C4C2D /* ELCommunityRecommendViewController.m */,
-				653CB1191FE2602E006C4C2D /* ELCommunityLastNewsViewController.h */,
-				653CB11A1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m */,
 				653CB11C1FE26040006C4C2D /* ELCommunityFindViewController.h */,
 				653CB11D1FE26040006C4C2D /* ELCommunityFindViewController.m */,
 			);
@@ -1287,7 +1282,6 @@
 				653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */,
 				653CF40F1FE8ACE70002BF23 /* ELCommunityFindTopicCategoryNode.m in Sources */,
 				653CF4121FE8ADFD0002BF23 /* ELCommunityFindActivityNode.m in Sources */,
-				653CB11B1FE2602E006C4C2D /* ELCommunityLastNewsViewController.m in Sources */,
 				657CC0C61FD7C3EA001616BF /* ELHomeViewController.m in Sources */,
 				65D4AD351FE7605A005B050B /* ELCommunityBannerBean.m in Sources */,
 				653CB10C1FE227C3006C4C2D /* ELVideoPageBean.m in Sources */,
