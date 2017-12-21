@@ -514,9 +514,9 @@ static NSString * const ID = @"CONTENTCELL";
         
         _isInitial = YES;
         
-        CGFloat statusH = [UIApplication sharedApplication].statusBarFrame.size.height;
+//        CGFloat statusH = [UIApplication sharedApplication].statusBarFrame.size.height;
         
-        CGFloat titleY = self.navigationController.navigationBarHidden == NO ?YZNavBarH:statusH;
+        CGFloat titleY = YZNavBarH;
         
         // 是否占据全屏
         if (_isfullScreen) {

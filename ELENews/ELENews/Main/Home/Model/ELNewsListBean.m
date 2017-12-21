@@ -10,6 +10,12 @@
 
 @implementation ELNewsListBean
 
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"newsID" : @"id"
+             };
+}
+
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
     return @{
              @"gallary" : NSDictionary.class,
@@ -33,5 +39,11 @@
 @end
 
 @implementation ELNewsAuthorBean
+
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"authorID" : @"id"
+             };
+}
 
 @end

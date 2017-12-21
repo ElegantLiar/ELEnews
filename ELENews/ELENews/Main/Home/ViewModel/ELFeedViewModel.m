@@ -15,10 +15,6 @@
 
 @implementation ELFeedViewModel
 
-- (void)loadFirstPageDataFromNetworkWithTabType:(ELTabType)tabType{
-    _tabType = tabType;
-    [self loadFirstPageDataFromNetwork];
-}
 - (void)loadDataFromNetwork{
     
     @weakify(self);

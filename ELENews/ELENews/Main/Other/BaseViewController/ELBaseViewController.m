@@ -15,12 +15,15 @@
 
 @implementation ELBaseViewController{
     UILabel         *_titleLabel;
-    
+    UIImageView     *_iconImageView;
+    NSString        *_iconImageUrl;
 }
 
 #pragma mark – LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = ELWhiteColor;
+
 
     _baseNavigationView = [[UIView alloc] init];
     [self.view addSubview:_baseNavigationView];
@@ -38,29 +41,73 @@
         make.bottom.mas_equalTo(self.view).with.offset(0);
     }];
     
+    UIView *bgView = [[UIView alloc] init];
+    [_baseNavigationView addSubview:bgView];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(_baseNavigationView).with.offset(0);
+    }];
+    
+    _iconImageView = [[UIImageView alloc] init];
+    _iconImageView.layer.cornerRadius = 9;
+    _iconImageView.layer.masksToBounds = YES;
+    [bgView addSubview:_iconImageView];
+    [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(18, 18));
+        make.left.mas_equalTo(bgView).with.offset(0);
+        make.top.mas_equalTo(bgView).with.offset(0);
+        make.bottom.mas_equalTo(bgView).with.offset(0);
+    }];
+    
     _titleLabel = [ELViewFactory labelWithBackgroundColor:ELClearColor
                                                 textColor:[UIColor hexChangeFloat:@"333333"]
                                             textAlignment:NSTextAlignmentCenter
                                             numberOfLines:1
                                                      text:self.baseTitle
-                                                 fontSize:20];
-    _titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+                                                 fontSize:15];
     _titleLabel.shadowOffset = CGSizeMake(0, 1);
-    [_baseNavigationView addSubview:_titleLabel];
+    [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(_baseNavigationView).with.offset(0);
+        make.right.mas_equalTo(bgView).with.offset(0);
+        make.left.mas_equalTo(_iconImageView.mas_right).with.offset(5);
+        make.centerY.mas_equalTo(bgView).with.offset(0);
     }];
     
+    [_iconImageView yy_setImageWithURL:[NSURL URLWithString:_iconImageUrl] placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:nil];
+    [_titleLabel setText:_baseTitle];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    });
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.navigationController setNavigationBarHidden:NO animated:NO];
+//    });
+//}
 
 #pragma mark - Intial Methods
 
 #pragma mark – Target Methods
 
 #pragma mark - Private Methods
-- (void)showNavImageWithImageName:(NSString *)imageName
-                             size:(CGSize)size{
-    
+- (void)configureNavTitle:(NSString *)navTitle iconImageUrl:(NSString *)iconImageUrl{
+    _baseTitle = navTitle;
+    _iconImageUrl = iconImageUrl;
 }
 #pragma mark - Setter Getter Methods
 

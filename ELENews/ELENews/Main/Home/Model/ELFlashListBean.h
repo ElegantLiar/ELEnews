@@ -30,7 +30,12 @@
 
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGFloat size;
 @property (nonatomic, strong) NSString *src;
 @property (nonatomic, strong) NSString *thumb;
+@property (nonatomic, strong) NSString *org;
+@property (nonatomic, assign) BOOL high_img;
 
+@property (nonatomic, assign) CGFloat showWidth;
+@property (nonatomic, assign) CGFloat showHeight;
 @end

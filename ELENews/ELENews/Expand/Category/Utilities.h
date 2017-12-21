@@ -47,4 +47,8 @@
                                              color:(UIColor *)color
                                     firstWordColor:(UIColor *)firstWordColor;
 
++ (NSAttributedString *)attributedStringWithString:(NSString *)string
+                                          fontSize:(CGFloat)size
+                                             color:(UIColor *)color
+                                          lineSpac:(CGFloat)lineSpce;
 @end

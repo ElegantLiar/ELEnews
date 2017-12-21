@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ELMainTabBarController.h"
+#import "ELNavgationController.h"
 #import "YYFPSLabel.h"
 
 @interface AppDelegate ()
@@ -27,9 +28,11 @@
     self.window = [[UIWindow alloc] initWithFrame:ELScreenBounds];
     self.window.backgroundColor = ELWhiteColor;
     
-    ELMainTabBarController *tabBarVc = [[ELMainTabBarController alloc] init];;
+    ELMainTabBarController *tabBarVc = [[ELMainTabBarController alloc] init];
     
-    self.window.rootViewController = tabBarVc;
+    ELNavgationController *navgationController = [[ELNavgationController alloc] initWithRootViewController:tabBarVc];
+
+    self.window.rootViewController = navgationController;
     [self.window makeKeyAndVisible];
     
     _fpsLabel = [YYFPSLabel new];

@@ -78,8 +78,7 @@
     [childController.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
-    ELNavgationController *navgationController = [[ELNavgationController alloc] initWithRootViewController:childController];
-//    [childController.navigationController setNavigationBarHidden:YES animated:NO];
+//    ELNavgationController *navgationController = [[ELNavgationController alloc] initWithRootViewController:childController];
     [self addChildViewController:childController];
 }
 #pragma mark - Setter Getter Methods

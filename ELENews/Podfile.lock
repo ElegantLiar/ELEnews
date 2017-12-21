@@ -39,6 +39,7 @@ PODS:
   - libwebp/utils (0.6.0):
     - libwebp/core
   - libwebp/webp (0.6.0)
+  - lottie-ios (2.1.4)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.1)
   - PINCache (3.0.1-beta.5):
@@ -83,6 +84,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - FDFullscreenPopGesture (= 1.1)
+  - lottie-ios (~> 2.1.4)
   - Masonry (~> 1.1.0)
   - MJRefresh
   - PINRemoteImage/WebP
@@ -95,6 +97,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
+  lottie-ios: 94fa2d82547ce3adf1e61157653ba99999fd279f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   PINCache: 98e7b1ef782824ad231ade51987c218b758c30d8
@@ -107,6 +110,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ba8b38d91506c61656a159d97e082987a6988e35
+PODFILE CHECKSUM: 6d6fa865537248f253714cde3911c832e5731ae8
 
 COCOAPODS: 1.3.1

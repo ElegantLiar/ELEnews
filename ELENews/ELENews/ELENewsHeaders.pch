@@ -23,7 +23,7 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 #import "YYModel.h"
-#import "MJRefresh.h"
+#import "ELRefreshHeader.h"
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
 #import "AFNetworking.h"
@@ -31,4 +31,5 @@
 #import "ELHTTPManager.h"
 #import "ELNetWorkBaseParams.h"
 #import "UIView+YYAdd.h"
+#import "YYWebImage.h"
 #endif /* ELENewsHeaders_pch */

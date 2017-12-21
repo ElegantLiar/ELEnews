@@ -17,11 +17,17 @@
 #import "ELFlashFeedNote.h"
 #import "ELGIFFeedNode.h"
 #import "ELVideoNode.h"
+#import "ELNewsOneBigPicCenterFeedNote.h"
+#import "ELNewsOneSmallPicLeftFeedNote.h"
+#import "ELNewsThreePicFeedNote.h"
+
+#import "ELNewsDetailViewController.h"
 
 @interface ELNewsPageViewController ()<
 ASTableDelegate,
 ASTableDataSource,
-UIScrollViewDelegate>
+UIScrollViewDelegate
+>
 
 @end
 
@@ -46,7 +52,6 @@ UIScrollViewDelegate>
     
     [self initUI];
     
-
 }
 
 #pragma mark - Intial Methods
@@ -62,6 +67,13 @@ UIScrollViewDelegate>
         make.top.left.right.mas_equalTo(self.view);
         make.height.mas_equalTo(@(_orignalHeight));
     }];
+    
+    _tableNode.view.mj_header = [ELRefreshHeader headerWithRefreshingBlock:^{
+        [_feedViewModel loadFirstPageDataFromNetwork];
+        [self loadPageWithContext:nil];
+    }];
+    
+//    [_tableNode.view.mj_header beginRefreshing];
 }
 #pragma mark – Target Methods
 
@@ -70,11 +82,17 @@ UIScrollViewDelegate>
     @weakify(self);
     [[_feedViewModel.requestCommand execute:nil] subscribeNext:^(NSArray *listArray) {
         @strongify(self);
-        [self->_listArray addObjectsFromArray:listArray];
-        [self insertNewRows:listArray];
+        if (self->_feedViewModel.page == 1 && listArray.count > 0) {
+            [self->_listArray setArray:listArray];
+            [_tableNode reloadData];
+        } else {
+            [self->_listArray addObjectsFromArray:listArray];
+            [self insertNewRows:listArray];
+        }
         if (context) {
             [context completeBatchFetching:YES];
         }
+        [self->_tableNode.view.mj_header endRefreshing];
     }];
 }
 
@@ -103,7 +121,17 @@ UIScrollViewDelegate>
     if (_feedViewModel.tabType == ELTabTypeHome) {
         if (_feedViewModel.feedType == ELFeedTypeNews) {
             return ^ASCellNode *() {
-                ELNewsFeedNote *cellNode = [[ELNewsFeedNote alloc] initWithNewsListBean:feedBean];
+                ELNewsListBean *newsListBean = feedBean;
+                ASCellNode *cellNode = nil;
+                if (newsListBean.display == ELNewsListBeanDisplayTypeOneBigPicCenter) {
+                    cellNode = [[ELNewsOneBigPicCenterFeedNote alloc] initWithNewsListBean:newsListBean];
+                } else if (newsListBean.display == ELNewsListBeanDisplayTypeOneSmallPicLeft) {
+                    cellNode = [[ELNewsOneSmallPicLeftFeedNote alloc] initWithNewsListBean:newsListBean];
+                } else if (newsListBean.display == ELNewsListBeanDisplayTypeThreePic) {
+                    cellNode = [[ELNewsThreePicFeedNote alloc] initWithNewsListBean:newsListBean];
+                } else {
+                    cellNode = [[ELNewsFeedNote alloc] initWithNewsListBean:newsListBean];
+                }
                 return cellNode;
             };
         } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
@@ -122,6 +150,28 @@ UIScrollViewDelegate>
             ELVideoNode *cellNode = [[ELVideoNode alloc] initWithVideoListBean:feedBean];
             return cellNode;
         };
+    }
+}
+
+- (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    id feedBean = [_listArray safeObjectAtIndex:indexPath.row];
+    if (_feedViewModel.tabType == ELTabTypeHome) {
+        if (_feedViewModel.feedType == ELFeedTypeNews) {
+            ELNewsListBean *bean = feedBean;
+            ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
+            detailVc.newID = bean.newsID;
+            [detailVc configureNavTitle:bean.cat.name iconImageUrl:bean.cat.pic];
+            [self.navigationController pushViewController:detailVc animated:YES];
+        } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
+            return;
+        } else {
+            return;
+        }
+    } else {
+        ELVideoListBean *bean = feedBean;
+        ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
+        detailVc.newID = bean.videoID;
+        [self.navigationController pushViewController:detailVc animated:YES];
     }
 }
 

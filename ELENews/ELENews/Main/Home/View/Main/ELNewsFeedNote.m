@@ -56,6 +56,7 @@
         
         _photoImageNode = [[ASNetworkImageNode alloc] init];
         _photoImageNode.URL = [NSURL URLWithString:_newsListBean.pic];
+        _photoImageNode.defaultImage = [UIImage imageNamed:@"placehoderImg_145x108_"];
         _photoImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
             UIImage *modifiedImage;
             CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);

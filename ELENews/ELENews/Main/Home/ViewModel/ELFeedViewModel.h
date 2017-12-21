@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, ELTabType) {
 
 @property (nonatomic, assign) ELTabType tabType;
 
-- (void)loadFirstPageDataFromNetworkWithTabType:(ELTabType)tabType;
+- (void)loadFirstPageDataFromNetwork;
 
 - (void)loadNextPageDataFromNetwork;
 

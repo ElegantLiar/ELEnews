@@ -10,8 +10,14 @@
 
 @class ELNewsAuthorBean;
 
+typedef NS_ENUM(NSInteger, ELNewsListBeanDisplayType) {
+    ELNewsListBeanDisplayTypeOneBigPicCenter = 101,
+    ELNewsListBeanDisplayTypeOneSmallPicLeft,
+    ELNewsListBeanDisplayTypeThreePic,
+};
 @interface ELNewsListBean : NSObject
 
+@property (nonatomic, assign) NSInteger newsID;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *pic;
 @property (nonatomic, strong) ELNewsAuthorBean *cat;
@@ -26,7 +32,10 @@
 
 @interface ELNewsAuthorBean : NSObject
 
+@property (nonatomic, assign) NSInteger authorID;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *pic;
+@property (nonatomic, strong) NSString *avatar_box;
+@property (nonatomic, strong) NSString *url_route;
 
 @end

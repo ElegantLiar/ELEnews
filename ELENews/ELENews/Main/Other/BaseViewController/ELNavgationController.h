@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 @interface ELNavgationController : UINavigationController
 
