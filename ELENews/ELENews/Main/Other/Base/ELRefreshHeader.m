@@ -18,9 +18,9 @@
 - (void)prepare{
     [super prepare];
     
-    _animationView = [LOTAnimationView animationNamed:@"loading_in_black_bg.json" inBundle:[NSBundle mainBundle]];
+    _animationView = [LOTAnimationView animationNamed:@"simple_loader.json" inBundle:[NSBundle mainBundle]];
     _animationView.loopAnimation = YES;
-    _animationView.frame = CGRectMake((ELScreenW - 50)/2, (self.height - 50)/2, 50, 50);
+    _animationView.frame = CGRectMake((ELScreenW - 80)/2, (self.height - 80)/2, 80, 80);
     [self addSubview:_animationView];
     [_animationView play];
 
@@ -33,7 +33,7 @@
 - (void)placeSubviews{
     [super placeSubviews];
     
-    _animationView.left = (self.width - 50) / 2.f;
+    _animationView.left = (self.width - 80) / 2.f;
 }
 
 

@@ -8,7 +8,6 @@
 
 #import "ELNewsDetailViewController.h"
 #import "ELNewsDetailViewModel.h"
-#import "ELNewsDetailPageBean.h"
 #import "ELNewsDetailView.h"
 
 @interface ELNewsDetailViewController ()

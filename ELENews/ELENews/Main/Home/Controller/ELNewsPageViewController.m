@@ -22,6 +22,7 @@
 #import "ELNewsThreePicFeedNote.h"
 
 #import "ELNewsDetailViewController.h"
+#import "ELNewsPhotoDetailViewController.h"
 
 @interface ELNewsPageViewController ()<
 ASTableDelegate,
@@ -76,6 +77,20 @@ UIScrollViewDelegate
 //    [_tableNode.view.mj_header beginRefreshing];
 }
 #pragma mark – Target Methods
+- (void)showDetailVcWithELNewsListBean:(ELNewsListBean *)listBean{
+    ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
+    detailVc.newID = listBean.newsID;
+    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
+    [self.navigationController pushViewController:detailVc animated:YES];
+}
+
+- (void)showPhotoBrowserWithNewsListBean:(ELNewsListBean *)listBean{
+    ELNewsPhotoDetailViewController *detailVc = [[ELNewsPhotoDetailViewController alloc] init];
+    detailVc.newID = 175215;
+//    detailVc.newID = listBean.newsID;
+//    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
+    [self.navigationController pushViewController:detailVc animated:YES];
+}
 
 #pragma mark - Private Methods
 - (void)loadPageWithContext:(ASBatchContext *)context{
@@ -158,10 +173,13 @@ UIScrollViewDelegate
     if (_feedViewModel.tabType == ELTabTypeHome) {
         if (_feedViewModel.feedType == ELFeedTypeNews) {
             ELNewsListBean *bean = feedBean;
-            ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
-            detailVc.newID = bean.newsID;
-            [detailVc configureNavTitle:bean.cat.name iconImageUrl:bean.cat.pic];
-            [self.navigationController pushViewController:detailVc animated:YES];
+            [self showPhotoBrowserWithNewsListBean:bean];
+
+//            if ([bean.cat.name isEqualToString:@"橘子News"]) {
+//                [self showPhotoBrowserWithNewsListBean:bean];
+//            } else {
+//                [self showDetailVcWithELNewsListBean:bean];
+//            }
         } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
             return;
         } else {

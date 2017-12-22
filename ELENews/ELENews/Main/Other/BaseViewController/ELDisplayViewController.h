@@ -10,7 +10,4 @@
 
 @interface ELDisplayViewController : YZDisplayViewController
 
-
-
-
 @end

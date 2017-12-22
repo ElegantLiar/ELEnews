@@ -7,8 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ELNewsDetailPageBean.h"
 
 @interface ELNewsDetailViewModel : NSObject
+
+@property (nonatomic, strong, readonly) RACCommand *requestCommand;
+
+- (void)loadDataFromNetworkWithNewsID:(NSInteger)newsID;
+
+@end
+
+@interface ELNewsPhotoDetailViewModel : NSObject
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 

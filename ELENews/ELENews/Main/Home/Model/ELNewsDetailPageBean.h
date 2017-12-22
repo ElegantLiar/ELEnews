@@ -60,3 +60,25 @@ typedef NS_ENUM(NSInteger, ELNewsDetailParagraphType) {
 @property (nonatomic, strong) NSArray *IMG;
 
 @end
+
+@interface ELNewsPhotoBrowserBean : NSObject
+
+@property (nonatomic, assign) NSInteger photoID;
+@property (nonatomic, strong) NSString *des;
+@property (nonatomic, strong) NSString *origin_img;
+@property (nonatomic, strong) NSString *origin_img_size;
+@property (nonatomic, strong) NSString *origin_img_credit;
+@property (nonatomic, assign) BOOL user_checked;
+@property (nonatomic, strong) NSString *pic;
+
+@end
+
+@interface ELNewsPhotoDetailPageBean : NSObject
+
+@property (nonatomic, strong) ELNewsDetailInfoBean *info;
+@property (nonatomic, strong) NSArray *contents;
+@property (nonatomic, strong) NSMutableArray *photoUrls;
+
+- (void)configureUrls;
+
+@end

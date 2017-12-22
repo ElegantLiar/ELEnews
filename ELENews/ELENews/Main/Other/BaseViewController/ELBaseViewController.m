@@ -81,23 +81,9 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.navigationController setNavigationBarHidden:YES animated:NO];
-//    });
-//}
-//
 //- (void)viewWillDisappear:(BOOL)animated{
 //    [super viewWillDisappear:animated];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.navigationController setNavigationBarHidden:NO animated:NO];
-//    });
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
 //}
 
 #pragma mark - Intial Methods

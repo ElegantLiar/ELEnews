@@ -23,6 +23,16 @@
     [self initUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
 #pragma mark - Intial Methods
 - (void)initUI{
     self.delegate = self;
@@ -78,7 +88,6 @@
     [childController.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
-//    ELNavgationController *navgationController = [[ELNavgationController alloc] initWithRootViewController:childController];
     [self addChildViewController:childController];
 }
 #pragma mark - Setter Getter Methods

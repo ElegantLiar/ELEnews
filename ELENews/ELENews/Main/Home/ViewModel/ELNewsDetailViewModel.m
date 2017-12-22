@@ -7,7 +7,6 @@
 //
 
 #import "ELNewsDetailViewModel.h"
-#import "ELNewsDetailPageBean.h"
 
 @implementation ELNewsDetailViewModel
 
@@ -39,3 +38,35 @@
 
 
 @end
+
+@implementation ELNewsPhotoDetailViewModel
+
+- (void)loadDataFromNetworkWithNewsID:(NSInteger)newsID{
+    _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:[ELNetWorkBaseParams baseParams]];
+            [params setObject:@(newsID) forKey:@"id"];
+            NSString *url = @"http://api.app.happyjuzi.com/article/photo";
+            [[ELHTTPManager manager] GET:url
+                              parameters:params
+                                progress:nil
+                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                     ELNewsPhotoDetailPageBean *newsPhotoDetailPageBean = [ELNewsPhotoDetailPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                     [newsPhotoDetailPageBean configureUrls];
+                                     [subscriber sendNext:newsPhotoDetailPageBean];
+                                     [subscriber sendCompleted];
+                                     
+                                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                     [subscriber sendError:error];
+                                 }];
+            
+            return nil;
+        }];
+        
+        return signal;
+    }];
+}
+
+
+@end
+

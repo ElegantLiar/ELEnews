@@ -73,3 +73,36 @@
 }
 
 @end
+
+@implementation ELNewsPhotoBrowserBean
+
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"photoID" : @"id",
+             @"des" : @"description"
+             
+             };
+}
+
+@end
+
+@implementation ELNewsPhotoDetailPageBean
+
++ (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass{
+    return @{
+             @"contents" : ELNewsPhotoBrowserBean.class
+             };
+}
+
+- (void)configureUrls{
+    if (self.contents.count > 0) {
+        _photoUrls = @[].mutableCopy;
+        for (ELNewsPhotoBrowserBean *bean in self.contents) {
+            [_photoUrls safeAddObject:bean.pic];
+        }
+    }
+    
+}
+
+@end
+
