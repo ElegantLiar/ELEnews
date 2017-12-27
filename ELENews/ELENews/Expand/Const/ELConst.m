@@ -32,3 +32,6 @@ CGFloat const kAppPadding_32 = 32;
 NSString * const kELNetworkCache = @"kELNetworkCache";
 NSString * const kELNetworkCacheChannel = @"kELNetworkCacheChannel";
 NSString * const kELNetworkCacheMainPage = @"kELNetworkCacheMainPage";
+
+/** 上次下载的MP4的url*/
+NSString * const kELDownloadLaunchVideoUrl = @"kELDownloadLaunchVideoUrl";

@@ -76,6 +76,7 @@
 		65472D6F1FB5495F00ECC33C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D6E1FB5495F00ECC33C /* main.m */; };
 		65472D791FB5495F00ECC33C /* ELENewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D781FB5495F00ECC33C /* ELENewsTests.m */; };
 		65472D841FB5495F00ECC33C /* ELENewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65472D831FB5495F00ECC33C /* ELENewsUITests.m */; };
+		654CD1CB1FF34E2F00DD1EAA /* ELLaunchBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 654CD1CA1FF34E2F00DD1EAA /* ELLaunchBean.m */; };
 		6555D82B1FDF823700058708 /* ELNetWorkBaseParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */; };
 		6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */; };
 		655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ED3B61FDA752100A4E9BA /* Utilities.m */; };
@@ -188,6 +189,7 @@
 		65EF35D71FECB7350012FB1F /* black_circle_back_33x33_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65EF35D51FECB7340012FB1F /* black_circle_back_33x33_@3x.png */; };
 		65EF35D81FECB7350012FB1F /* black_circle_back_33x33_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65EF35D61FECB7350012FB1F /* black_circle_back_33x33_@2x.png */; };
 		65EF35DC1FECFA670012FB1F /* ELPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EF35DB1FECFA670012FB1F /* ELPhotoBrowser.m */; };
+		65F310F71FF378E700A6E4A4 /* ELLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F310F61FF378E700A6E4A4 /* ELLaunchManager.m */; };
 		E43F9023CECA5FB227726121 /* libPods-ELENews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 368F734167BEB89BA344E6B4 /* libPods-ELENews.a */; };
 /* End PBXBuildFile section */
 
@@ -321,6 +323,8 @@
 		65472D7F1FB5495F00ECC33C /* ELENewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELENewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65472D831FB5495F00ECC33C /* ELENewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELENewsUITests.m; sourceTree = "<group>"; };
 		65472D851FB5495F00ECC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654CD1C91FF34E2F00DD1EAA /* ELLaunchBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELLaunchBean.h; sourceTree = "<group>"; };
+		654CD1CA1FF34E2F00DD1EAA /* ELLaunchBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELLaunchBean.m; sourceTree = "<group>"; };
 		6555D8291FDF823700058708 /* ELNetWorkBaseParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNetWorkBaseParams.h; sourceTree = "<group>"; };
 		6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNetWorkBaseParams.m; sourceTree = "<group>"; };
 		6555D82C1FDFB07700058708 /* ELNewsFeedNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsFeedNote.h; sourceTree = "<group>"; };
@@ -502,6 +506,8 @@
 		65EF35D61FECB7350012FB1F /* black_circle_back_33x33_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_circle_back_33x33_@2x.png"; sourceTree = "<group>"; };
 		65EF35DA1FECFA670012FB1F /* ELPhotoBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELPhotoBrowser.h; sourceTree = "<group>"; };
 		65EF35DB1FECFA670012FB1F /* ELPhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELPhotoBrowser.m; sourceTree = "<group>"; };
+		65F310F51FF378E700A6E4A4 /* ELLaunchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELLaunchManager.h; sourceTree = "<group>"; };
+		65F310F61FF378E700A6E4A4 /* ELLaunchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELLaunchManager.m; sourceTree = "<group>"; };
 		BD7F80F6FD8CFD2ADF8B010A /* Pods-ELENews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELENews.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELENews/Pods-ELENews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -813,6 +819,49 @@
 			path = ELENewsUITests;
 			sourceTree = "<group>";
 		};
+		654CD1BE1FF34D2100DD1EAA /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				654CD1BF1FF34D2100DD1EAA /* Controller */,
+				654CD1C21FF34D2100DD1EAA /* Model */,
+				654CD1C31FF34D2100DD1EAA /* View */,
+				654CD1C41FF34D2100DD1EAA /* ViewModel */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		654CD1BF1FF34D2100DD1EAA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		654CD1C21FF34D2100DD1EAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				654CD1C91FF34E2F00DD1EAA /* ELLaunchBean.h */,
+				654CD1CA1FF34E2F00DD1EAA /* ELLaunchBean.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		654CD1C31FF34D2100DD1EAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		654CD1C41FF34D2100DD1EAA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				65F310F51FF378E700A6E4A4 /* ELLaunchManager.h */,
+				65F310F61FF378E700A6E4A4 /* ELLaunchManager.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6565ABE31FF246D900706C7D /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +894,7 @@
 				65D8B7851FD6828D0054DDE4 /* Video */,
 				65D8B7701FD6828D0054DDE4 /* Community */,
 				65D8B77A1FD6828D0054DDE4 /* Me */,
+				654CD1BE1FF34D2100DD1EAA /* Launch */,
 				65D8B77F1FD6828D0054DDE4 /* Other */,
 			);
 			path = Main;
@@ -1588,6 +1638,7 @@
 				653CB0DC1FE10044006C4C2D /* ELGIFPageBean.m in Sources */,
 				65EF35CA1FECA1860012FB1F /* TAPageControl.m in Sources */,
 				657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */,
+				654CD1CB1FF34E2F00DD1EAA /* ELLaunchBean.m in Sources */,
 				65EF35941FEBCB7A0012FB1F /* ELNewsOneSmallPicLeftFeedNote.m in Sources */,
 				65EF35581FEB453C0012FB1F /* ELNewsDetailViewController.m in Sources */,
 				65E1BA131FF0A5A400798A07 /* ELVideoDetailViewController.m in Sources */,
@@ -1612,6 +1663,7 @@
 				65472D6F1FB5495F00ECC33C /* main.m in Sources */,
 				65D8B78C1FD682BB0054DDE4 /* ELConst.m in Sources */,
 				657CC0C31FD7C374001616BF /* YZDisplayTitleLabel.m in Sources */,
+				65F310F71FF378E700A6E4A4 /* ELLaunchManager.m in Sources */,
 				653CB0C51FDFCFC1006C4C2D /* ELNewsPageBean.m in Sources */,
 				65A830541FD6ACEF00A75B32 /* ELViewFactory.m in Sources */,
 				65D4AD4B1FE794E5005B050B /* ELCommunityFindAddStarNode.m in Sources */,

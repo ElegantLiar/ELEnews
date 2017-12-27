@@ -32,3 +32,5 @@ UIKIT_EXTERN CGFloat const kAppPadding_32;
 UIKIT_EXTERN NSString * const kELNetworkCache;
 UIKIT_EXTERN NSString * const kELNetworkCacheChannel;
 UIKIT_EXTERN NSString * const kELNetworkCacheMainPage;
+
+UIKIT_EXTERN NSString * const kELDownloadLaunchVideoUrl;

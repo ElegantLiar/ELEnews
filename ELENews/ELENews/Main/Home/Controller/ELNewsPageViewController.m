@@ -54,9 +54,9 @@ UIScrollViewDelegate
     
     [self initUI];
     
+    @weakify(self);
     if (self.singleChannelBean.channelID == 0 && self.tabType == ELTabTypeHome) {
         [_feedViewModel loadFirstPageDataFromCache];
-        @weakify(self);
         [[_feedViewModel.cacheCommand execute:nil] subscribeNext:^(NSArray *listArray) {
             @strongify(self);
             if (self->_feedViewModel.page == 1 && listArray.count > 0) {
@@ -68,11 +68,11 @@ UIScrollViewDelegate
     }
     
     _tableNode.view.mj_header = [ELRefreshHeader headerWithRefreshingBlock:^{
-        [_feedViewModel loadFirstPageDataFromNetwork];
-        [self loadPageWithContext:nil];
+        @strongify(self);
+        [self loadFirstPageData];
     }];
     
-    [_tableNode.view.mj_header beginRefreshing];
+    [self loadFirstPageData];
 }
 
 #pragma mark - Intial Methods
@@ -88,11 +88,8 @@ UIScrollViewDelegate
         make.top.left.right.mas_equalTo(self.view);
         make.height.mas_equalTo(@(_orignalHeight));
     }];
-    
-    
-    
-//    [_tableNode.view.mj_header beginRefreshing];
 }
+
 #pragma mark – Target Methods
 - (void)showDetailVcWithELNewsListBean:(ELNewsListBean *)listBean{
     ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
@@ -109,6 +106,11 @@ UIScrollViewDelegate
 }
 
 #pragma mark - Private Methods
+- (void)loadFirstPageData{
+    [_feedViewModel loadFirstPageDataFromNetwork];
+    [self loadPageWithContext:nil];
+}
+
 - (void)loadPageWithContext:(ASBatchContext *)context{
     @weakify(self);
     

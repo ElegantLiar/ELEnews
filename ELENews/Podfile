@@ -11,4 +11,5 @@ target :’ELENews’ do
 	pod 'PINRemoteImage/WebP'
 	pod 'YYWebImage', '~> 1.0.5'
 	pod 'lottie-ios', '~> 2.1.4'
+	pod 'XHLaunchAd'
 end
