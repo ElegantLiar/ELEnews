@@ -27,8 +27,9 @@
     
     _viewModel = [[ELNewsDetailViewModel alloc] init];
     
-    [_viewModel loadDataFromNetworkWithNewsID:_newID];
-    
+    [_viewModel loadDataFromNetworkWithNewsID:_newsID];
+    [_viewModel loadInfoFromNetworkWithNewsID:_newsID];
+
     @weakify(self);
     [[_viewModel.requestCommand execute:nil] subscribeNext:^(ELNewsDetailPageBean *pageBean) {
         @strongify(self);
@@ -37,10 +38,18 @@
     } error:^(NSError *error) {
         
     }];
+    
+    [[_viewModel.infoRequestCommand execute:nil] subscribeNext:^(ELNewsDetailInfoPageBean *infoPageBean) {
+        @strongify(self);
+        [self->_detailView setInfoPageBean:infoPageBean];
+    } error:^(NSError *error) {
+        
+    }];
 }
 #pragma mark - Intial Methods
 - (void)initUI{
     _detailView = [[ELNewsDetailView alloc] init];
+    _detailView.type = ELNewsDetailViewTypeNews;
     [self.baseContentView addSubview:_detailView];
     [_detailView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.baseContentView).with.insets(UIEdgeInsetsZero);

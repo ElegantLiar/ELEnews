@@ -36,6 +36,31 @@
     }];
 }
 
+- (void)loadInfoFromNetworkWithNewsID:(NSInteger)newsID{
+    _infoRequestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:[ELNetWorkBaseParams baseParams]];
+            [params setObject:@(newsID) forKey:@"id"];
+            NSString *url = @"http://api.app.happyjuzi.com/article/info";
+            [[ELHTTPManager manager] GET:url
+                              parameters:params
+                                progress:nil
+                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                     ELNewsDetailInfoPageBean *newsDetailPageBean = [ELNewsDetailInfoPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+                                     [subscriber sendNext:newsDetailPageBean];
+                                     [subscriber sendCompleted];
+                                     
+                                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                     [subscriber sendError:error];
+                                 }];
+            
+            return nil;
+        }];
+        
+        return signal;
+    }];
+}
+
 
 @end
 

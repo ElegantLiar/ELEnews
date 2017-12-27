@@ -14,6 +14,8 @@
 
 - (instancetype)initWithTitle:(NSString *)title{
     if (self = [super init]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         _titleNode = [[ASTextNode alloc] init];
         _titleNode.attributedText = [NSAttributedString attributedStringWithString:title
                                                                           fontSize:23

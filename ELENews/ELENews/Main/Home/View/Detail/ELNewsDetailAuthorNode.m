@@ -17,6 +17,8 @@
 
 - (instancetype)initWithNewsDetailInfoBean:(ELNewsDetailInfoBean *)detailInfoBean{
     if (self = [super init]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         _detailInfoBean = detailInfoBean;
         
         _userAvatarImageNode = [[ASNetworkImageNode alloc] init];

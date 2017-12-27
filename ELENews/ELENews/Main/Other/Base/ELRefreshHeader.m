@@ -30,6 +30,30 @@
     self.stateLabel.hidden = YES;
 }
 
+#pragma mark 监听控件的刷新状态
+- (void)setState:(MJRefreshState)state{
+    MJRefreshCheckState;
+    switch (state) {
+        case MJRefreshStateIdle:
+            [_animationView play];
+            break;
+        case MJRefreshStatePulling:
+            [_animationView play];
+            break;
+        case MJRefreshStateRefreshing:
+            [_animationView play];
+            break;
+        case MJRefreshStateWillRefresh:
+            [_animationView play];
+            break;
+        case MJRefreshStateNoMoreData:
+            [_animationView pause];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)placeSubviews{
     [super placeSubviews];
     

@@ -36,6 +36,7 @@
         self->_photoBrowser = [ELPhotoBrowser showPhotoBrowserWithImages:self->_pageBean.photoUrls
                                                        currentImageIndex:0
                                                                 rootView:self.view];
+        self->_photoBrowser.placeholderImage = [UIImage imageNamed:@"placehoderImg_145x108_"];
         self->_photoBrowser.pageControlStyle = XLPhotoBrowserPageControlStyleNone;
         self->_photoBrowser.delegate = self;
         self->_photoBrowser.photoDetailPageBean = pageBean;
@@ -60,7 +61,6 @@
 - (void)photoBrowserClickBackBtn:(XLPhotoBrowser *)browser{
     [self.navigationController popViewControllerAnimated:YES];
     [_photoBrowser dismiss];
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,9 @@
 #import "ELNewsDetailTitleNode.h"
 #import "ELNewsDetailAuthorNode.h"
 #import "ELNewsDetailContentNode.h"
+#import "ELVideoDetailContentNode.h"
+#import "ELNewsDetailCommentNode.h"
+
 
 @interface ELNewsDetailView()<
 ASTableDelegate,
@@ -42,14 +45,24 @@ ASTableDataSource
 
 #pragma mark - ASTableDataSource
 - (NSInteger)numberOfSectionsInTableNode:(ASTableNode *)tableNode{
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return 2;
+    } else if (section == 1){
+        if (_type == ELNewsDetailViewTypeNews) {
+            return _pageBean.showParagraph.count;
+        } else {
+            return 1;
+        }
     } else {
-        return _pageBean.showParagraph.count;
+        if (_infoPageBean.comment.list.count > 0) {
+            return 1 + _infoPageBean.comment.list.count;
+        } else {
+            return 0;
+        }
     }
 }
 
@@ -66,16 +79,40 @@ ASTableDataSource
                 return cellNode;
             };
         }
+    } else if (indexPath.section == 1) {
+        if (_type == ELNewsDetailViewTypeNews) {
+            return ^ASCellNode *() {
+                ELNewsDetailContentNode *cellNode = [[ELNewsDetailContentNode alloc] initWithNewsDetailParagraphBean:[_pageBean.showParagraph safeObjectAtIndex:indexPath.row] detailPageBean:_pageBean];
+                return cellNode;
+            };
+        } else {
+            return ^ASCellNode *() {
+                ELVideoDetailContentNode *cellNode = [[ELVideoDetailContentNode alloc] initWithTitle:_pageBean.info.txtlead];
+                return cellNode;
+            };
+        }
     } else {
-        return ^ASCellNode *() {
-            ELNewsDetailContentNode *cellNode = [[ELNewsDetailContentNode alloc] initWithNewsDetailParagraphBean:[_pageBean.showParagraph safeObjectAtIndex:indexPath.row] detailPageBean:_pageBean];
-            return cellNode;
-        };
+        if (indexPath.row == 0) {
+            return ^ASCellNode *() {
+                ELNewsDetailCommentTitleNode *cellNode = [[ELNewsDetailCommentTitleNode alloc] initWithTitle:@"用 户 评 论"];
+                return cellNode;
+            };
+        } else {
+            return ^ASCellNode *() {
+                ELNewsDetailCommentNode *cellNode = [[ELNewsDetailCommentNode alloc] initWithCommentContentBean:[_infoPageBean.comment.list safeObjectAtIndex:indexPath.row - 1]];
+                return cellNode;
+            };
+        }
     }
 }
 
 - (void)setPageBean:(ELNewsDetailPageBean *)pageBean{
     _pageBean = pageBean;
+    [_tableNode reloadData];
+}
+
+- (void)setInfoPageBean:(ELNewsDetailInfoPageBean *)infoPageBean{
+    _infoPageBean = infoPageBean;
     [_tableNode reloadData];
 }
 @end

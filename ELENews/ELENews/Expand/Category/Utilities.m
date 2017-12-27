@@ -317,4 +317,18 @@ static NSDate *parseRfc3339ToNSDate(NSString *rfc3339DateTimeString)
     return attributedString;
 }
 
++ (NSAttributedString *)attributedStringWithString:(NSString *)string
+                                          fontSize:(CGFloat)size
+                                             color:(UIColor *)color
+                                          lineSpac:(CGFloat)lineSpce
+                                     textAlignment:(NSTextAlignment)textAlignment{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:[[self class] attributedStringWithString:string fontSize:size color:color firstWordColor:nil]];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:size];
+    [paragraphStyle setAlignment:textAlignment];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];
+    return attributedString;
+}
+
 @end

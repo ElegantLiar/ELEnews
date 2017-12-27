@@ -28,3 +28,7 @@ CGFloat const kAppPadding_24 = 24;
 CGFloat const kAppPadding_28 = 28;
 /** 系统间距字段 32 */
 CGFloat const kAppPadding_32 = 32;
+
+NSString * const kELNetworkCache = @"kELNetworkCache";
+NSString * const kELNetworkCacheChannel = @"kELNetworkCacheChannel";
+NSString * const kELNetworkCacheMainPage = @"kELNetworkCacheMainPage";

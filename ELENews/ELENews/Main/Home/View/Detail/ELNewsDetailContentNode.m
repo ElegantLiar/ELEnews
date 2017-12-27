@@ -16,6 +16,8 @@
 
 - (instancetype)initWithNewsDetailParagraphBean:(ELNewsDetailParagraphBean *)bean detailPageBean:(ELNewsDetailPageBean *)pageBean{
     if (self = [super init]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         _paragraphBean = bean;
         
         if (_paragraphBean.type == ELNewsDetailParagraphTypeText) {

@@ -79,6 +79,9 @@
 		6555D82B1FDF823700058708 /* ELNetWorkBaseParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */; };
 		6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */; };
 		655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ED3B61FDA752100A4E9BA /* Utilities.m */; };
+		6565ABE61FF246EF00706C7D /* ELNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6565ABE51FF246EF00706C7D /* ELNetworkCache.m */; };
+		6565ABE91FF262DE00706C7D /* ELNewsDetailCommentNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6565ABE81FF262DE00706C7D /* ELNewsDetailCommentNode.m */; };
+		6565ABEB1FF3385500706C7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6565ABEA1FF3385500706C7D /* Images.xcassets */; };
 		656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 656A89C31FD6912E00A17CDB /* ELMainTabBarController.m */; };
 		657CC0C01FD7C374001616BF /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0B71FD7C373001616BF /* YZFlowLayout.m */; };
 		657CC0C11FD7C374001616BF /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0B91FD7C374001616BF /* YZDisplayViewController.m */; };
@@ -138,6 +141,16 @@
 		65D4AD551FE7BA1F005B050B /* community_discover_topic_14x15_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D4AD531FE7BA1E005B050B /* community_discover_topic_14x15_@3x.png */; };
 		65D8B78C1FD682BB0054DDE4 /* ELConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D8B78B1FD682BB0054DDE4 /* ELConst.m */; };
 		65D8B78F1FD6830C0054DDE4 /* ELMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D8B78E1FD6830C0054DDE4 /* ELMacros.m */; };
+		65E1BA0F1FF09B0000798A07 /* video_play_54x54_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E1BA0D1FF09B0000798A07 /* video_play_54x54_@2x.png */; };
+		65E1BA101FF09B0000798A07 /* video_play_54x54_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E1BA0E1FF09B0000798A07 /* video_play_54x54_@3x.png */; };
+		65E1BA131FF0A5A400798A07 /* ELVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1BA121FF0A5A400798A07 /* ELVideoDetailViewController.m */; };
+		65E1BA1E1FF0AA6F00798A07 /* FastForwardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1BA171FF0AA6F00798A07 /* FastForwardView.m */; };
+		65E1BA1F1FF0AA6F00798A07 /* FastForwardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E1BA181FF0AA6F00798A07 /* FastForwardView.xib */; };
+		65E1BA201FF0AA6F00798A07 /* WMLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1BA1A1FF0AA6F00798A07 /* WMLightView.m */; };
+		65E1BA211FF0AA6F00798A07 /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65E1BA1B1FF0AA6F00798A07 /* WMPlayer.bundle */; };
+		65E1BA221FF0AA6F00798A07 /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1BA1D1FF0AA6F00798A07 /* WMPlayer.m */; };
+		65E1BA251FF0CDB300798A07 /* ELVideoDetailContentNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1BA241FF0CDB300798A07 /* ELVideoDetailContentNode.m */; };
+		65E1BA2B1FF0D08A00798A07 /* ELNewsDetailInfoPageBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1BA2A1FF0D08A00798A07 /* ELNewsDetailInfoPageBean.m */; };
 		65EF35581FEB453C0012FB1F /* ELNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EF35571FEB453C0012FB1F /* ELNewsDetailViewController.m */; };
 		65EF355B1FEB45650012FB1F /* ELNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EF355A1FEB45650012FB1F /* ELNewsDetailView.m */; };
 		65EF355E1FEB45AB0012FB1F /* ELNewsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EF355D1FEB45AB0012FB1F /* ELNewsDetailViewModel.m */; };
@@ -314,6 +327,11 @@
 		6555D82D1FDFB07700058708 /* ELNewsFeedNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsFeedNote.m; sourceTree = "<group>"; };
 		655ED3B61FDA752100A4E9BA /* Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		655ED3B71FDA752100A4E9BA /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		6565ABE41FF246EF00706C7D /* ELNetworkCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNetworkCache.h; sourceTree = "<group>"; };
+		6565ABE51FF246EF00706C7D /* ELNetworkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNetworkCache.m; sourceTree = "<group>"; };
+		6565ABE71FF262DE00706C7D /* ELNewsDetailCommentNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsDetailCommentNode.h; sourceTree = "<group>"; };
+		6565ABE81FF262DE00706C7D /* ELNewsDetailCommentNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsDetailCommentNode.m; sourceTree = "<group>"; };
+		6565ABEA1FF3385500706C7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		656A89C21FD6912E00A17CDB /* ELMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELMainTabBarController.h; sourceTree = "<group>"; };
 		656A89C31FD6912E00A17CDB /* ELMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELMainTabBarController.m; sourceTree = "<group>"; };
 		657CC0B71FD7C373001616BF /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
@@ -403,6 +421,22 @@
 		65D8B78B1FD682BB0054DDE4 /* ELConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELConst.m; sourceTree = "<group>"; };
 		65D8B78D1FD6830C0054DDE4 /* ELMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELMacros.h; sourceTree = "<group>"; };
 		65D8B78E1FD6830C0054DDE4 /* ELMacros.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELMacros.m; sourceTree = "<group>"; };
+		65E1BA0D1FF09B0000798A07 /* video_play_54x54_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video_play_54x54_@2x.png"; sourceTree = "<group>"; };
+		65E1BA0E1FF09B0000798A07 /* video_play_54x54_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video_play_54x54_@3x.png"; sourceTree = "<group>"; };
+		65E1BA111FF0A5A400798A07 /* ELVideoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoDetailViewController.h; sourceTree = "<group>"; };
+		65E1BA121FF0A5A400798A07 /* ELVideoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoDetailViewController.m; sourceTree = "<group>"; };
+		65E1BA161FF0AA6F00798A07 /* FastForwardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastForwardView.h; sourceTree = "<group>"; };
+		65E1BA171FF0AA6F00798A07 /* FastForwardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastForwardView.m; sourceTree = "<group>"; };
+		65E1BA181FF0AA6F00798A07 /* FastForwardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FastForwardView.xib; sourceTree = "<group>"; };
+		65E1BA191FF0AA6F00798A07 /* WMLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLightView.h; sourceTree = "<group>"; };
+		65E1BA1A1FF0AA6F00798A07 /* WMLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLightView.m; sourceTree = "<group>"; };
+		65E1BA1B1FF0AA6F00798A07 /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
+		65E1BA1C1FF0AA6F00798A07 /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
+		65E1BA1D1FF0AA6F00798A07 /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
+		65E1BA231FF0CDB300798A07 /* ELVideoDetailContentNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELVideoDetailContentNode.h; sourceTree = "<group>"; };
+		65E1BA241FF0CDB300798A07 /* ELVideoDetailContentNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELVideoDetailContentNode.m; sourceTree = "<group>"; };
+		65E1BA291FF0D08A00798A07 /* ELNewsDetailInfoPageBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsDetailInfoPageBean.h; sourceTree = "<group>"; };
+		65E1BA2A1FF0D08A00798A07 /* ELNewsDetailInfoPageBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsDetailInfoPageBean.m; sourceTree = "<group>"; };
 		65EF35561FEB453C0012FB1F /* ELNewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsDetailViewController.h; sourceTree = "<group>"; };
 		65EF35571FEB453C0012FB1F /* ELNewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNewsDetailViewController.m; sourceTree = "<group>"; };
 		65EF35591FEB45650012FB1F /* ELNewsDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNewsDetailView.h; sourceTree = "<group>"; };
@@ -593,6 +627,8 @@
 		653CB15F1FE35DF0006C4C2D /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				65E1BA0D1FF09B0000798A07 /* video_play_54x54_@2x.png */,
+				65E1BA0E1FF09B0000798A07 /* video_play_54x54_@3x.png */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -640,6 +676,7 @@
 		65432F6B1FD6812F00367FD4 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				65E1BA141FF0AA6F00798A07 /* WMPlayer */,
 				65EF359C1FECA1850012FB1F /* XLPhotoBrowser+CoderXL */,
 				653CF4141FE902C00002BF23 /* YYFPSLabel */,
 				657CC0AD1FD7C269001616BF /* YZDisplayViewController */,
@@ -650,6 +687,7 @@
 		65432F6C1FD6812F00367FD4 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				6565ABE31FF246D900706C7D /* Cache */,
 				65432F6D1FD6812F00367FD4 /* Category */,
 				65432F6E1FD6812F00367FD4 /* Const */,
 				65432F6F1FD6812F00367FD4 /* Macros */,
@@ -752,6 +790,7 @@
 				65472D6D1FB5495F00ECC33C /* Info.plist */,
 				65472D6E1FB5495F00ECC33C /* main.m */,
 				65432F411FD66F9F00367FD4 /* ELENewsHeaders.pch */,
+				6565ABEA1FF3385500706C7D /* Images.xcassets */,
 			);
 			path = ELENews;
 			sourceTree = "<group>";
@@ -772,6 +811,15 @@
 				65472D851FB5495F00ECC33C /* Info.plist */,
 			);
 			path = ELENewsUITests;
+			sourceTree = "<group>";
+		};
+		6565ABE31FF246D900706C7D /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				6565ABE41FF246EF00706C7D /* ELNetworkCache.h */,
+				6565ABE51FF246EF00706C7D /* ELNetworkCache.m */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		657CC0AD1FD7C269001616BF /* YZDisplayViewController */ = {
@@ -934,6 +982,8 @@
 				653CB0DB1FE10044006C4C2D /* ELGIFPageBean.m */,
 				65EF35621FEB46A50012FB1F /* ELNewsDetailPageBean.h */,
 				65EF35631FEB46A50012FB1F /* ELNewsDetailPageBean.m */,
+				65E1BA291FF0D08A00798A07 /* ELNewsDetailInfoPageBean.h */,
+				65E1BA2A1FF0D08A00798A07 /* ELNewsDetailInfoPageBean.m */,
 				653CF4131FE8C5F30002BF23 /* ELDisplayViewScrollDelegate.h */,
 			);
 			path = Model;
@@ -1041,6 +1091,8 @@
 			children = (
 				653CB0FE1FE21B52006C4C2D /* ELVideoViewController.h */,
 				653CB0FF1FE21B52006C4C2D /* ELVideoViewController.m */,
+				65E1BA111FF0A5A400798A07 /* ELVideoDetailViewController.h */,
+				65E1BA121FF0A5A400798A07 /* ELVideoDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1061,6 +1113,8 @@
 			children = (
 				653CB10D1FE22AD2006C4C2D /* ELVideoNode.h */,
 				653CB10E1FE22AD2006C4C2D /* ELVideoNode.m */,
+				65E1BA231FF0CDB300798A07 /* ELVideoDetailContentNode.h */,
+				65E1BA241FF0CDB300798A07 /* ELVideoDetailContentNode.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1070,6 +1124,29 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		65E1BA141FF0AA6F00798A07 /* WMPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				65E1BA151FF0AA6F00798A07 /* View */,
+				65E1BA1B1FF0AA6F00798A07 /* WMPlayer.bundle */,
+				65E1BA1C1FF0AA6F00798A07 /* WMPlayer.h */,
+				65E1BA1D1FF0AA6F00798A07 /* WMPlayer.m */,
+			);
+			path = WMPlayer;
+			sourceTree = "<group>";
+		};
+		65E1BA151FF0AA6F00798A07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65E1BA161FF0AA6F00798A07 /* FastForwardView.h */,
+				65E1BA171FF0AA6F00798A07 /* FastForwardView.m */,
+				65E1BA181FF0AA6F00798A07 /* FastForwardView.xib */,
+				65E1BA191FF0AA6F00798A07 /* WMLightView.h */,
+				65E1BA1A1FF0AA6F00798A07 /* WMLightView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		65EF35651FEB91E90012FB1F /* Detail */ = {
@@ -1083,6 +1160,8 @@
 				65EF356E1FEB946F0012FB1F /* ELNewsDetailAuthorNode.m */,
 				65EF35701FEB94B60012FB1F /* ELNewsDetailContentNode.h */,
 				65EF35711FEB94B60012FB1F /* ELNewsDetailContentNode.m */,
+				6565ABE71FF262DE00706C7D /* ELNewsDetailCommentNode.h */,
+				6565ABE81FF262DE00706C7D /* ELNewsDetailCommentNode.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1335,11 +1414,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D4AD471FE792B8005B050B /* community_discover_activity_14x15_@3x.png in Resources */,
+				6565ABEB1FF3385500706C7D /* Images.xcassets in Resources */,
 				65C9C22E1FE3ADB600157CE5 /* community_today_49x11_@3x.png in Resources */,
 				65EF358B1FEBC8ED0012FB1F /* placehoderImg_145x108_@3x.png in Resources */,
 				653CB1651FE35DF0006C4C2D /* person_arrow_up_9x5_@3x.png in Resources */,
 				653CB16A1FE35DF0006C4C2D /* community_smallJuzi_20x20_@2x.png in Resources */,
 				653CB1691FE35DF0006C4C2D /* community_share_20x20_@3x.png in Resources */,
+				65E1BA211FF0AA6F00798A07 /* WMPlayer.bundle in Resources */,
 				653CB1701FE35DF0006C4C2D /* tabbar_community_selected_40x40_@3x.png in Resources */,
 				65C9C22A1FE3ADB600157CE5 /* community_stars_weekBottom_110x28_@3x.png in Resources */,
 				653CB1621FE35DF0006C4C2D /* person_arrow_9x5_@2x.png in Resources */,
@@ -1347,6 +1428,7 @@
 				653CB1671FE35DF0006C4C2D /* community_comment_20x20_@3x.png in Resources */,
 				65C9C23E1FE3C09900157CE5 /* community_fast_40x11_@3x.png in Resources */,
 				653CB16C1FE35DF0006C4C2D /* tabbar_background_os7_1x44_@2x.png in Resources */,
+				65E1BA0F1FF09B0000798A07 /* video_play_54x54_@2x.png in Resources */,
 				653CB1731FE35DF0006C4C2D /* tabbar_index_normal_40x40_@2x.png in Resources */,
 				65C9C2281FE3ADB600157CE5 /* community_today_49x11_@2x.png in Resources */,
 				653CB1741FE35DF0006C4C2D /* tabbar_index_normal_40x40_@3x.png in Resources */,
@@ -1367,9 +1449,11 @@
 				65D4AD2C1FE75615005B050B /* video_arrow_7x11_@3x.png in Resources */,
 				653CB1601FE35DF0006C4C2D /* home_nav_logo_91x26_@2x.png in Resources */,
 				65C9C22D1FE3ADB600157CE5 /* community_star_topShadow_110x90_@3x.png in Resources */,
+				65E1BA101FF09B0000798A07 /* video_play_54x54_@3x.png in Resources */,
 				65EF359B1FEC962C0012FB1F /* simple_loader.json in Resources */,
 				65C9C2141FE3617700157CE5 /* community_topicName_20x20_@2x.png in Resources */,
 				65D4AD541FE7BA1F005B050B /* community_discover_topic_14x15_@2x.png in Resources */,
+				65E1BA1F1FF0AA6F00798A07 /* FastForwardView.xib in Resources */,
 				65C9C21D1FE3ACF800157CE5 /* community_stars_fastBottom_110x28_@3x.png in Resources */,
 				65472D691FB5495F00ECC33C /* Assets.xcassets in Resources */,
 				653CB17E1FE35DF0006C4C2D /* tabbar_video_selected_40x40_@3x.png in Resources */,
@@ -1489,6 +1573,7 @@
 			files = (
 				65EF35C71FECA1860012FB1F /* TAAbstractDotView.m in Sources */,
 				653CB0C81FDFD087006C4C2D /* ELFlashPageBean.m in Sources */,
+				65E1BA1E1FF0AA6F00798A07 /* FastForwardView.m in Sources */,
 				65A8304B1FD694C200A75B32 /* NSMutableDictionary+Safe.m in Sources */,
 				653CF42A1FE90BA10002BF23 /* UIView+YYAdd.m in Sources */,
 				65EF356F1FEB946F0012FB1F /* ELNewsDetailAuthorNode.m in Sources */,
@@ -1505,6 +1590,7 @@
 				657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */,
 				65EF35941FEBCB7A0012FB1F /* ELNewsOneSmallPicLeftFeedNote.m in Sources */,
 				65EF35581FEB453C0012FB1F /* ELNewsDetailViewController.m in Sources */,
+				65E1BA131FF0A5A400798A07 /* ELVideoDetailViewController.m in Sources */,
 				653CB13C1FE28387006C4C2D /* ELCommunityFeedNode.m in Sources */,
 				655ED3B81FDA752100A4E9BA /* Utilities.m in Sources */,
 				65D4AD4E1FE7975A005B050B /* ELCommunityFindDayTopicNode.m in Sources */,
@@ -1520,6 +1606,7 @@
 				653CB1151FE25FF5006C4C2D /* ELCommunityFeedBaseViewController.m in Sources */,
 				653CB1121FE25F6E006C4C2D /* ELCommunityViewController.m in Sources */,
 				65D4AD381FE7626A005B050B /* ELCommunityFindViewModel.m in Sources */,
+				65E1BA201FF0AA6F00798A07 /* WMLightView.m in Sources */,
 				657CC0C01FD7C374001616BF /* YZFlowLayout.m in Sources */,
 				65EF35C21FECA1860012FB1F /* FSActionSheetCell.m in Sources */,
 				65472D6F1FB5495F00ECC33C /* main.m in Sources */,
@@ -1533,6 +1620,7 @@
 				657CC0C21FD7C374001616BF /* UIView+Frame.m in Sources */,
 				65EF35CD1FECA1860012FB1F /* XLZoomingScrollView.m in Sources */,
 				65D4AD511FE7A25E005B050B /* ELCommunityTopicCategoryBean.m in Sources */,
+				65E1BA251FF0CDB300798A07 /* ELVideoDetailContentNode.m in Sources */,
 				65A8304A1FD694C200A75B32 /* NSMutableArray+Safe.m in Sources */,
 				653CF4191FE902C10002BF23 /* YYFPSLabel.m in Sources */,
 				653CB1361FE27B48006C4C2D /* ELCommunityStarBean.m in Sources */,
@@ -1544,6 +1632,7 @@
 				65472D611FB5495F00ECC33C /* AppDelegate.m in Sources */,
 				65EF35911FEBCB630012FB1F /* ELNewsOneBigPicCenterFeedNote.m in Sources */,
 				653CB0E51FE10410006C4C2D /* ELFlashListBean.m in Sources */,
+				6565ABE91FF262DE00706C7D /* ELNewsDetailCommentNode.m in Sources */,
 				65EF35CC1FECA1860012FB1F /* XLProgressView.m in Sources */,
 				653CB0CB1FDFD126006C4C2D /* ELNewsPageViewController.m in Sources */,
 				65EF35C31FECA1860012FB1F /* FSActionSheetConfig.m in Sources */,
@@ -1557,11 +1646,13 @@
 				65A8304E1FD698B400A75B32 /* UIColor+extend.m in Sources */,
 				653CB1091FE22699006C4C2D /* ELVideoListBean.m in Sources */,
 				65EF35D01FECA87E0012FB1F /* ELNewsPhotoDetailViewController.m in Sources */,
+				6565ABE61FF246EF00706C7D /* ELNetworkCache.m in Sources */,
 				65EF35C41FECA1860012FB1F /* FSActionSheetItem.m in Sources */,
 				657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */,
 				653CB0EB1FE10935006C4C2D /* ELGIFFeedNode.m in Sources */,
 				653CF40F1FE8ACE70002BF23 /* ELCommunityFindTopicCategoryNode.m in Sources */,
 				653CF4121FE8ADFD0002BF23 /* ELCommunityFindActivityNode.m in Sources */,
+				65E1BA2B1FF0D08A00798A07 /* ELNewsDetailInfoPageBean.m in Sources */,
 				657CC0C61FD7C3EA001616BF /* ELHomeViewController.m in Sources */,
 				65D4AD351FE7605A005B050B /* ELCommunityBannerBean.m in Sources */,
 				653CB10C1FE227C3006C4C2D /* ELVideoPageBean.m in Sources */,
@@ -1570,6 +1661,7 @@
 				653CB10F1FE22AD2006C4C2D /* ELVideoNode.m in Sources */,
 				657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */,
 				653CF41A1FE902C10002BF23 /* YYWeakProxy.m in Sources */,
+				65E1BA221FF0AA6F00798A07 /* WMPlayer.m in Sources */,
 				65EF35641FEB46A50012FB1F /* ELNewsDetailPageBean.m in Sources */,
 				653CB1301FE275E5006C4C2D /* ELCommunityRecommendViewModel.m in Sources */,
 				6555D82E1FDFB07700058708 /* ELNewsFeedNote.m in Sources */,
@@ -1741,6 +1833,7 @@
 			baseConfigurationReference = 00FA55D0A96FB815DFBA207A /* Pods-ELENews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EACARN623L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1750,7 +1843,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ElegantLiar.ELENews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
 			name = Debug;
@@ -1760,6 +1853,7 @@
 			baseConfigurationReference = BD7F80F6FD8CFD2ADF8B010A /* Pods-ELENews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EACARN623L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1769,7 +1863,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ElegantLiar.ELENews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
 			name = Release;

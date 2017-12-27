@@ -57,11 +57,9 @@
 #pragma mark - Intial Methods
 - (void)initData{
     _channleViewModel = [ELHomeChannelViewModel shareInstance];
-    
-    [_channleViewModel loadDataFromNetwork];
-    
     @weakify(self);
-    [[_channleViewModel.requestCommand execute:nil] subscribeNext:^(id x) {
+    [_channleViewModel loadChannelDataFromCache];
+    [[_channleViewModel.cacheCommand execute:nil] subscribeNext:^(id x) {
         @strongify(self);
         [self setUpAllViewController];
     } error:^(NSError *error) {
@@ -69,14 +67,14 @@
     }];
     
     
-    [[ELNotificationCenter rac_addObserverForName:ELHomeNewsScrollViewDidScrollNotification object:nil] subscribeNext:^(NSNotification *x) {
-//        @strongify(self);
-//        if ([x.object isKindOfClass:[self class]]) {
-//            [self.contentTableView.mj_header beginRefreshing];
-//        }
+    [_channleViewModel loadDataFromNetwork];
+    [[_channleViewModel.requestCommand execute:nil] subscribeNext:^(id x) {
+        @strongify(self);
+        [self refreshAllViewControllers];
+    } error:^(NSError *error) {
+        
     }];
 }
-
 #pragma mark – Target Methods
 
 #pragma mark - Private Methods
@@ -91,9 +89,34 @@
         newsPageVc.delegate = self;
         [self addChildViewController:newsPageVc];
     }
-    
     [self refreshDisplay];
+}
+
+- (void)refreshAllViewControllers{
+    NSInteger cacheChannelNumber = self.childViewControllers.count;
+    NSInteger lastChannelNumber = _channleViewModel.channelBean.home.count;
     
+    if (lastChannelNumber >= cacheChannelNumber) {
+        for (NSInteger i = 0; i < lastChannelNumber - cacheChannelNumber; i++) {
+            ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] init];
+            [self addChildViewController:newsPageVc];
+        }
+    } else {
+        for (NSInteger i = 0; i < cacheChannelNumber - lastChannelNumber; i++) {
+            ELNewsPageViewController *newsPageVc = [self.childViewControllers lastObject];
+            [newsPageVc.view removeFromSuperview];
+            [newsPageVc removeFromParentViewController];
+        }
+    }
+    for (NSInteger i = 0; i < _channleViewModel.channelBean.home.count; i++) {
+        ELSingleChannelBean *bean = [_channleViewModel.channelBean.home safeObjectAtIndex:i];
+        ELNewsPageViewController *newsPageVc = [self.childViewControllers safeObjectAtIndex:i];
+        newsPageVc.title = bean.name;
+        newsPageVc.singleChannelBean = bean;
+        newsPageVc.tabType = ELTabTypeHome;
+        newsPageVc.delegate = self;
+    }
+    [self refreshDisplay];
 }
 
 #pragma mark - Setter Getter Methods

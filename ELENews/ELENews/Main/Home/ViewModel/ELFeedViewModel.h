@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, ELTabType) {
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
+@property (nonatomic, strong, readonly) RACCommand *cacheCommand;
+
 @property (nonatomic, assign) NSInteger channelID;
 
 @property (nonatomic, assign) NSInteger page;
@@ -36,5 +38,8 @@ typedef NS_ENUM(NSInteger, ELTabType) {
 - (void)loadFirstPageDataFromNetwork;
 
 - (void)loadNextPageDataFromNetwork;
+
+- (void)loadFirstPageDataFromCache;
+
 
 @end

@@ -51,4 +51,10 @@
                                           fontSize:(CGFloat)size
                                              color:(UIColor *)color
                                           lineSpac:(CGFloat)lineSpce;
+
++ (NSAttributedString *)attributedStringWithString:(NSString *)string
+                                          fontSize:(CGFloat)size
+                                             color:(UIColor *)color
+                                          lineSpac:(CGFloat)lineSpce
+                                     textAlignment:(NSTextAlignment)textAlignment;
 @end

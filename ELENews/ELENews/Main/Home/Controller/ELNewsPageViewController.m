@@ -23,6 +23,7 @@
 
 #import "ELNewsDetailViewController.h"
 #import "ELNewsPhotoDetailViewController.h"
+#import "ELVideoDetailViewController.h"
 
 @interface ELNewsPageViewController ()<
 ASTableDelegate,
@@ -53,6 +54,25 @@ UIScrollViewDelegate
     
     [self initUI];
     
+    if (self.singleChannelBean.channelID == 0) {
+        [_feedViewModel loadFirstPageDataFromCache];
+        @weakify(self);
+        [[_feedViewModel.cacheCommand execute:nil] subscribeNext:^(NSArray *listArray) {
+            @strongify(self);
+            if (self->_feedViewModel.page == 1 && listArray.count > 0) {
+                [self->_listArray setArray:listArray];
+                [_tableNode reloadData];
+            }
+            [self->_tableNode.view.mj_header endRefreshing];
+        }];
+    }
+    
+    _tableNode.view.mj_header = [ELRefreshHeader headerWithRefreshingBlock:^{
+        [_feedViewModel loadFirstPageDataFromNetwork];
+        [self loadPageWithContext:nil];
+    }];
+    
+    [_tableNode.view.mj_header beginRefreshing];
 }
 
 #pragma mark - Intial Methods
@@ -69,32 +89,29 @@ UIScrollViewDelegate
         make.height.mas_equalTo(@(_orignalHeight));
     }];
     
-    _tableNode.view.mj_header = [ELRefreshHeader headerWithRefreshingBlock:^{
-        [_feedViewModel loadFirstPageDataFromNetwork];
-        [self loadPageWithContext:nil];
-    }];
+    
     
 //    [_tableNode.view.mj_header beginRefreshing];
 }
 #pragma mark – Target Methods
 - (void)showDetailVcWithELNewsListBean:(ELNewsListBean *)listBean{
     ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
-    detailVc.newID = listBean.newsID;
+    detailVc.newsID = listBean.newsID;
     [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 - (void)showPhotoBrowserWithNewsListBean:(ELNewsListBean *)listBean{
     ELNewsPhotoDetailViewController *detailVc = [[ELNewsPhotoDetailViewController alloc] init];
-    detailVc.newID = 175215;
-//    detailVc.newID = listBean.newsID;
-//    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
+    detailVc.newID = listBean.newsID;
+    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 #pragma mark - Private Methods
 - (void)loadPageWithContext:(ASBatchContext *)context{
     @weakify(self);
+    
     [[_feedViewModel.requestCommand execute:nil] subscribeNext:^(NSArray *listArray) {
         @strongify(self);
         if (self->_feedViewModel.page == 1 && listArray.count > 0) {
@@ -104,10 +121,13 @@ UIScrollViewDelegate
             [self->_listArray addObjectsFromArray:listArray];
             [self insertNewRows:listArray];
         }
-        if (context) {
-            [context completeBatchFetching:YES];
-        }
+        [context completeBatchFetching:YES];
+
         [self->_tableNode.view.mj_header endRefreshing];
+    } error:^(NSError *error) {
+        @strongify(self);
+        [self->_tableNode.view.mj_header endRefreshing];
+        [context completeBatchFetching:YES];
     }];
 }
 
@@ -173,13 +193,11 @@ UIScrollViewDelegate
     if (_feedViewModel.tabType == ELTabTypeHome) {
         if (_feedViewModel.feedType == ELFeedTypeNews) {
             ELNewsListBean *bean = feedBean;
-            [self showPhotoBrowserWithNewsListBean:bean];
-
-//            if ([bean.cat.name isEqualToString:@"橘子News"]) {
-//                [self showPhotoBrowserWithNewsListBean:bean];
-//            } else {
-//                [self showDetailVcWithELNewsListBean:bean];
-//            }
+            if ([bean.cat.name isEqualToString:@"橘子News"]) {
+                [self showPhotoBrowserWithNewsListBean:bean];
+            } else {
+                [self showDetailVcWithELNewsListBean:bean];
+            }
         } else if (_feedViewModel.feedType == ELFeedTypeFlash) {
             return;
         } else {
@@ -187,8 +205,8 @@ UIScrollViewDelegate
         }
     } else {
         ELVideoListBean *bean = feedBean;
-        ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
-        detailVc.newID = bean.videoID;
+        ELVideoDetailViewController *detailVc = [[ELVideoDetailViewController alloc] init];
+        detailVc.newsID = bean.videoID;
         [self.navigationController pushViewController:detailVc animated:YES];
     }
 }

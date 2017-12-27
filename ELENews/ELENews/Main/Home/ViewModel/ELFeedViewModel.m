@@ -46,24 +46,10 @@
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                     NSArray *listArray = nil;
-                                     if (_tabType == ELTabTypeHome) {
-                                         if (_feedType == ELFeedTypeFlash) {
-                                             ELFlashPageBean *flashPageBean = [ELFlashPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
-                                             listArray = flashPageBean.list;
-                                         } else if (_feedType == ELFeedTypeGif) {
-                                             ELGIFPageBean *gifPageBean = [ELGIFPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
-                                             listArray = gifPageBean.list;
-                                         } else {
-                                             ELNewsPageBean *newsPageBean = [ELNewsPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
-                                             listArray = newsPageBean.list;
-                                         }
-                                     }  else if (_tabType == ELTabTypeVideo) {
-                                         ELVideoPageBean *newsPageBean = [ELVideoPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
-                                         listArray = newsPageBean.list;
+                                     if (self.channelID == 0 && self->_page == 1) {
+                                         [[ELNetworkCache shareInstance] setObject:responseObject forKey:kELNetworkCacheMainPage withBlock:nil];
                                      }
-                                     
-                [subscriber sendNext:listArray];
+                [subscriber sendNext:[self configureResponseObject:responseObject]];
                 [subscriber sendCompleted];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -72,6 +58,28 @@
                 }
                 [subscriber sendError:error];
             }];
+            
+            return nil;
+        }];
+        
+        return signal;
+    }];
+}
+
+- (void)loadDataFromCache{
+    @weakify(self);
+    
+    _cacheCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            @strongify(self);
+            
+            id responseObject = [[ELNetworkCache shareInstance] objectForKey:kELNetworkCacheMainPage];
+            if (responseObject) {
+                [subscriber sendNext:[self configureResponseObject:responseObject]];
+                [subscriber sendCompleted];
+            } else {
+                [subscriber sendCompleted];
+            }
             
             return nil;
         }];
@@ -91,6 +99,26 @@
     }
 }
 
+- (NSArray *)configureResponseObject:(id)responseObject{
+    NSArray *listArray = nil;
+    if (_tabType == ELTabTypeHome) {
+        if (_feedType == ELFeedTypeFlash) {
+            ELFlashPageBean *flashPageBean = [ELFlashPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+            listArray = flashPageBean.list;
+        } else if (_feedType == ELFeedTypeGif) {
+            ELGIFPageBean *gifPageBean = [ELGIFPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+            listArray = gifPageBean.list;
+        } else {
+            ELNewsPageBean *newsPageBean = [ELNewsPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+            listArray = newsPageBean.list;
+        }
+    }  else if (_tabType == ELTabTypeVideo) {
+        ELVideoPageBean *newsPageBean = [ELVideoPageBean yy_modelWithJSON:[responseObject objectForKey:@"data"]];
+        listArray = newsPageBean.list;
+    }
+    return listArray;
+}
+
 - (void)loadFirstPageDataFromNetwork{
     _page = 1;
     [self loadDataFromNetwork];
@@ -101,5 +129,8 @@
     [self loadDataFromNetwork];
 }
 
-
+- (void)loadFirstPageDataFromCache{
+    _page = 1;
+    [self loadDataFromCache];
+}
 @end

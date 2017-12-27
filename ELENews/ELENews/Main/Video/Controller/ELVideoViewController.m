@@ -44,13 +44,13 @@
         *underLineColor = [UIColor hexChangeFloat:@"FF3D3D"];
     }];
     
-    [self initData];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     [super viewWillAppear:animated];
+    
+    [self initData];
 }
 
 #pragma mark - Intial Methods

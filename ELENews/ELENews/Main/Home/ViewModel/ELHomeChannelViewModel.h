@@ -15,8 +15,12 @@
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
+@property (nonatomic, strong, readonly) RACCommand *cacheCommand;
+
 + (ELHomeChannelViewModel *)shareInstance;
 
 - (void)loadDataFromNetwork;
+
+- (void)loadChannelDataFromCache;
 
 @end

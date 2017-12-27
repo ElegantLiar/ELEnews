@@ -32,4 +32,5 @@
 #import "ELNetWorkBaseParams.h"
 #import "UIView+YYAdd.h"
 #import "YYWebImage.h"
+#import "ELNetworkCache.h"
 #endif /* ELENewsHeaders_pch */

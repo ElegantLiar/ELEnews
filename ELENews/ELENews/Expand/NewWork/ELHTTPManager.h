@@ -12,5 +12,4 @@
 
 + (ELHTTPManager *)manager;
 
-
 @end

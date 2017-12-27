@@ -8,7 +8,6 @@
 
 #import "ELHTTPManager.h"
 
-
 @implementation ELHTTPManager
 
 + (instancetype)manager{
@@ -23,6 +22,7 @@
 - (instancetype)init{
     self = [super init];
     if (!self) return nil;
+    self.requestSerializer.timeoutInterval = 10;
     self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
                                                       @"application/json",
                                                       @"text/json",
