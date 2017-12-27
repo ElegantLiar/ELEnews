@@ -54,7 +54,7 @@ UIScrollViewDelegate
     
     [self initUI];
     
-    if (self.singleChannelBean.channelID == 0) {
+    if (self.singleChannelBean.channelID == 0 && self.tabType == ELTabTypeHome) {
         [_feedViewModel loadFirstPageDataFromCache];
         @weakify(self);
         [[_feedViewModel.cacheCommand execute:nil] subscribeNext:^(NSArray *listArray) {

@@ -48,7 +48,7 @@
         ELNewsDetailVideoBean *videoBean = [pageBean.video safeObjectAtIndex:0];
         [self->_videoPlayer.coverImageView yy_setImageWithURL:[NSURL URLWithString:videoBean.img] placeholder:nil];
         self->_videoPlayer.URLString = videoBean.url;
-       
+        [self->_detailView setInfoPageBean:pageBean];
     } error:^(NSError *error) {
         
     }];

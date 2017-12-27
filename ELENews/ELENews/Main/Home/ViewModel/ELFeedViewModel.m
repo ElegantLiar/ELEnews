@@ -46,7 +46,7 @@
                               parameters:params
                                 progress:nil
                                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                     if (self.channelID == 0 && self->_page == 1) {
+                                     if (self.channelID == 0 && self->_page == 1 && self->_tabType == ELTabTypeHome) {
                                          [[ELNetworkCache shareInstance] setObject:responseObject forKey:kELNetworkCacheMainPage withBlock:nil];
                                      }
                 [subscriber sendNext:[self configureResponseObject:responseObject]];
