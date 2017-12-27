@@ -72,6 +72,12 @@
                 CGFloat width = (ELScreenW - 40) / 3;
                 photoImageNode.style.preferredSize = CGSizeMake(width, width);
                 NSString *url = [_listBean.img safeObjectAtIndex:i];
+                if (url.length > 0) {
+                    photoImageNode.hidden = NO;
+                } else {
+                    photoImageNode.hidden = YES;
+                }
+                photoImageNode.defaultImage = [UIImage imageNamed:@"placehoderImg_145x108_"];
                 photoImageNode.URL = [NSURL URLWithString:url];
                 photoImageNode.imageModificationBlock = ^UIImage *(UIImage *image) {
                     UIImage *modifiedImage;
