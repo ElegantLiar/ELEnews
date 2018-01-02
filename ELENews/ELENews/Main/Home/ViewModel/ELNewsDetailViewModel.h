@@ -6,23 +6,29 @@
 //  Copyright © 2017年 ElegantLiar. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "ELNewsDetailPageBean.h"
 #import "ELNewsDetailInfoPageBean.h"
+#import "ELBaseViewModel.h"
+#import "ELNewsListBean.h"
 
-@interface ELNewsDetailViewModel : NSObject
+@interface ELNewsDetailViewModel : ELBaseViewModel
+
+- (instancetype)initWithListBean:(ELNewsListBean *)listBean;
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
 @property (nonatomic, strong, readonly) RACCommand *infoRequestCommand;
 
-- (void)loadDataFromNetworkWithNewsID:(NSInteger)newsID;
+@property (nonatomic, assign) NSInteger newsID;
 
-- (void)loadInfoFromNetworkWithNewsID:(NSInteger)newsID;
+- (void)loadDataFromNetwork;
+
+- (void)loadInfoFromNetwork;
+
 
 @end
 
-@interface ELNewsPhotoDetailViewModel : NSObject
+@interface ELNewsPhotoDetailViewModel : ELBaseViewModel
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 

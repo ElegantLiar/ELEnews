@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ELChannelBean.h"
 
 typedef NS_ENUM(NSInteger, ELFeedType) {
     ELFeedTypeNews = 0,
@@ -21,6 +22,8 @@ typedef NS_ENUM(NSInteger, ELTabType) {
 
 @interface ELFeedViewModel : NSObject
 
+- (instancetype)initWithELSingleChannelBean:(ELSingleChannelBean *)bean;
+
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
 @property (nonatomic, strong, readonly) RACCommand *cacheCommand;
@@ -34,6 +37,9 @@ typedef NS_ENUM(NSInteger, ELTabType) {
 @property (nonatomic, assign) ELFeedType feedType;
 
 @property (nonatomic, assign) ELTabType tabType;
+
+@property (nonatomic, strong) NSString *title;
+
 
 - (void)loadFirstPageDataFromNetwork;
 

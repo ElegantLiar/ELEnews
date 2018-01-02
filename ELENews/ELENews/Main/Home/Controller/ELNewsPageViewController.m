@@ -13,6 +13,8 @@
 #import "ELFlashPageBean.h"
 #import "ELGifPageBean.h"
 
+#import "ELNewsDetailViewModel.h"
+
 #import "ELNewsFeedNote.h"
 #import "ELFlashFeedNote.h"
 #import "ELGIFFeedNode.h"
@@ -31,11 +33,12 @@ ASTableDataSource,
 UIScrollViewDelegate
 >
 
+@property (nonatomic, strong) ELFeedViewModel *feedViewModel;
+
 @end
 
 @implementation ELNewsPageViewController{
     ASTableNode         *_tableNode;
-    ELFeedViewModel     *_feedViewModel;
     NSMutableArray      *_listArray;
     CGFloat             _orignalHeight;
     CGFloat             _height;
@@ -46,11 +49,6 @@ UIScrollViewDelegate
     [super viewDidLoad];
     
     _listArray = @[].mutableCopy;
-    
-    _feedViewModel = [[ELFeedViewModel alloc] init];
-    _feedViewModel.channelID = _singleChannelBean.channelID;
-    _feedViewModel.flag = _singleChannelBean.flag;
-    _feedViewModel.tabType = _tabType;
     
     [self initUI];
     
@@ -76,6 +74,17 @@ UIScrollViewDelegate
 }
 
 #pragma mark - Intial Methods
+- (instancetype)initWithViewModel:(ELFeedViewModel *)viewModel{
+    if (self = [super init]) {
+        _feedViewModel = viewModel;
+        
+        RAC(self, title) = RACObserve(self.feedViewModel, title);
+        
+        self.tabType = ELTabTypeHome;
+    }
+    return self;
+}
+
 - (void)initUI{
     _orignalHeight = self.view.height - kAppTabBarHeight;
     
@@ -92,16 +101,18 @@ UIScrollViewDelegate
 
 #pragma mark – Target Methods
 - (void)showDetailVcWithELNewsListBean:(ELNewsListBean *)listBean{
-    ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] init];
-    detailVc.newsID = listBean.newsID;
-    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
+    
+    ELNewsDetailViewModel *viewModel = [[ELNewsDetailViewModel alloc] initWithListBean:listBean];
+    ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] initWithViewModel:viewModel];
+    
+//    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 - (void)showPhotoBrowserWithNewsListBean:(ELNewsListBean *)listBean{
     ELNewsPhotoDetailViewController *detailVc = [[ELNewsPhotoDetailViewController alloc] init];
     detailVc.newID = listBean.newsID;
-    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
+//    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 

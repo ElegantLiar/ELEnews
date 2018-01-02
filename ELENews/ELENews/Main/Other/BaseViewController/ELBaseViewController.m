@@ -11,12 +11,35 @@
 
 @interface ELBaseViewController ()
 
+@property (nonatomic, strong) NSString *baseTitle;
+
 @end
 
 @implementation ELBaseViewController{
     UILabel         *_titleLabel;
     UIImageView     *_iconImageView;
     NSString        *_iconImageUrl;
+}
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone{
+    ELBaseViewController *viewController = [super allocWithZone:zone];
+    
+    @weakify(viewController)
+    [[viewController
+      rac_signalForSelector:@selector(viewDidLoad)]
+     subscribeNext:^(id x) {
+         @strongify(viewController)
+         [viewController bindViewModel];
+     }];
+    
+    return viewController;
+}
+
+- (instancetype)initWithViewModel:(ELBaseViewModel *)viewModel{
+    if (self = [super init]) {
+        _viewModel = viewModel;
+    }
+    return self;
 }
 
 #pragma mark – LifeCycle
@@ -71,9 +94,6 @@
         make.left.mas_equalTo(_iconImageView.mas_right).with.offset(5);
         make.centerY.mas_equalTo(bgView).with.offset(0);
     }];
-    
-    [_iconImageView yy_setImageWithURL:[NSURL URLWithString:_iconImageUrl] placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:nil];
-    [_titleLabel setText:_baseTitle];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -81,23 +101,12 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
-//- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    [self.navigationController setNavigationBarHidden:NO animated:NO];
-//}
-
-#pragma mark - Intial Methods
-
-#pragma mark – Target Methods
-
-#pragma mark - Private Methods
-- (void)configureNavTitle:(NSString *)navTitle iconImageUrl:(NSString *)iconImageUrl{
-    _baseTitle = navTitle;
-    _iconImageUrl = iconImageUrl;
+- (void)bindViewModel{
+    _baseTitle = self.viewModel.title;
+    _iconImageUrl = self.viewModel.iconImageUrl;
+    
+    [_iconImageView yy_setImageWithURL:[NSURL URLWithString:_iconImageUrl] placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:nil];
+    [_titleLabel setText:_baseTitle];
 }
-#pragma mark - Setter Getter Methods
-
-#pragma mark - External Delegate
-
 
 @end

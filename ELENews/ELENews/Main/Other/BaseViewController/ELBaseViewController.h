@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ELBaseViewModel.h"
 
-//typedef NS_ENUM(NSInteger, ELBaseViewControllerNavType) {
-//    ELBaseViewControllerNavTypeMainPage = 0,
-//    ELBaseViewControllerNavTypeSubPage
-//};
 @interface ELBaseViewController : UIViewController
 
 @property (nonatomic, strong) UIView *baseNavigationView;
 @property (nonatomic, strong) UIView *baseContentView;
-@property (nonatomic, strong) NSString *baseTitle;
 
-- (void)configureNavTitle:(NSString *)navTitle iconImageUrl:(NSString *)iconImageUrl;
-//@property (nonatomic, assign) ELBaseViewControllerNavType type;
+@property (nonatomic, strong, readonly) ELBaseViewModel *viewModel;
+
+- (instancetype)initWithViewModel:(ELBaseViewModel *)viewModel;
+
+- (void)bindViewModel;
 
 @end

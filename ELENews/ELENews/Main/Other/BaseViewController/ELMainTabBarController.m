@@ -9,6 +9,7 @@
 #import "ELMainTabBarController.h"
 #import "ELDisplayViewController.h"
 #import "ELNavgationController.h"
+#import "ELTabbarViewModel.h"
 
 @interface ELMainTabBarController ()<UITabBarControllerDelegate>
 
@@ -57,39 +58,22 @@
                                     @"tabbar_me_selected_40x40_"
                                     ];
     
+    
     for (NSInteger i = 0; i < titles.count; i++) {
+        ELTabbarViewModel *viewModel = [[ELTabbarViewModel alloc] initWithTitle:[titles safeObjectAtIndex:i]
+                                                                    tabbarTitle:[titles safeObjectAtIndex:i]
+                                                             tabbarDefaultImage:[defaultImageNames safeObjectAtIndex:i]
+                                                            tabbarSelectedImage:[selectedImageNames safeObjectAtIndex:i]];
         
-        [self addChildViewController:[[NSClassFromString([className safeObjectAtIndex:i]) alloc] init]
-                               title:[titles safeObjectAtIndex:i]
-                    defaultImageName:[defaultImageNames safeObjectAtIndex:i]
-                   selectedImageName:[selectedImageNames safeObjectAtIndex:i]];
+        ELDisplayViewController *viewController = [[NSClassFromString([className safeObjectAtIndex:i]) alloc] initWithViewModel:viewModel];
+        [self addChildViewController:viewController];
     }
-        
 }
 
 #pragma mark – Target Methods
 
 #pragma mark - Private Methods
-- (void)addChildViewController:(ELDisplayViewController *)childController
-                         title:(NSString *)title
-              defaultImageName:(NSString *)defaultImageName
-             selectedImageName:(NSString *)selectedImageName{
-    childController.baseTitle = title;
-    childController.tabBarItem.title = title;
-    childController.tabBarItem.image = [[UIImage imageNamed:defaultImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    childController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    NSMutableDictionary *textAttrs = @{}.mutableCopy;
-    textAttrs[NSForegroundColorAttributeName] = [UIColor hexChangeFloat:@"999999"];
-    
-    NSMutableDictionary *selectTextAttrs = @{}.mutableCopy;
-    selectTextAttrs[NSForegroundColorAttributeName] = [UIColor hexChangeFloat:@"FF625D"];
-    
-    [childController.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    [childController.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
-    
-    [self addChildViewController:childController];
-}
+
 #pragma mark - Setter Getter Methods
 
 #pragma mark - External Delegate

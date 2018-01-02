@@ -10,6 +10,4 @@
 
 @interface ELNewsDetailViewController : ELBaseViewController
 
-@property (nonatomic, assign) NSInteger newsID;
-
 @end

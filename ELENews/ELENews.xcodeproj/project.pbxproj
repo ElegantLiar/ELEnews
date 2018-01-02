@@ -93,6 +93,8 @@
 		657CC0DB1FD93165001616BF /* ELHomeChannelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0DA1FD93165001616BF /* ELHomeChannelViewModel.m */; };
 		657CC0DE1FD93185001616BF /* ELChannelBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0DD1FD93185001616BF /* ELChannelBean.m */; };
 		657CC0E71FD94024001616BF /* ELFeedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 657CC0E61FD94024001616BF /* ELFeedViewModel.m */; };
+		658294221FFB7BF900832D8B /* ELBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 658294211FFB7BF900832D8B /* ELBaseViewModel.m */; };
+		658294261FFB7EBD00832D8B /* ELTabbarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 658294251FFB7EBD00832D8B /* ELTabbarViewModel.m */; };
 		65A8301C1FD6919800A75B32 /* ELNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D8B7841FD6828D0054DDE4 /* ELNavgationController.m */; };
 		65A830491FD694C200A75B32 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A830441FD694C100A75B32 /* NSArray+Safe.m */; };
 		65A8304A1FD694C200A75B32 /* NSMutableArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A830461FD694C100A75B32 /* NSMutableArray+Safe.m */; };
@@ -357,6 +359,11 @@
 		657CC0DD1FD93185001616BF /* ELChannelBean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELChannelBean.m; sourceTree = "<group>"; };
 		657CC0E51FD94024001616BF /* ELFeedViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELFeedViewModel.h; sourceTree = "<group>"; };
 		657CC0E61FD94024001616BF /* ELFeedViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELFeedViewModel.m; sourceTree = "<group>"; };
+		658294201FFB7BF900832D8B /* ELBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELBaseViewModel.h; sourceTree = "<group>"; };
+		658294211FFB7BF900832D8B /* ELBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELBaseViewModel.m; sourceTree = "<group>"; };
+		658294231FFB7E2000832D8B /* ELBindViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELBindViewModelProtocol.h; sourceTree = "<group>"; };
+		658294241FFB7EBD00832D8B /* ELTabbarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELTabbarViewModel.h; sourceTree = "<group>"; };
+		658294251FFB7EBD00832D8B /* ELTabbarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELTabbarViewModel.m; sourceTree = "<group>"; };
 		65A830431FD694C100A75B32 /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
 		65A830441FD694C100A75B32 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		65A830451FD694C100A75B32 /* NSMutableDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Safe.h"; sourceTree = "<group>"; };
@@ -544,6 +551,7 @@
 				6555D82A1FDF823700058708 /* ELNetWorkBaseParams.m */,
 				65EF35731FEBB9E70012FB1F /* ELRefreshHeader.h */,
 				65EF35741FEBB9E70012FB1F /* ELRefreshHeader.m */,
+				658294231FFB7E2000832D8B /* ELBindViewModelProtocol.h */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -887,6 +895,17 @@
 			path = YZDisplayViewController;
 			sourceTree = "<group>";
 		};
+		6582941F1FFB7BE400832D8B /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				658294201FFB7BF900832D8B /* ELBaseViewModel.h */,
+				658294211FFB7BF900832D8B /* ELBaseViewModel.m */,
+				658294241FFB7EBD00832D8B /* ELTabbarViewModel.h */,
+				658294251FFB7EBD00832D8B /* ELTabbarViewModel.m */,
+			);
+			path = BaseViewModel;
+			sourceTree = "<group>";
+		};
 		65D8B76F1FD6828D0054DDE4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,6 +1122,7 @@
 		65D8B77F1FD6828D0054DDE4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				6582941F1FFB7BE400832D8B /* BaseViewModel */,
 				65EF35D91FECFA4D0012FB1F /* PhotoBrowser */,
 				6529F3BA1FD68E3500A096FE /* Base */,
 				65D8B7801FD6828D0054DDE4 /* BaseViewController */,
@@ -1687,8 +1707,10 @@
 				6565ABE91FF262DE00706C7D /* ELNewsDetailCommentNode.m in Sources */,
 				65EF35CC1FECA1860012FB1F /* XLProgressView.m in Sources */,
 				653CB0CB1FDFD126006C4C2D /* ELNewsPageViewController.m in Sources */,
+				658294261FFB7EBD00832D8B /* ELTabbarViewModel.m in Sources */,
 				65EF35C31FECA1860012FB1F /* FSActionSheetConfig.m in Sources */,
 				65A830571FD780BD00A75B32 /* ELDisplayViewController.m in Sources */,
+				658294221FFB7BF900832D8B /* ELBaseViewModel.m in Sources */,
 				65D8B78F1FD6830C0054DDE4 /* ELMacros.m in Sources */,
 				656A89C41FD6912E00A17CDB /* ELMainTabBarController.m in Sources */,
 				65C9C23B1FE3B63600157CE5 /* ELCommunityStarNode.m in Sources */,

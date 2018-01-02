@@ -30,8 +30,8 @@
     
     _viewModel = [[ELNewsDetailViewModel alloc] init];
     
-    [_viewModel loadDataFromNetworkWithNewsID:_newsID];
-    [_viewModel loadInfoFromNetworkWithNewsID:_newsID];
+    [_viewModel loadDataFromNetwork];
+    [_viewModel loadInfoFromNetwork];
     
     @weakify(self);
     [[_viewModel.requestCommand execute:nil] subscribeNext:^(ELNewsDetailPageBean *pageBean) {
@@ -51,6 +51,13 @@
         [self->_detailView setInfoPageBean:pageBean];
     } error:^(NSError *error) {
         
+    }];
+    
+    [[self rac_signalForSelector:@selector(wmplayer:clickedCloseButton:) fromProtocol:@protocol(WMPlayerDelegate)] subscribeNext:^(RACTuple *tuple) {
+        @strongify(self);
+        WMPlayer *player = tuple.first;
+        [player pause];
+        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 #pragma mark - Intial Methods
@@ -83,11 +90,11 @@
 
 #pragma mark - Setter Getter Methods
 
-#pragma mark - External Delegate
--(void)wmplayer:(WMPlayer *)wmplayer clickedCloseButton:(UIButton *)closeBtn{
-    [wmplayer pause];
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//#pragma mark - External Delegate
+//-(void)wmplayer:(WMPlayer *)wmplayer clickedCloseButton:(UIButton *)closeBtn{
+//    [wmplayer pause];
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 @end
 

@@ -33,4 +33,5 @@
 #import "UIView+YYAdd.h"
 #import "YYWebImage.h"
 #import "ELNetworkCache.h"
+#import "ELBindViewModelProtocol.h"
 #endif /* ELENewsHeaders_pch */

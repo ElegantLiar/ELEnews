@@ -18,4 +18,6 @@
 @property (nonatomic, assign) ELTabType tabType;
 @property (nonatomic, weak) id<ELDisplayViewScrollDelegate> delegate;
 
+- (instancetype)initWithViewModel:(ELFeedViewModel *)viewModel;
+
 @end

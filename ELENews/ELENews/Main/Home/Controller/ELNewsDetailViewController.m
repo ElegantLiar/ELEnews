@@ -7,31 +7,33 @@
 //
 
 #import "ELNewsDetailViewController.h"
-#import "ELNewsDetailViewModel.h"
 #import "ELNewsDetailView.h"
+#import "ELNewsDetailViewModel.h"
 
 @interface ELNewsDetailViewController ()
 
+@property (nonatomic, strong, readonly) ELNewsDetailViewModel *viewModel;
+
 @end
 
+
 @implementation ELNewsDetailViewController{
-    ELNewsDetailViewModel       *_viewModel;
     ELNewsDetailPageBean        *_pageBean;
     ELNewsDetailView            *_detailView;
-
 }
+
+@dynamic viewModel;
+
 #pragma mark – LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
     
-    _viewModel = [[ELNewsDetailViewModel alloc] init];
-    
-    [_viewModel loadDataFromNetworkWithNewsID:_newsID];
-    [_viewModel loadInfoFromNetworkWithNewsID:_newsID];
+    [self.viewModel loadDataFromNetwork];
+    [self.viewModel loadInfoFromNetwork];
 
     @weakify(self);
-    [[_viewModel.requestCommand execute:nil] subscribeNext:^(ELNewsDetailPageBean *pageBean) {
+    [[self.viewModel.requestCommand execute:nil] subscribeNext:^(ELNewsDetailPageBean *pageBean) {
         @strongify(self);
         self->_pageBean = pageBean;
         [self->_detailView setPageBean:self->_pageBean];
@@ -39,7 +41,7 @@
         
     }];
     
-    [[_viewModel.infoRequestCommand execute:nil] subscribeNext:^(ELNewsDetailInfoPageBean *infoPageBean) {
+    [[self.viewModel.infoRequestCommand execute:nil] subscribeNext:^(ELNewsDetailInfoPageBean *infoPageBean) {
         @strongify(self);
         [self->_detailView setInfoPageBean:infoPageBean];
     } error:^(NSError *error) {
@@ -65,20 +67,9 @@
 #pragma mark - External Delegate
 
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

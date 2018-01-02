@@ -13,7 +13,21 @@
 #import "ELGIFPageBean.h"
 #import "ELVideoPageBean.h"
 
-@implementation ELFeedViewModel
+@implementation ELFeedViewModel{
+    ELSingleChannelBean     *_channelBean;
+}
+
+- (instancetype)initWithELSingleChannelBean:(ELSingleChannelBean *)bean{
+    if (self = [super init]) {
+        _channelBean = bean;
+        
+        self.title = _channelBean.name;
+        self.channelID = _channelBean.channelID;
+        self.flag = _channelBean.flag;
+        self.tabType = _tabType;
+    }
+    return self;
+}
 
 - (void)loadDataFromNetwork{
     

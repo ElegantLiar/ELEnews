@@ -7,7 +7,10 @@
 //
 
 #import "YZDisplayViewController.h"
+#import "ELTabbarViewModel.h"
 
-@interface ELDisplayViewController : YZDisplayViewController
+@interface ELDisplayViewController : YZDisplayViewController<ELBindViewModelProtocol>
+
+- (instancetype)initWithViewModel:(ELTabbarViewModel *)viewModel;
 
 @end
