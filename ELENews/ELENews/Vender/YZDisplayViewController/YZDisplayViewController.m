@@ -19,9 +19,10 @@ static NSString * const ID = @"CONTENTCELL";
     UIColor         *_norColor;
     UIColor         *_selColor;
     CGFloat         _contentY;
-    UILabel         *_titleLabel;
-    UIImageView     *_iconImageView;
 }
+
+
+
 
 /**
  *  下标宽度是否等于标题宽度
@@ -569,24 +570,6 @@ static NSString * const ID = @"CONTENTCELL";
     }
     
     
-}
-
-- (void)showNavImageWithImageName:(NSString *)imageName
-                             size:(CGSize)size{
-    _titleLabel.hidden = YES;
-    if (!_iconImageView) {
-        _iconImageView = [[UIImageView alloc] init];
-        [_baseNavigationView addSubview:_iconImageView];
-        [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(size);
-            make.center.mas_equalTo(_baseNavigationView).with.offset(0);
-        }];
-    } else {
-        [_iconImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(size);
-        }];
-    }
-    _iconImageView.image = [UIImage imageNamed:imageName];
 }
 
 #pragma mark - 添加标题方法

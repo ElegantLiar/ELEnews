@@ -76,13 +76,27 @@
 
 @end
 
-@implementation ELNewsPhotoDetailViewModel
+@implementation ELNewsPhotoDetailViewModel{
+    ELNewsListBean *_listBean;
+}
 
-- (void)loadDataFromNetworkWithNewsID:(NSInteger)newsID{
+- (instancetype)initWithListBean:(ELNewsListBean *)listBean{
+    if (self = [super init]) {
+        _listBean = listBean;
+        self.newsID = _listBean.newsID;
+        self.title = _listBean.cat.name;
+        self.iconImageUrl = _listBean.cat.pic;
+    }
+    return self;
+}
+
+- (void)loadDataFromNetwork{
+    @weakify(self);
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            @strongify(self);
             NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:[ELNetWorkBaseParams baseParams]];
-            [params setObject:@(newsID) forKey:@"id"];
+            [params setObject:@(self.newsID) forKey:@"id"];
             NSString *url = @"http://api.app.happyjuzi.com/article/photo";
             [[ELHTTPManager manager] GET:url
                               parameters:params

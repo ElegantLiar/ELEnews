@@ -32,6 +32,12 @@
          [viewController bindViewModel];
      }];
     
+    [[viewController rac_signalForSelector:@selector(viewWillAppear:)]
+     subscribeNext:^(id x) {
+        @strongify(viewController)
+        [viewController.navigationController setNavigationBarHidden:YES animated:NO];
+    }];
+    
     return viewController;
 }
 
@@ -46,7 +52,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ELWhiteColor;
-
 
     _baseNavigationView = [[UIView alloc] init];
     [self.view addSubview:_baseNavigationView];
@@ -94,11 +99,6 @@
         make.left.mas_equalTo(_iconImageView.mas_right).with.offset(5);
         make.centerY.mas_equalTo(bgView).with.offset(0);
     }];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)bindViewModel{

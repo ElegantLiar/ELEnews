@@ -10,6 +10,5 @@
 
 @interface ELNewsPhotoDetailViewController : ELBaseViewController
 
-@property (nonatomic, assign) NSInteger newID;
 
 @end

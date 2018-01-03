@@ -80,7 +80,7 @@ UIScrollViewDelegate
         
         RAC(self, title) = RACObserve(self.feedViewModel, title);
         
-        self.tabType = ELTabTypeHome;
+        self.tabType = _feedViewModel.tabType;;
     }
     return self;
 }
@@ -104,15 +104,12 @@ UIScrollViewDelegate
     
     ELNewsDetailViewModel *viewModel = [[ELNewsDetailViewModel alloc] initWithListBean:listBean];
     ELNewsDetailViewController *detailVc = [[ELNewsDetailViewController alloc] initWithViewModel:viewModel];
-    
-//    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
-    [self.navigationController pushViewController:detailVc animated:YES];
+        [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 - (void)showPhotoBrowserWithNewsListBean:(ELNewsListBean *)listBean{
-    ELNewsPhotoDetailViewController *detailVc = [[ELNewsPhotoDetailViewController alloc] init];
-    detailVc.newID = listBean.newsID;
-//    [detailVc configureNavTitle:listBean.cat.name iconImageUrl:listBean.cat.pic];
+    ELNewsPhotoDetailViewModel *viewModel = [[ELNewsPhotoDetailViewModel alloc] initWithListBean:listBean];
+    ELNewsPhotoDetailViewController *detailVc = [[ELNewsPhotoDetailViewController alloc] initWithViewModel:viewModel];
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
@@ -249,13 +246,4 @@ UIScrollViewDelegate
         }];
     }
 }
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    if (_feedViewModel.feedType == ELFeedTypeGif) {
-//        NSArray *visibleCells = [_tableNode indexPathsForVisibleRows];
-//        for (NSIndexPath *indexPath in visibleCells) {
-//            ELGIFFeedNode *cellNode = [_tableNode nodeForRowAtIndexPath:indexPath];
-//            [cellNode playGIF];
-//        }
-//    }
-//}
 @end

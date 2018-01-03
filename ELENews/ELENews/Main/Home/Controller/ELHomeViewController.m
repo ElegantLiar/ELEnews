@@ -12,6 +12,7 @@
 
 @interface ELHomeViewController ()
 
+@property (nonatomic, strong, readonly) ELTabbarViewModel *viewModel;
 
 @end
 
@@ -20,33 +21,13 @@
     CGPoint                 _lastOffset;
 }
 
+@dynamic viewModel;
+
 #pragma mark – LifeCycle
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    [self showNavImageWithImageName:@"home_nav_logo_91x26_" size:CGSizeMake(91, 26)];
-
-    [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat *titleHeight, CGFloat *titleWidth) {
-        *norColor = [UIColor hexChangeFloat:@"9A9A9A"];
-        *selColor = [UIColor hexChangeFloat:@"FF3D3D"];
-//        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
-        *titleHeight = 32;
-        *titleFont = [UIFont systemFontOfSize:16];
-    }];
-    
-    // 标题渐变
-    // *推荐方式(设置标题渐变)
-    [self setUpTitleGradient:^(YZTitleColorGradientStyle *titleColorGradientStyle, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor) {
-        
-    }];
-    
-    [self setUpUnderLineEffect:^(BOOL *isUnderLineDelayScroll, CGFloat *underLineH, UIColor *__autoreleasing *underLineColor,BOOL *isUnderLineEqualTitleWidth) {
-        *isUnderLineEqualTitleWidth = YES;
-        *underLineColor = [UIColor hexChangeFloat:@"FF3D3D"];
-    }];
-    
     [self initData];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -81,6 +62,7 @@
 - (void)setUpAllViewController{
     [[_channleViewModel.channelBean.home.rac_sequence.signal deliverOnMainThread] subscribeNext:^(ELSingleChannelBean *bean) {
         ELFeedViewModel *viewModel = [[ELFeedViewModel alloc] initWithELSingleChannelBean:bean];
+        viewModel.tabType = ELTabTypeHome;
         ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] initWithViewModel:viewModel];
         newsPageVc.delegate = self;
         [self addChildViewController:newsPageVc];
@@ -119,7 +101,6 @@
 #pragma mark - Setter Getter Methods
 
 #pragma mark - External Delegate
-
 
 
 

@@ -12,5 +12,7 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *iconImageUrl;
+@property (nonatomic, strong) NSString *iconImageName;
+@property (nonatomic, assign) CGSize iconSize;
 
 @end

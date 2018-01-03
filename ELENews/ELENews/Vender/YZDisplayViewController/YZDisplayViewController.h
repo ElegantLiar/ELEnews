@@ -17,6 +17,9 @@ typedef enum : NSUInteger {
 
 @interface YZDisplayViewController : UIViewController<ELDisplayViewScrollDelegate>
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *iconImageView;
+
 /**************************************【内容】************************************/
 /**
     内容是否需要全屏展示
@@ -49,10 +52,6 @@ typedef enum : NSUInteger {
  刷新标题和整个界面，在调用之前，必须先确定所有的子控制器。
  */
 - (void)refreshDisplay;
-
-
-- (void)showNavImageWithImageName:(NSString *)imageName
-                             size:(CGSize)size;
 
 
 /***********************************【顶部标题样式】********************************/

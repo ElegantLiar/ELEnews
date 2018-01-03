@@ -24,26 +24,6 @@
     [super viewDidLoad];
     
     self.baseTitle = @"视频";
-    
-    [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat *titleHeight, CGFloat *titleWidth) {
-        *norColor = [UIColor hexChangeFloat:@"9A9A9A"];
-        *selColor = [UIColor hexChangeFloat:@"FF3D3D"];
-        //        *titleWidth = [UIScreen mainScreen].bounds.size.width / 6;
-        *titleHeight = 32;
-        *titleFont = [UIFont systemFontOfSize:15];
-    }];
-    
-    // 标题渐变
-    // *推荐方式(设置标题渐变)
-    [self setUpTitleGradient:^(YZTitleColorGradientStyle *titleColorGradientStyle, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor) {
-        
-    }];
-    
-    [self setUpUnderLineEffect:^(BOOL *isUnderLineDelayScroll, CGFloat *underLineH, UIColor *__autoreleasing *underLineColor,BOOL *isUnderLineEqualTitleWidth) {
-        *isUnderLineEqualTitleWidth = YES;
-        *underLineColor = [UIColor hexChangeFloat:@"FF3D3D"];
-    }];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -79,17 +59,26 @@
 #pragma mark - Private Methods
 // 添加所有子控制器
 - (void)setUpAllViewController{
-    for (NSInteger i = 0; i < _channelViewModel.channelBean.video.count; i++) {
-        ELSingleChannelBean *bean = [_channelViewModel.channelBean.video safeObjectAtIndex:i];
-        ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] init];
+    [[_channelViewModel.channelBean.video.rac_sequence.signal deliverOnMainThread] subscribeNext:^(ELSingleChannelBean *bean) {
+        ELFeedViewModel *viewModel = [[ELFeedViewModel alloc] initWithELSingleChannelBean:bean];
+        viewModel.tabType = ELTabTypeVideo;
+        ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] initWithViewModel:viewModel];
         newsPageVc.delegate = self;
-        newsPageVc.title = bean.name;
-        newsPageVc.singleChannelBean = bean;
-        newsPageVc.tabType = ELTabTypeVideo;
         [self addChildViewController:newsPageVc];
-    }
-    
-    [self refreshDisplay];
+    }  completed:^{
+        [self refreshDisplay];
+    }];
+////    for (NSInteger i = 0; i < _channelViewModel.channelBean.video.count; i++) {
+////        ELSingleChannelBean *bean = [_channelViewModel.channelBean.video safeObjectAtIndex:i];
+////        ELNewsPageViewController *newsPageVc = [[ELNewsPageViewController alloc] init];
+////        newsPageVc.delegate = self;
+////        newsPageVc.title = bean.name;
+////        newsPageVc.singleChannelBean = bean;
+////        newsPageVc.tabType = ELTabTypeVideo;
+////        [self addChildViewController:newsPageVc];
+////    }
+//
+//    [self refreshDisplay];
     
 }
 

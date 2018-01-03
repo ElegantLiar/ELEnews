@@ -13,13 +13,13 @@
 
 @interface ELNewsDetailViewModel : ELBaseViewModel
 
-- (instancetype)initWithListBean:(ELNewsListBean *)listBean;
-
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
 @property (nonatomic, strong, readonly) RACCommand *infoRequestCommand;
 
 @property (nonatomic, assign) NSInteger newsID;
+
+- (instancetype)initWithListBean:(ELNewsListBean *)listBean;
 
 - (void)loadDataFromNetwork;
 
@@ -32,6 +32,10 @@
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 
-- (void)loadDataFromNetworkWithNewsID:(NSInteger)newsID;
+@property (nonatomic, assign) NSInteger newsID;
+
+- (instancetype)initWithListBean:(ELNewsListBean *)listBean;
+
+- (void)loadDataFromNetwork;
 
 @end

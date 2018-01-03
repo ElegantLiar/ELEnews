@@ -64,7 +64,10 @@
                                                                     tabbarTitle:[titles safeObjectAtIndex:i]
                                                              tabbarDefaultImage:[defaultImageNames safeObjectAtIndex:i]
                                                             tabbarSelectedImage:[selectedImageNames safeObjectAtIndex:i]];
-        
+        if (i == 0) {
+            viewModel.iconSize = CGSizeMake(91, 26);
+            viewModel.iconImageName = @"home_nav_logo_91x26_";
+        }
         ELDisplayViewController *viewController = [[NSClassFromString([className safeObjectAtIndex:i]) alloc] initWithViewModel:viewModel];
         [self addChildViewController:viewController];
     }

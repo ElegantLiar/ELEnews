@@ -9,8 +9,12 @@
 #import "YZDisplayViewController.h"
 #import "ELTabbarViewModel.h"
 
-@interface ELDisplayViewController : YZDisplayViewController<ELBindViewModelProtocol>
+@interface ELDisplayViewController : YZDisplayViewController
 
-- (instancetype)initWithViewModel:(ELTabbarViewModel *)viewModel;
+@property (nonatomic, strong, readonly) ELTabbarViewModel *viewModel;
+
+- (instancetype)initWithViewModel:(ELBaseViewModel *)viewModel;
+
+- (void)bindViewModel;
 
 @end

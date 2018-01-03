@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ELBaseViewModel.h"
 #import "ELChannelBean.h"
 
 typedef NS_ENUM(NSInteger, ELFeedType) {
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSInteger, ELTabType) {
     ELTabTypeVideo
 };
 
-@interface ELFeedViewModel : NSObject
+@interface ELFeedViewModel : ELBaseViewModel
 
 - (instancetype)initWithELSingleChannelBean:(ELSingleChannelBean *)bean;
 
@@ -37,8 +38,6 @@ typedef NS_ENUM(NSInteger, ELTabType) {
 @property (nonatomic, assign) ELFeedType feedType;
 
 @property (nonatomic, assign) ELTabType tabType;
-
-@property (nonatomic, strong) NSString *title;
 
 
 - (void)loadFirstPageDataFromNetwork;
